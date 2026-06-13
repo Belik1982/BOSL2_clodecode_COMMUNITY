@@ -5,8 +5,8 @@
 // All parameters are defined below (inline for Customizer compatibility).
 // Implementation modules are in modules/ directory.
 // =============================================================================
-include <BOSL2/std.scad>
-include <BOSL2/screws.scad>
+include "BOSL2/std.scad"
+include "BOSL2/screws.scad"
 
 // Edition: "community" or "pro"
 _EDITION = "community";
@@ -467,15 +467,15 @@ Coeff_Heatset_Dia = 1.35; // [1.20 : 0.01 : 1.50]
 // Множник глибини отвору під термозакладку / Heatset hole depth multiplier
 Coeff_Heatset_Depth = 1.50; // [1.20 : 0.05 : 2.00]
 
-include <modules/constants.scad>
-include <modules/connectors.scad>
-include <modules/ventilation.scad>
-include <modules/fasteners.scad>
-include <modules/snaps.scad>
-include <modules/text.scad>
-include <modules/features.scad>
-include <modules/panels.scad>
-include <modules/pcb.scad>
-include <modules/base_lid.scad>
-include <modules/bom.scad>
-include <modules/assembly.scad>
+include "modules/constants.scad"
+include "modules/connectors.scad"
+include "modules/ventilation.scad"
+include "modules/fasteners.scad"
+include "modules/snaps.scad"
+include "modules/text.scad"
+include "modules/features.scad"
+include "modules/panels.scad"
+include "modules/pcb.scad"
+include "modules/base_lid.scad"
+include "modules/bom.scad"
+include "modules/assembly.scad"
