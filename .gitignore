@@ -5,6 +5,8 @@
 *.dxf
 *.svg
 *.png
+!gallery/*.png
+!images/*.png
 Thumbs.db
 .DS_Store
 __pycache__/

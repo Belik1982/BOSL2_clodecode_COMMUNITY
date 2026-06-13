@@ -23,7 +23,9 @@ Output:
       index.md    ← Markdown gallery page with all images
 """
 
-import subprocess, os, sys, json, argparse, time
+import subprocess, os, sys, json, argparse, time, io
+sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8", errors="replace")
+sys.stderr = io.TextIOWrapper(sys.stderr.buffer, encoding="utf-8", errors="replace")
 from pathlib import Path
 from datetime import datetime
 from concurrent.futures import ThreadPoolExecutor, as_completed

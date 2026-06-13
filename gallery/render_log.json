@@ -1,0 +1,104 @@
+{
+  "timestamp": "2026-06-14T01:02:18.861650",
+  "openscad": "C:\\Program Files\\OpenSCAD (Nightly)\\openscad.exe",
+  "size": "1280x960",
+  "total_sec": 9.2,
+  "results": [
+    {
+      "name": "01_basic_assembled",
+      "ok": true,
+      "elapsed": 1.0,
+      "path": "D:\\Downloads\\3d printel models\\parametric_generator openscad\\antropic_progect\\BOSL2_clodecode_COMMUNITY\\gallery\\01_basic_assembled.png"
+    },
+    {
+      "name": "02_basic_exploded",
+      "ok": true,
+      "elapsed": 0.9,
+      "path": "D:\\Downloads\\3d printel models\\parametric_generator openscad\\antropic_progect\\BOSL2_clodecode_COMMUNITY\\gallery\\02_basic_exploded.png"
+    },
+    {
+      "name": "03_iot_sensor",
+      "ok": true,
+      "elapsed": 1.1,
+      "path": "D:\\Downloads\\3d printel models\\parametric_generator openscad\\antropic_progect\\BOSL2_clodecode_COMMUNITY\\gallery\\03_iot_sensor.png"
+    },
+    {
+      "name": "04_arduino_nano",
+      "ok": true,
+      "elapsed": 1.2,
+      "path": "D:\\Downloads\\3d printel models\\parametric_generator openscad\\antropic_progect\\BOSL2_clodecode_COMMUNITY\\gallery\\04_arduino_nano.png"
+    },
+    {
+      "name": "05_audio_di_box",
+      "ok": true,
+      "elapsed": 1.0,
+      "path": "D:\\Downloads\\3d printel models\\parametric_generator openscad\\antropic_progect\\BOSL2_clodecode_COMMUNITY\\gallery\\05_audio_di_box.png"
+    },
+    {
+      "name": "06_midi_controller",
+      "ok": true,
+      "elapsed": 0.9,
+      "path": "D:\\Downloads\\3d printel models\\parametric_generator openscad\\antropic_progect\\BOSL2_clodecode_COMMUNITY\\gallery\\06_midi_controller.png"
+    },
+    {
+      "name": "07_network_router",
+      "ok": true,
+      "elapsed": 1.2,
+      "path": "D:\\Downloads\\3d printel models\\parametric_generator openscad\\antropic_progect\\BOSL2_clodecode_COMMUNITY\\gallery\\07_network_router.png"
+    },
+    {
+      "name": "08_psu_box",
+      "ok": true,
+      "elapsed": 1.6,
+      "path": "D:\\Downloads\\3d printel models\\parametric_generator openscad\\antropic_progect\\BOSL2_clodecode_COMMUNITY\\gallery\\08_psu_box.png"
+    },
+    {
+      "name": "09_honeycomb_all",
+      "ok": true,
+      "elapsed": 1.2,
+      "path": "D:\\Downloads\\3d printel models\\parametric_generator openscad\\antropic_progect\\BOSL2_clodecode_COMMUNITY\\gallery\\09_honeycomb_all.png"
+    },
+    {
+      "name": "10_slots_top_side",
+      "ok": true,
+      "elapsed": 1.1,
+      "path": "D:\\Downloads\\3d printel models\\parametric_generator openscad\\antropic_progect\\BOSL2_clodecode_COMMUNITY\\gallery\\10_slots_top_side.png"
+    },
+    {
+      "name": "11_multi_connector",
+      "ok": true,
+      "elapsed": 0.7,
+      "path": "D:\\Downloads\\3d printel models\\parametric_generator openscad\\antropic_progect\\BOSL2_clodecode_COMMUNITY\\gallery\\11_multi_connector.png"
+    },
+    {
+      "name": "12_text_labels",
+      "ok": true,
+      "elapsed": 0.9,
+      "path": "D:\\Downloads\\3d printel models\\parametric_generator openscad\\antropic_progect\\BOSL2_clodecode_COMMUNITY\\gallery\\12_text_labels.png"
+    },
+    {
+      "name": "13_joint_lip",
+      "ok": true,
+      "elapsed": 0.9,
+      "path": "D:\\Downloads\\3d printel models\\parametric_generator openscad\\antropic_progect\\BOSL2_clodecode_COMMUNITY\\gallery\\13_joint_lip.png"
+    },
+    {
+      "name": "14_joint_ledge",
+      "ok": true,
+      "elapsed": 0.9,
+      "path": "D:\\Downloads\\3d printel models\\parametric_generator openscad\\antropic_progect\\BOSL2_clodecode_COMMUNITY\\gallery\\14_joint_ledge.png"
+    },
+    {
+      "name": "15_size_micro",
+      "ok": true,
+      "elapsed": 0.9,
+      "path": "D:\\Downloads\\3d printel models\\parametric_generator openscad\\antropic_progect\\BOSL2_clodecode_COMMUNITY\\gallery\\15_size_micro.png"
+    },
+    {
+      "name": "16_size_maxi",
+      "ok": true,
+      "elapsed": 1.6,
+      "path": "D:\\Downloads\\3d printel models\\parametric_generator openscad\\antropic_progect\\BOSL2_clodecode_COMMUNITY\\gallery\\16_size_maxi.png"
+    }
+  ]
+}
