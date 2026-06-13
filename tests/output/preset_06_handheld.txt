@@ -1,0 +1,35 @@
+=== STDOUT ===
+
+=== STDERR ===
+ECHO: "INFO: Recommended screw length = 37 mm (M3)"
+ECHO: "INFO: If text renders incorrectly, try font='Liberation Sans:style=Bold' (available on all platforms)"
+ECHO: "PRESET: 6 Handheld 115x70x35  |  115x70x35 mm  |  Vol: ~281.75 cm3  |  Suggested corner radius: 3.5 mm  |  Wall: 3mm / Bottom: 2mm / Top: 2mm"
+ECHO: "=== BILL OF MATERIALS ==="
+ECHO: "Enclosure: 100 x 60 x 30 mm"
+ECHO: "Material: PLA (shrinkage compensation: 0.3%)"
+ECHO: "FASTENERS: M3 x 37mm -- qty: 4 pcs"
+ECHO: "NUTS: DIN 934 M3 (AF=5.5mm) -- qty: 4 pcs"
+ECHO: "========================="
+ECHO: "--- BAMBU STUDIO HINTS ---"
+ECHO: "{ "printer": "Bambu Lab P2S","
+ECHO: "  "filament": "PLA","
+ECHO: "  "layer_height": 0.2,"
+ECHO: "  "wall_loops": 8,"
+ECHO: "  "top_shell_layers": 10,"
+ECHO: "  "bottom_shell_layers": 10,"
+ECHO: "  "support_needed": false,"
+ECHO: "  "print_orientation": "as_generated","
+ECHO: "  "note": "Screw: M3, Boss_OD: 8mm" }"
+ECHO: "--------------------------"
+Geometries in cache: 84
+Geometry cache size in bytes: 203248
+CGAL Polyhedrons in cache: 143
+CGAL cache size in bytes: 2224250
+Total rendering time: 0:00:00.045
+   Top level object is a 3D object (manifold):
+   Status:     NoError
+   Genus:      8
+   Vertices:     1122
+   Facets:       2272
+
+=== EXIT CODE: 0 ===

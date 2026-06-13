@@ -1,0 +1,604 @@
+{
+  "timestamp": "2026-06-09T00:02:58.422969",
+  "total": 27,
+  "passed": 27,
+  "failed": 0,
+  "errors": 0,
+  "timeouts": 0,
+  "results": [
+    {
+      "name": "conn_usb_a",
+      "status": "PASS",
+      "elapsed_sec": 0.566,
+      "exit_code": 0,
+      "has_warnings": false,
+      "has_errors": false,
+      "stl_exists": true,
+      "errors": [],
+      "geometry": {
+        "vertex_count": 1388,
+        "facet_count": 2816,
+        "is_watertight": true,
+        "genus": 11,
+        "volume_mm3": 28993.083851009065,
+        "bbox": {
+          "x_size": 100.29999999999998,
+          "y_size": 60.17999999999999,
+          "z_size": 23.49
+        }
+      }
+    },
+    {
+      "name": "conn_usb_a_dual",
+      "status": "PASS",
+      "elapsed_sec": 0.573,
+      "exit_code": 0,
+      "has_warnings": false,
+      "has_errors": false,
+      "stl_exists": true,
+      "errors": [],
+      "geometry": {
+        "vertex_count": 1388,
+        "facet_count": 2816,
+        "is_watertight": true,
+        "genus": 11,
+        "volume_mm3": 28709.983851009063,
+        "bbox": {
+          "x_size": 100.29999999999998,
+          "y_size": 60.17999999999999,
+          "z_size": 23.49
+        }
+      }
+    },
+    {
+      "name": "conn_usb_b",
+      "status": "PASS",
+      "elapsed_sec": 0.569,
+      "exit_code": 0,
+      "has_warnings": false,
+      "has_errors": false,
+      "stl_exists": true,
+      "errors": [],
+      "geometry": {
+        "vertex_count": 1392,
+        "facet_count": 2824,
+        "is_watertight": true,
+        "genus": 11,
+        "volume_mm3": 28938.82385099475,
+        "bbox": {
+          "x_size": 100.29999999999998,
+          "y_size": 60.17999999999999,
+          "z_size": 23.49
+        }
+      }
+    },
+    {
+      "name": "conn_usb_c",
+      "status": "PASS",
+      "elapsed_sec": 0.568,
+      "exit_code": 0,
+      "has_warnings": false,
+      "has_errors": false,
+      "stl_exists": true,
+      "errors": [],
+      "geometry": {
+        "vertex_count": 1416,
+        "facet_count": 2872,
+        "is_watertight": true,
+        "genus": 11,
+        "volume_mm3": 29165.18761840944,
+        "bbox": {
+          "x_size": 100.29999999999998,
+          "y_size": 60.17999999999999,
+          "z_size": 23.49
+        }
+      }
+    },
+    {
+      "name": "conn_micro_usb",
+      "status": "PASS",
+      "elapsed_sec": 0.586,
+      "exit_code": 0,
+      "has_warnings": false,
+      "has_errors": false,
+      "stl_exists": true,
+      "errors": [],
+      "geometry": {
+        "vertex_count": 1320,
+        "facet_count": 2672,
+        "is_watertight": true,
+        "genus": 9,
+        "volume_mm3": 29195.09407427907,
+        "bbox": {
+          "x_size": 100.29999999999998,
+          "y_size": 60.17999999999999,
+          "z_size": 23.49
+        }
+      }
+    },
+    {
+      "name": "conn_mini_usb",
+      "status": "PASS",
+      "elapsed_sec": 0.558,
+      "exit_code": 0,
+      "has_warnings": false,
+      "has_errors": false,
+      "stl_exists": true,
+      "errors": [],
+      "geometry": {
+        "vertex_count": 1312,
+        "facet_count": 2656,
+        "is_watertight": true,
+        "genus": 9,
+        "volume_mm3": 29185.9508288505,
+        "bbox": {
+          "x_size": 100.29999999999998,
+          "y_size": 60.17999999999999,
+          "z_size": 23.49
+        }
+      }
+    },
+    {
+      "name": "conn_hdmi",
+      "status": "PASS",
+      "elapsed_sec": 0.566,
+      "exit_code": 0,
+      "has_warnings": false,
+      "has_errors": false,
+      "stl_exists": true,
+      "errors": [],
+      "geometry": {
+        "vertex_count": 1384,
+        "facet_count": 2808,
+        "is_watertight": true,
+        "genus": 11,
+        "volume_mm3": 29045.86741627192,
+        "bbox": {
+          "x_size": 100.29999999999998,
+          "y_size": 60.17999999999999,
+          "z_size": 23.49
+        }
+      }
+    },
+    {
+      "name": "conn_mini_hdmi",
+      "status": "PASS",
+      "elapsed_sec": 0.556,
+      "exit_code": 0,
+      "has_warnings": false,
+      "has_errors": false,
+      "stl_exists": true,
+      "errors": [],
+      "geometry": {
+        "vertex_count": 1296,
+        "facet_count": 2624,
+        "is_watertight": true,
+        "genus": 9,
+        "volume_mm3": 29158.425950405897,
+        "bbox": {
+          "x_size": 100.29999999999998,
+          "y_size": 60.17999999999999,
+          "z_size": 23.49
+        }
+      }
+    },
+    {
+      "name": "conn_rj45",
+      "status": "PASS",
+      "elapsed_sec": 0.567,
+      "exit_code": 0,
+      "has_warnings": false,
+      "has_errors": false,
+      "stl_exists": true,
+      "errors": [],
+      "geometry": {
+        "vertex_count": 1404,
+        "facet_count": 2848,
+        "is_watertight": true,
+        "genus": 11,
+        "volume_mm3": 28842.669637145456,
+        "bbox": {
+          "x_size": 100.29999999999998,
+          "y_size": 60.17999999999999,
+          "z_size": 23.49
+        }
+      }
+    },
+    {
+      "name": "conn_de9",
+      "status": "PASS",
+      "elapsed_sec": 0.572,
+      "exit_code": 0,
+      "has_warnings": false,
+      "has_errors": false,
+      "stl_exists": true,
+      "errors": [],
+      "geometry": {
+        "vertex_count": 1342,
+        "facet_count": 2716,
+        "is_watertight": true,
+        "genus": 9,
+        "volume_mm3": 28691.570821887795,
+        "bbox": {
+          "x_size": 100.29999999999998,
+          "y_size": 60.17999999999999,
+          "z_size": 23.49
+        }
+      }
+    },
+    {
+      "name": "conn_da15",
+      "status": "PASS",
+      "elapsed_sec": 0.57,
+      "exit_code": 0,
+      "has_warnings": false,
+      "has_errors": false,
+      "stl_exists": true,
+      "errors": [],
+      "geometry": {
+        "vertex_count": 1338,
+        "facet_count": 2708,
+        "is_watertight": true,
+        "genus": 9,
+        "volume_mm3": 28514.14359305785,
+        "bbox": {
+          "x_size": 100.29999999999998,
+          "y_size": 60.17999999999999,
+          "z_size": 23.49
+        }
+      }
+    },
+    {
+      "name": "conn_db25",
+      "status": "PASS",
+      "elapsed_sec": 0.572,
+      "exit_code": 0,
+      "has_warnings": false,
+      "has_errors": false,
+      "stl_exists": true,
+      "errors": [],
+      "geometry": {
+        "vertex_count": 1342,
+        "facet_count": 2716,
+        "is_watertight": true,
+        "genus": 9,
+        "volume_mm3": 28213.211285112262,
+        "bbox": {
+          "x_size": 100.29999999999998,
+          "y_size": 60.17999999999999,
+          "z_size": 23.49
+        }
+      }
+    },
+    {
+      "name": "conn_xlr3",
+      "status": "PASS",
+      "elapsed_sec": 0.574,
+      "exit_code": 0,
+      "has_warnings": false,
+      "has_errors": false,
+      "stl_exists": true,
+      "errors": [],
+      "geometry": {
+        "vertex_count": 1574,
+        "facet_count": 3180,
+        "is_watertight": true,
+        "genus": 9,
+        "volume_mm3": 28367.89849605408,
+        "bbox": {
+          "x_size": 100.29999999999998,
+          "y_size": 60.17999999999999,
+          "z_size": 23.49
+        }
+      }
+    },
+    {
+      "name": "conn_xlr5",
+      "status": "PASS",
+      "elapsed_sec": 0.609,
+      "exit_code": 0,
+      "has_warnings": false,
+      "has_errors": false,
+      "stl_exists": true,
+      "errors": [],
+      "geometry": {
+        "vertex_count": 1574,
+        "facet_count": 3180,
+        "is_watertight": true,
+        "genus": 9,
+        "volume_mm3": 28367.89849605408,
+        "bbox": {
+          "x_size": 100.29999999999998,
+          "y_size": 60.17999999999999,
+          "z_size": 23.49
+        }
+      }
+    },
+    {
+      "name": "conn_speakon",
+      "status": "PASS",
+      "elapsed_sec": 0.597,
+      "exit_code": 0,
+      "has_warnings": false,
+      "has_errors": false,
+      "stl_exists": true,
+      "errors": [],
+      "geometry": {
+        "vertex_count": 1540,
+        "facet_count": 3108,
+        "is_watertight": true,
+        "genus": 8,
+        "volume_mm3": 28351.805617216403,
+        "bbox": {
+          "x_size": 100.29999999999998,
+          "y_size": 60.17999999999999,
+          "z_size": 23.49
+        }
+      }
+    },
+    {
+      "name": "conn_jack35",
+      "status": "PASS",
+      "elapsed_sec": 0.553,
+      "exit_code": 0,
+      "has_warnings": false,
+      "has_errors": false,
+      "stl_exists": true,
+      "errors": [],
+      "geometry": {
+        "vertex_count": 1380,
+        "facet_count": 2792,
+        "is_watertight": true,
+        "genus": 9,
+        "volume_mm3": 29177.12392308358,
+        "bbox": {
+          "x_size": 100.29999999999998,
+          "y_size": 60.17999999999999,
+          "z_size": 23.49
+        }
+      }
+    },
+    {
+      "name": "conn_jack635",
+      "status": "PASS",
+      "elapsed_sec": 0.567,
+      "exit_code": 0,
+      "has_warnings": false,
+      "has_errors": false,
+      "stl_exists": true,
+      "errors": [],
+      "geometry": {
+        "vertex_count": 1426,
+        "facet_count": 2884,
+        "is_watertight": true,
+        "genus": 9,
+        "volume_mm3": 29098.90184565382,
+        "bbox": {
+          "x_size": 100.29999999999998,
+          "y_size": 60.17999999999999,
+          "z_size": 23.49
+        }
+      }
+    },
+    {
+      "name": "conn_midi",
+      "status": "PASS",
+      "elapsed_sec": 0.574,
+      "exit_code": 0,
+      "has_warnings": false,
+      "has_errors": false,
+      "stl_exists": true,
+      "errors": [],
+      "geometry": {
+        "vertex_count": 1538,
+        "facet_count": 3108,
+        "is_watertight": true,
+        "genus": 9,
+        "volume_mm3": 28850.648965190496,
+        "bbox": {
+          "x_size": 100.29999999999998,
+          "y_size": 60.17999999999999,
+          "z_size": 23.49
+        }
+      }
+    },
+    {
+      "name": "conn_dc_m8",
+      "status": "PASS",
+      "elapsed_sec": 0.567,
+      "exit_code": 0,
+      "has_warnings": false,
+      "has_errors": false,
+      "stl_exists": true,
+      "errors": [],
+      "geometry": {
+        "vertex_count": 1404,
+        "facet_count": 2840,
+        "is_watertight": true,
+        "genus": 9,
+        "volume_mm3": 29138.92571594067,
+        "bbox": {
+          "x_size": 100.29999999999998,
+          "y_size": 60.17999999999999,
+          "z_size": 23.49
+        }
+      }
+    },
+    {
+      "name": "conn_dc_m11",
+      "status": "PASS",
+      "elapsed_sec": 0.57,
+      "exit_code": 0,
+      "has_warnings": false,
+      "has_errors": false,
+      "stl_exists": true,
+      "errors": [],
+      "geometry": {
+        "vertex_count": 1452,
+        "facet_count": 2936,
+        "is_watertight": true,
+        "genus": 9,
+        "volume_mm3": 29045.618858921935,
+        "bbox": {
+          "x_size": 100.29999999999998,
+          "y_size": 60.17999999999999,
+          "z_size": 23.49
+        }
+      }
+    },
+    {
+      "name": "conn_xt30",
+      "status": "PASS",
+      "elapsed_sec": 0.574,
+      "exit_code": 0,
+      "has_warnings": false,
+      "has_errors": false,
+      "stl_exists": true,
+      "errors": [],
+      "geometry": {
+        "vertex_count": 1448,
+        "facet_count": 2936,
+        "is_watertight": true,
+        "genus": 11,
+        "volume_mm3": 29118.30280777998,
+        "bbox": {
+          "x_size": 100.29999999999998,
+          "y_size": 60.17999999999999,
+          "z_size": 23.49
+        }
+      }
+    },
+    {
+      "name": "conn_xt60",
+      "status": "PASS",
+      "elapsed_sec": 0.583,
+      "exit_code": 0,
+      "has_warnings": false,
+      "has_errors": false,
+      "stl_exists": true,
+      "errors": [],
+      "geometry": {
+        "vertex_count": 1516,
+        "facet_count": 3072,
+        "is_watertight": true,
+        "genus": 11,
+        "volume_mm3": 28877.175454208696,
+        "bbox": {
+          "x_size": 100.29999999999998,
+          "y_size": 60.17999999999999,
+          "z_size": 23.49
+        }
+      }
+    },
+    {
+      "name": "conn_iec_ac",
+      "status": "PASS",
+      "elapsed_sec": 0.573,
+      "exit_code": 0,
+      "has_warnings": false,
+      "has_errors": false,
+      "stl_exists": true,
+      "errors": [],
+      "geometry": {
+        "vertex_count": 1477,
+        "facet_count": 2994,
+        "is_watertight": true,
+        "genus": 11,
+        "volume_mm3": 27973.431415263243,
+        "bbox": {
+          "x_size": 100.29999999999998,
+          "y_size": 60.17999999999999,
+          "z_size": 23.49
+        }
+      }
+    },
+    {
+      "name": "conn_iec_c8",
+      "status": "PASS",
+      "elapsed_sec": 0.573,
+      "exit_code": 0,
+      "has_warnings": false,
+      "has_errors": false,
+      "stl_exists": true,
+      "errors": [],
+      "geometry": {
+        "vertex_count": 1428,
+        "facet_count": 2888,
+        "is_watertight": true,
+        "genus": 9,
+        "volume_mm3": 28799.04732754161,
+        "bbox": {
+          "x_size": 100.29999999999998,
+          "y_size": 60.17999999999999,
+          "z_size": 23.49
+        }
+      }
+    },
+    {
+      "name": "conn_gx16",
+      "status": "PASS",
+      "elapsed_sec": 0.569,
+      "exit_code": 0,
+      "has_warnings": false,
+      "has_errors": false,
+      "stl_exists": true,
+      "errors": [],
+      "geometry": {
+        "vertex_count": 1530,
+        "facet_count": 3092,
+        "is_watertight": true,
+        "genus": 9,
+        "volume_mm3": 28827.27941014351,
+        "bbox": {
+          "x_size": 100.29999999999998,
+          "y_size": 60.17999999999999,
+          "z_size": 23.49
+        }
+      }
+    },
+    {
+      "name": "conn_gx20",
+      "status": "PASS",
+      "elapsed_sec": 0.568,
+      "exit_code": 0,
+      "has_warnings": false,
+      "has_errors": false,
+      "stl_exists": true,
+      "errors": [],
+      "geometry": {
+        "vertex_count": 1600,
+        "facet_count": 3232,
+        "is_watertight": true,
+        "genus": 9,
+        "volume_mm3": 28595.97705094477,
+        "bbox": {
+          "x_size": 100.29999999999998,
+          "y_size": 60.17999999999999,
+          "z_size": 23.49
+        }
+      }
+    },
+    {
+      "name": "conn_multi_face",
+      "status": "PASS",
+      "elapsed_sec": 0.603,
+      "exit_code": 0,
+      "has_warnings": false,
+      "has_errors": false,
+      "stl_exists": true,
+      "errors": [],
+      "geometry": {
+        "vertex_count": 1646,
+        "facet_count": 3348,
+        "is_watertight": true,
+        "genus": 15,
+        "volume_mm3": 27513.106091166013,
+        "bbox": {
+          "x_size": 100.29999999999998,
+          "y_size": 60.17999999999999,
+          "z_size": 23.49
+        }
+      }
+    }
+  ]
+}

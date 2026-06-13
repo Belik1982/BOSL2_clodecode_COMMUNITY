@@ -1,0 +1,365 @@
+{
+  "timestamp": "2026-06-08T23:13:42.566387",
+  "total": 19,
+  "passed": 12,
+  "failed": 7,
+  "errors": 0,
+  "timeouts": 0,
+  "results": [
+    {
+      "name": "fasten_magnets",
+      "status": "PASS",
+      "elapsed_sec": 0.514,
+      "exit_code": 0,
+      "has_warnings": false,
+      "has_errors": false,
+      "stl_exists": true,
+      "errors": [],
+      "geometry": {
+        "vertex_count": 947,
+        "facet_count": 1890,
+        "is_watertight": true,
+        "genus": 0,
+        "volume_mm3": 29514.887700574764,
+        "bbox": {
+          "x_size": 100.29999999999998,
+          "y_size": 60.17999999999999,
+          "z_size": 23.49
+        }
+      }
+    },
+    {
+      "name": "fasten_snaps",
+      "status": "PASS",
+      "elapsed_sec": 0.521,
+      "exit_code": 0,
+      "has_warnings": true,
+      "has_errors": false,
+      "stl_exists": true,
+      "errors": [],
+      "geometry": {
+        "vertex_count": 589,
+        "facet_count": 1174,
+        "is_watertight": true,
+        "genus": 0,
+        "volume_mm3": 22718.716256174997,
+        "bbox": {
+          "x_size": 100.29999999999998,
+          "y_size": 60.17999999999999,
+          "z_size": 23.5
+        }
+      }
+    },
+    {
+      "name": "fasten_heatset",
+      "status": "PASS",
+      "elapsed_sec": 0.537,
+      "exit_code": 0,
+      "has_warnings": false,
+      "has_errors": false,
+      "stl_exists": true,
+      "errors": [],
+      "geometry": {
+        "vertex_count": 1107,
+        "facet_count": 2226,
+        "is_watertight": true,
+        "genus": 4,
+        "volume_mm3": 29495.49431655383,
+        "bbox": {
+          "x_size": 100.29999999999998,
+          "y_size": 60.17999999999999,
+          "z_size": 23.49
+        }
+      }
+    },
+    {
+      "name": "fasten_nuts",
+      "status": "PASS",
+      "elapsed_sec": 0.637,
+      "exit_code": 0,
+      "has_warnings": false,
+      "has_errors": false,
+      "stl_exists": true,
+      "errors": [],
+      "geometry": {
+        "vertex_count": 1272,
+        "facet_count": 2572,
+        "is_watertight": true,
+        "genus": 8,
+        "volume_mm3": 29249.593763797126,
+        "bbox": {
+          "x_size": 100.29999999999998,
+          "y_size": 60.17999999999999,
+          "z_size": 23.49
+        }
+      }
+    },
+    {
+      "name": "fasten_selftap",
+      "status": "PASS",
+      "elapsed_sec": 0.555,
+      "exit_code": 0,
+      "has_warnings": false,
+      "has_errors": false,
+      "stl_exists": true,
+      "errors": [],
+      "geometry": {
+        "vertex_count": 899,
+        "facet_count": 1810,
+        "is_watertight": true,
+        "genus": 4,
+        "volume_mm3": 29119.852505106377,
+        "bbox": {
+          "x_size": 100.29999999999998,
+          "y_size": 60.17999999999999,
+          "z_size": 23.49
+        }
+      }
+    },
+    {
+      "name": "joint_flat",
+      "status": "PASS",
+      "elapsed_sec": 0.786,
+      "exit_code": 0,
+      "has_warnings": false,
+      "has_errors": false,
+      "stl_exists": true,
+      "errors": [],
+      "geometry": {
+        "vertex_count": 1977,
+        "facet_count": 3962,
+        "is_watertight": true,
+        "genus": 3,
+        "volume_mm3": 44646.057039309235,
+        "bbox": {
+          "x_size": 100.29999999999998,
+          "y_size": 60.17999999999999,
+          "z_size": 30.0
+        }
+      }
+    },
+    {
+      "name": "joint_lip",
+      "status": "PASS",
+      "elapsed_sec": 0.885,
+      "exit_code": 0,
+      "has_warnings": false,
+      "has_errors": false,
+      "stl_exists": true,
+      "errors": [],
+      "geometry": {
+        "vertex_count": 2388,
+        "facet_count": 4816,
+        "is_watertight": false,
+        "genus": null,
+        "volume_mm3": 44524.14893314371,
+        "bbox": {
+          "x_size": 100.29999999999998,
+          "y_size": 60.17999999999999,
+          "z_size": 30.0
+        }
+      }
+    },
+    {
+      "name": "joint_ledge",
+      "status": "PASS",
+      "elapsed_sec": 0.903,
+      "exit_code": 0,
+      "has_warnings": false,
+      "has_errors": false,
+      "stl_exists": true,
+      "errors": [],
+      "geometry": {
+        "vertex_count": 2388,
+        "facet_count": 4816,
+        "is_watertight": false,
+        "genus": null,
+        "volume_mm3": 44524.148933143704,
+        "bbox": {
+          "x_size": 100.29999999999998,
+          "y_size": 60.17999999999999,
+          "z_size": 30.0
+        }
+      }
+    },
+    {
+      "name": "safety_min_length",
+      "status": "FAIL",
+      "elapsed_sec": 0.262,
+      "exit_code": 1,
+      "has_warnings": true,
+      "has_errors": true,
+      "stl_exists": false,
+      "errors": [
+        "Exit code 1",
+        "ERROR in console output"
+      ]
+    },
+    {
+      "name": "safety_max_length",
+      "status": "FAIL",
+      "elapsed_sec": 0.235,
+      "exit_code": 1,
+      "has_warnings": true,
+      "has_errors": true,
+      "stl_exists": false,
+      "errors": [
+        "Exit code 1",
+        "ERROR in console output"
+      ]
+    },
+    {
+      "name": "safety_min_wall",
+      "status": "PASS",
+      "elapsed_sec": 0.55,
+      "exit_code": 0,
+      "has_warnings": false,
+      "has_errors": false,
+      "stl_exists": true,
+      "errors": [],
+      "geometry": {
+        "vertex_count": 1272,
+        "facet_count": 2572,
+        "is_watertight": true,
+        "genus": 8,
+        "volume_mm3": 29249.593763797126,
+        "bbox": {
+          "x_size": 100.29999999999998,
+          "y_size": 60.17999999999999,
+          "z_size": 23.49
+        }
+      }
+    },
+    {
+      "name": "safety_max_wall",
+      "status": "PASS",
+      "elapsed_sec": 0.608,
+      "exit_code": 0,
+      "has_warnings": false,
+      "has_errors": false,
+      "stl_exists": true,
+      "errors": [],
+      "geometry": {
+        "vertex_count": 1272,
+        "facet_count": 2572,
+        "is_watertight": true,
+        "genus": 8,
+        "volume_mm3": 29249.593763797126,
+        "bbox": {
+          "x_size": 100.29999999999998,
+          "y_size": 60.17999999999999,
+          "z_size": 23.49
+        }
+      }
+    },
+    {
+      "name": "safety_max_radius",
+      "status": "PASS",
+      "elapsed_sec": 0.327,
+      "exit_code": 0,
+      "has_warnings": true,
+      "has_errors": false,
+      "stl_exists": true,
+      "errors": [],
+      "geometry": {
+        "vertex_count": 161,
+        "facet_count": 318,
+        "is_watertight": true,
+        "genus": 0,
+        "volume_mm3": 23934.235705380383,
+        "bbox": {
+          "x_size": 100.29999999999998,
+          "y_size": 60.17999999999999,
+          "z_size": 23.49
+        }
+      }
+    },
+    {
+      "name": "safety_min_clearance",
+      "status": "FAIL",
+      "elapsed_sec": 0.645,
+      "exit_code": 1,
+      "has_warnings": true,
+      "has_errors": true,
+      "stl_exists": false,
+      "errors": [
+        "Exit code 1",
+        "ERROR in console output"
+      ]
+    },
+    {
+      "name": "safety_max_clearance",
+      "status": "FAIL",
+      "elapsed_sec": 0.648,
+      "exit_code": 1,
+      "has_warnings": true,
+      "has_errors": true,
+      "stl_exists": false,
+      "errors": [
+        "Exit code 1",
+        "ERROR in console output"
+      ]
+    },
+    {
+      "name": "safety_split_10",
+      "status": "FAIL",
+      "elapsed_sec": 0.233,
+      "exit_code": 1,
+      "has_warnings": true,
+      "has_errors": true,
+      "stl_exists": false,
+      "errors": [
+        "Exit code 1",
+        "ERROR in console output"
+      ]
+    },
+    {
+      "name": "safety_split_90",
+      "status": "FAIL",
+      "elapsed_sec": 0.233,
+      "exit_code": 1,
+      "has_warnings": true,
+      "has_errors": true,
+      "stl_exists": false,
+      "errors": [
+        "Exit code 1",
+        "ERROR in console output"
+      ]
+    },
+    {
+      "name": "safety_corner_offset",
+      "status": "PASS",
+      "elapsed_sec": 0.523,
+      "exit_code": 0,
+      "has_warnings": true,
+      "has_errors": false,
+      "stl_exists": true,
+      "errors": [],
+      "geometry": {
+        "vertex_count": 560,
+        "facet_count": 1116,
+        "is_watertight": true,
+        "genus": 0,
+        "volume_mm3": 23669.447321555406,
+        "bbox": {
+          "x_size": 100.29999999999998,
+          "y_size": 60.17999999999999,
+          "z_size": 23.49
+        }
+      }
+    },
+    {
+      "name": "safety_snap_depth_clamp",
+      "status": "FAIL",
+      "elapsed_sec": 0.426,
+      "exit_code": 1,
+      "has_warnings": true,
+      "has_errors": true,
+      "stl_exists": false,
+      "errors": [
+        "Exit code 1",
+        "ERROR in console output"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+﻿*.stl
+*.3mf
+*.obj
+*.off
+*.dxf
+*.svg
+*.png
+Thumbs.db
+.DS_Store
+__pycache__/
+*.pyc

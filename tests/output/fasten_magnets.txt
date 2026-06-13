@@ -1,0 +1,32 @@
+=== STDOUT ===
+
+=== STDERR ===
+ECHO: "INFO: If text renders incorrectly, try font='Liberation Sans:style=Bold' (available on all platforms)"
+ECHO: "=== BILL OF MATERIALS ==="
+ECHO: "Enclosure: 100 x 60 x 30 mm"
+ECHO: "Material: PLA (shrinkage compensation: 0.3%)"
+ECHO: "MAGNETS: D4.2 x 1.8mm -- qty: 8 pcs (base + lid)"
+ECHO: "========================="
+ECHO: "--- BAMBU STUDIO HINTS ---"
+ECHO: "{ "printer": "Bambu Lab P2S","
+ECHO: "  "filament": "PLA","
+ECHO: "  "layer_height": 0.2,"
+ECHO: "  "wall_loops": 8,"
+ECHO: "  "top_shell_layers": 10,"
+ECHO: "  "bottom_shell_layers": 10,"
+ECHO: "  "support_needed": false,"
+ECHO: "  "print_orientation": "as_generated","
+ECHO: "  "note": "Screw: M3, Boss_OD: 7.2mm" }"
+ECHO: "--------------------------"
+Geometries in cache: 82
+Geometry cache size in bytes: 243960
+CGAL Polyhedrons in cache: 124
+CGAL cache size in bytes: 1970250
+Total rendering time: 0:00:00.041
+   Top level object is a 3D object (manifold):
+   Status:     NoError
+   Genus:      0
+   Vertices:      850
+   Facets:       1696
+
+=== EXIT CODE: 0 ===

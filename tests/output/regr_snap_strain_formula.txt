@@ -1,0 +1,32 @@
+=== STDOUT ===
+
+=== STDERR ===
+ECHO: "<B><FONT COLOR='red'>WARNING: Snap-fit strain ~30.7% exceeds limit 1% for PLA. Reduce Snap_Depth_Glybyna or increase Lip_Height_Vysota.</FONT></B>"
+ECHO: "INFO: If text renders incorrectly, try font='Liberation Sans:style=Bold' (available on all platforms)"
+ECHO: "=== BILL OF MATERIALS ==="
+ECHO: "Enclosure: 100 x 60 x 30 mm"
+ECHO: "Material: PLA (shrinkage compensation: 0.3%)"
+ECHO: "========================="
+ECHO: "--- BAMBU STUDIO HINTS ---"
+ECHO: "{ "printer": "Bambu Lab P2S","
+ECHO: "  "filament": "PLA","
+ECHO: "  "layer_height": 0.2,"
+ECHO: "  "wall_loops": 8,"
+ECHO: "  "top_shell_layers": 10,"
+ECHO: "  "bottom_shell_layers": 10,"
+ECHO: "  "support_needed": false,"
+ECHO: "  "print_orientation": "as_generated","
+ECHO: "  "note": "Screw: M3, Boss_OD: 0mm" }"
+ECHO: "--------------------------"
+Geometries in cache: 86
+Geometry cache size in bytes: 166928
+CGAL Polyhedrons in cache: 125
+CGAL cache size in bytes: 1456500
+Total rendering time: 0:00:00.031
+   Top level object is a 3D object (manifold):
+   Status:     NoError
+   Genus:      0
+   Vertices:      489
+   Facets:        974
+
+=== EXIT CODE: 0 ===

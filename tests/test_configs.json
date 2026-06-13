@@ -1,0 +1,571 @@
+{
+  "description": "Parametric Enclosure Generator v14.0 — Test Configurations",
+  "openscad_path": "C:\\Program Files\\OpenSCAD (Nightly)\\openscad.exe",
+  "openscad_fallback": "C:\\Program Files\\OpenSCAD\\openscad.exe",
+  "project_dir": "D:\\Downloads\\3d printel models\\parametric_generator openscad\\antropic_progect\\BOSL2_clodecode",
+  "entry_file": "enclosure.scad",
+  "backend": "manifold",
+  "timeout_seconds": 120,
+  "output_dir": "tests/output",
+
+  "suites": {
+    "smoke": {
+      "description": "Smoke tests — all render modes compile without errors with default params",
+      "tests": [
+        {"name": "smoke_all_parts",      "params": {"Part_Chastyna": "Всі деталі (All)"}},
+        {"name": "smoke_base_only",      "params": {"Part_Chastyna": "База (Base)"}},
+        {"name": "smoke_lid_only",       "params": {"Part_Chastyna": "Кришка (Lid)"}},
+        {"name": "smoke_assembled",      "params": {"Part_Chastyna": "Зібраний (Assembled)"}},
+        {"name": "smoke_ajar",           "params": {"Part_Chastyna": "Напіввідкритий (Ajar)"}},
+        {"name": "smoke_pcb_standoffs",  "params": {"Part_Chastyna": "Стійки PCB (PCB Standoffs)", "PCB_Enable_Stiyky": "true"}},
+        {"name": "smoke_fine_quality",   "params": {"Part_Chastyna": "База (Base)", "Render_Quality": "Fine"}},
+        {"name": "smoke_draft_quality",  "params": {"Part_Chastyna": "База (Base)", "Render_Quality": "Draft"}}
+      ]
+    },
+
+    "fastening": {
+      "description": "All 5 fastening types compile correctly",
+      "tests": [
+        {"name": "fasten_magnets",       "params": {"Part_Chastyna": "База (Base)", "Fastening_Kriplennya": "Магніти (Magnets)"}},
+        {"name": "fasten_snaps",         "params": {"Part_Chastyna": "База (Base)", "Fastening_Kriplennya": "Защіпки (Snaps)"}},
+        {"name": "fasten_heatset",       "params": {"Part_Chastyna": "База (Base)", "Fastening_Kriplennya": "Термозакладки (Heatset)"}},
+        {"name": "fasten_nuts",          "params": {"Part_Chastyna": "База (Base)", "Fastening_Kriplennya": "Гайки (Nuts)"}},
+        {"name": "fasten_selftap",       "params": {"Part_Chastyna": "База (Base)", "Fastening_Kriplennya": "Саморізи (Self-tap)"}}
+      ]
+    },
+
+    "joint_types": {
+      "description": "All 3 joint types compile correctly",
+      "tests": [
+        {"name": "joint_flat",           "params": {"Part_Chastyna": "Зібраний (Assembled)", "Joint_Styk": "Плоский (Flat)"}},
+        {"name": "joint_lip",            "params": {"Part_Chastyna": "Зібраний (Assembled)", "Joint_Styk": "Губа (Lip)"}},
+        {"name": "joint_ledge",          "params": {"Part_Chastyna": "Зібраний (Assembled)", "Joint_Styk": "Сходинка (Ledge)"}}
+      ]
+    },
+
+    "safety_bounds": {
+      "description": "Parameter clamping — extreme values must not crash the compiler",
+      "tests": [
+        {"name": "safety_min_length",    "params": {"Part_Chastyna": "База (Base)", "Length_Dovzhyna": "20.0"}, "expect_warning": false, "expect_error": false},
+        {"name": "safety_max_length",    "params": {"Part_Chastyna": "База (Base)", "Length_Dovzhyna": "400.0"}, "expect_warning": false, "expect_error": false},
+        {"name": "safety_min_wall",      "params": {"Part_Chastyna": "База (Base)", "Wall_Stinka": "0.8"}, "expect_warning": false, "expect_error": false},
+        {"name": "safety_max_wall",      "params": {"Part_Chastyna": "База (Base)", "Wall_Stinka": "8.0"}, "expect_warning": false, "expect_error": false},
+        {"name": "safety_max_radius",    "params": {"Part_Chastyna": "База (Base)", "Radius_Kutiv": "40.0"}, "expect_warning": false, "expect_error": false},
+        {"name": "safety_min_clearance", "params": {"Part_Chastyna": "Зібраний (Assembled)", "Clearance_Zazor": "0.05"}, "expect_warning": false, "expect_error": false},
+        {"name": "safety_max_clearance", "params": {"Part_Chastyna": "Зібраний (Assembled)", "Clearance_Zazor": "0.60"}, "expect_warning": false, "expect_error": false},
+        {"name": "safety_split_10",      "params": {"Part_Chastyna": "База (Base)", "Split_Proportsiya": "10"}, "expect_warning": false, "expect_error": false},
+        {"name": "safety_split_90",      "params": {"Part_Chastyna": "База (Base)", "Split_Proportsiya": "90"}, "expect_warning": false, "expect_error": false},
+        {"name": "safety_corner_offset", "params": {"Part_Chastyna": "База (Base)", "Offset_Vidstup": "2.0"}, "expect_warning": false, "expect_error": false},
+        {"name": "safety_snap_depth_clamp","params": {"Part_Chastyna": "База (Base)", "Fastening_Kriplennya": "Защіпки (Snaps)", "Snap_Depth_Glybyna": "3.0"}, "expect_warning": true, "expect_error": false}
+      ]
+    },
+
+    "presets": {
+      "description": "All 15 presets compile and produce expected bounding boxes",
+      "tests": [
+        {"name": "preset_01_microdongle", "params": {"Part_Chastyna": "База (Base)", "Enclosure_Preset": "1 Micro-Dongle 50x35x22"}, "bbox_tolerance": 2.0},
+        {"name": "preset_02_pocket",      "params": {"Part_Chastyna": "База (Base)", "Enclosure_Preset": "2 Pocket 64x41x20"}, "bbox_tolerance": 2.0},
+        {"name": "preset_03_keyfob",      "params": {"Part_Chastyna": "База (Base)", "Enclosure_Preset": "3 KeyFob 80x45x16"}, "bbox_tolerance": 2.0},
+        {"name": "preset_04_minigauge",   "params": {"Part_Chastyna": "База (Base)", "Enclosure_Preset": "4 Mini-Gauge 100x60x25"}, "bbox_tolerance": 2.0},
+        {"name": "preset_05_sensor",      "params": {"Part_Chastyna": "База (Base)", "Enclosure_Preset": "5 Sensor 85x50x21"}, "bbox_tolerance": 2.0},
+        {"name": "preset_06_handheld",    "params": {"Part_Chastyna": "База (Base)", "Enclosure_Preset": "6 Handheld 115x70x35"}, "bbox_tolerance": 2.0},
+        {"name": "preset_07_project",     "params": {"Part_Chastyna": "База (Base)", "Enclosure_Preset": "7 Project 115x75x40"}, "bbox_tolerance": 2.0},
+        {"name": "preset_08_gadget",      "params": {"Part_Chastyna": "База (Base)", "Enclosure_Preset": "8 Gadget 120x80x40"}, "bbox_tolerance": 2.0},
+        {"name": "preset_09_desktops",    "params": {"Part_Chastyna": "База (Base)", "Enclosure_Preset": "9 Desktop-S 130x70x45"}, "bbox_tolerance": 2.0},
+        {"name": "preset_10_router",      "params": {"Part_Chastyna": "База (Base)", "Enclosure_Preset": "10 Router 140x90x35"}, "bbox_tolerance": 2.0},
+        {"name": "preset_11_mainframe",   "params": {"Part_Chastyna": "База (Base)", "Enclosure_Preset": "11 Mainframe 150x100x50"}, "bbox_tolerance": 2.0},
+        {"name": "preset_12_psu",         "params": {"Part_Chastyna": "База (Base)", "Enclosure_Preset": "12 PSU-Box 160x110x60"}, "bbox_tolerance": 2.0},
+        {"name": "preset_13_automation",  "params": {"Part_Chastyna": "База (Base)", "Enclosure_Preset": "13 Automation 200x120x55"}, "bbox_tolerance": 2.0},
+        {"name": "preset_14_console",     "params": {"Part_Chastyna": "База (Base)", "Enclosure_Preset": "14 Console 200x150x75"}, "bbox_tolerance": 2.0},
+        {"name": "preset_15_maxi",        "params": {"Part_Chastyna": "База (Base)", "Enclosure_Preset": "15 Maxi 250x180x100"}, "bbox_tolerance": 2.0}
+      ]
+    },
+
+    "regression_v13_1": {
+      "description": "Regression tests for bugs fixed in v13.1 changelog",
+      "tests": [
+        {
+          "name": "regr_iec_c14_dimensions",
+          "params": {"Part_Chastyna": "База (Base)", "Port_1_Type": "IEC AC 220V", "Port_1_Face": "Спереду (Front)"},
+          "expect_bbox_feature": true,
+          "feature_note": "IEC C14 cutout should be 28.2x22.8 mm (was 27.5x20)"
+        },
+        {
+          "name": "regr_xt60_height",
+          "params": {"Part_Chastyna": "База (Base)", "Port_1_Type": "XT60", "Port_1_Face": "Спереду (Front)"},
+          "expect_bbox_feature": true,
+          "feature_note": "XT60 cutout height should be 11.2 mm (was 8.5)"
+        },
+        {
+          "name": "regr_fan_m4_clearance",
+          "params": {"Part_Chastyna": "Кришка (Lid)", "Fan_Face_Gran": "Дах (Top)", "Fan_Size_Rozmir": "80x80", "Fan_Grill_Style": "Відкритий (Open)"},
+          "expect_bbox_feature": true,
+          "feature_note": "Fan 80x80 screw holes should be 4.5mm (M4 ISO 273)"
+        },
+        {
+          "name": "regr_snap_strain_formula",
+          "params": {"Part_Chastyna": "База (Base)", "Fastening_Kriplennya": "Защіпки (Snaps)", "Joint_Styk": "Губа (Lip)", "Lip_Thick_Tovshchyna": "1.6", "Snap_Depth_Glybyna": "0.8"},
+          "expect_console": "INFO: Snap-fit strain",
+          "feature_note": "Snap-fit strain formula uses t_lip instead of hardcoded 3.0"
+        }
+      ]
+    },
+
+    "regression_v14": {
+      "description": "Regression tests for bugs fixed in v14.0 — panel system, divider, tongue-and-groove",
+      "tests": [
+        {
+          "name": "regr_panel_z_placement",
+          "params": {
+            "_EDITION": "pro",
+            "Part_Chastyna": "Зібраний (Assembled)",
+            "Panel_Enable": "true",
+            "Panel_Walls": "Всі 4 (All 4)"
+          },
+          "expect_error": false,
+          "feature_note": "Panel z=Bottom_Dno_safe (was z=0 in v13). Assembled mode must compile without errors."
+        },
+        {
+          "name": "regr_panel_cutout_translate",
+          "params": {
+            "_EDITION": "pro",
+            "Part_Chastyna": "Панель X (X-Panel)",
+            "Panel_Enable": "true",
+            "Panel_Walls": "Ліво+Право (Left+Right)",
+            "Port_1_Type": "USB-C",
+            "Port_1_Face": "Зліва (Left)"
+          },
+          "expect_error": false,
+          "feature_note": "Panel cutout counter-translate uses correct L/2-T/2 offset from panel_x_local_cutouts"
+        },
+        {
+          "name": "regr_divider_height_safe",
+          "params": {
+            "Part_Chastyna": "База (Base)",
+            "Divider_Type": "Подовжня (X-Axis)",
+            "Split_Proportsiya": "50"
+          },
+          "expect_error": false,
+          "feature_note": "Divider_Height_safe variable must be defined; crash was fixed in v13 hotfix"
+        },
+        {
+          "name": "regr_tongue_groove_render",
+          "params": {
+            "_EDITION": "pro",
+            "Part_Chastyna": "База (Base)",
+            "Panel_Enable": "true",
+            "Panel_Walls": "Всі 4 (All 4)",
+            "Panel_Clearance": "0.2"
+          },
+          "expect_manifold": true,
+          "feature_note": "Base with tongue-groove cuts must remain watertight (manifold)"
+        }
+      ]
+    },
+
+    "panels_v14": {
+      "description": "Full test coverage for v14 tongue-and-groove removable panel system (PRO feature)",
+      "tests": [
+        {
+          "name": "panel_x_standalone_default",
+          "params": {
+            "_EDITION": "pro",
+            "Part_Chastyna": "Панель X (X-Panel)",
+            "Panel_Enable": "true",
+            "Panel_Walls": "Ліво+Право (Left+Right)"
+          },
+          "expect_manifold": true,
+          "feature_note": "X-panel renders as isolated part with tongues top/bottom"
+        },
+        {
+          "name": "panel_y_standalone_default",
+          "params": {
+            "_EDITION": "pro",
+            "Part_Chastyna": "Панель Y (Y-Panel)",
+            "Panel_Enable": "true",
+            "Panel_Walls": "Перед+Зад (Front+Back)"
+          },
+          "expect_manifold": true,
+          "feature_note": "Y-panel renders as isolated part with tongues top/bottom"
+        },
+        {
+          "name": "panel_all4_assembled",
+          "params": {
+            "_EDITION": "pro",
+            "Part_Chastyna": "Зібраний (Assembled)",
+            "Panel_Enable": "true",
+            "Panel_Walls": "Всі 4 (All 4)"
+          },
+          "expect_error": false,
+          "feature_note": "All 4 panels placed in assembled view at correct world positions"
+        },
+        {
+          "name": "panel_all4_all_parts_layout",
+          "params": {
+            "_EDITION": "pro",
+            "Part_Chastyna": "Всі деталі (All)",
+            "Panel_Enable": "true",
+            "Panel_Walls": "Всі 4 (All 4)"
+          },
+          "expect_error": false,
+          "feature_note": "All-parts layout includes panels laid out flat alongside base/lid"
+        },
+        {
+          "name": "panel_x_with_usbc_cutout",
+          "params": {
+            "_EDITION": "pro",
+            "Part_Chastyna": "Панель X (X-Panel)",
+            "Panel_Enable": "true",
+            "Panel_Walls": "Ліво+Право (Left+Right)",
+            "Port_1_Type": "USB-C",
+            "Port_1_Face": "Зліва (Left)"
+          },
+          "expect_manifold": true,
+          "feature_note": "Connector cutout correctly translated from world coords to panel-local coords"
+        },
+        {
+          "name": "panel_y_with_hdmi_cutout",
+          "params": {
+            "_EDITION": "pro",
+            "Part_Chastyna": "Панель Y (Y-Panel)",
+            "Panel_Enable": "true",
+            "Panel_Walls": "Перед+Зад (Front+Back)",
+            "Port_1_Type": "HDMI",
+            "Port_1_Face": "Спереду (Front)"
+          },
+          "expect_manifold": true,
+          "feature_note": "HDMI cutout on Y-panel"
+        },
+        {
+          "name": "panel_x_with_text",
+          "params": {
+            "_EDITION": "pro",
+            "Part_Chastyna": "Панель X (X-Panel)",
+            "Panel_Enable": "true",
+            "Panel_Walls": "Ліво+Право (Left+Right)",
+            "Text_1_Face_Gran": "Зліва (Left)",
+            "Text_1_Depth_Glybyna": "-0.8"
+          },
+          "expect_error": false,
+          "feature_note": "Text deboss cutout on X-panel face"
+        },
+        {
+          "name": "panel_tight_clearance",
+          "params": {
+            "_EDITION": "pro",
+            "Part_Chastyna": "Панель X (X-Panel)",
+            "Panel_Enable": "true",
+            "Panel_Walls": "Ліво+Право (Left+Right)",
+            "Panel_Clearance": "0.1"
+          },
+          "expect_manifold": true,
+          "feature_note": "Tight clearance 0.1mm — tongue geometry must still be positive (not degenerate)"
+        },
+        {
+          "name": "panel_loose_clearance",
+          "params": {
+            "_EDITION": "pro",
+            "Part_Chastyna": "Панель X (X-Panel)",
+            "Panel_Enable": "true",
+            "Panel_Walls": "Ліво+Право (Left+Right)",
+            "Panel_Clearance": "0.35"
+          },
+          "expect_manifold": true,
+          "feature_note": "Loose clearance 0.35mm — panel still valid"
+        },
+        {
+          "name": "panel_thin_wall",
+          "params": {
+            "_EDITION": "pro",
+            "Part_Chastyna": "Панель X (X-Panel)",
+            "Panel_Enable": "true",
+            "Panel_Walls": "Ліво+Право (Left+Right)",
+            "Wall_Stinka": "1.6",
+            "Panel_Clearance": "0.2"
+          },
+          "expect_error": false,
+          "feature_note": "Thin-walled enclosure — tongue height must clamp to avoid negative wall material"
+        },
+        {
+          "name": "panel_base_groove_manifold",
+          "params": {
+            "_EDITION": "pro",
+            "Part_Chastyna": "База (Base)",
+            "Panel_Enable": "true",
+            "Panel_Walls": "Всі 4 (All 4)"
+          },
+          "expect_manifold": true,
+          "feature_note": "Base with all groove cuts remains watertight"
+        },
+        {
+          "name": "panel_lid_groove_manifold",
+          "params": {
+            "_EDITION": "pro",
+            "Part_Chastyna": "Кришка (Lid)",
+            "Panel_Enable": "true",
+            "Panel_Walls": "Всі 4 (All 4)"
+          },
+          "expect_manifold": true,
+          "feature_note": "Lid with all groove cuts remains watertight"
+        }
+      ]
+    },
+
+    "features": {
+      "description": "Feature-specific tests — verify optional features compile",
+      "tests": [
+        {"name": "feat_panels_enabled",     "params": {"_EDITION": "pro", "Part_Chastyna": "Зібраний (Assembled)", "Panel_Enable": "true", "Panel_Walls": "Всі 4 (All 4)"}},
+        {"name": "feat_panels_frontback",   "params": {"_EDITION": "pro", "Part_Chastyna": "Зібраний (Assembled)", "Panel_Enable": "true", "Panel_Walls": "Перед+Зад (Front+Back)"}},
+        {"name": "feat_panels_leftright",   "params": {"_EDITION": "pro", "Part_Chastyna": "Зібраний (Assembled)", "Panel_Enable": "true", "Panel_Walls": "Ліво+Право (Left+Right)"}},
+        {"name": "feat_din_rail",           "params": {"_EDITION": "pro", "Part_Chastyna": "База (Base)", "DIN_Rail_Enable": "true"}},
+        {"name": "feat_vesa_75",            "params": {"_EDITION": "pro", "Part_Chastyna": "База (Base)", "VESA_Mount_Enable": "true", "VESA_Size": "75x75"}},
+        {"name": "feat_vesa_100",           "params": {"_EDITION": "pro", "Part_Chastyna": "База (Base)", "VESA_Mount_Enable": "true", "VESA_Size": "100x100"}},
+        {"name": "feat_ears_lr_2",          "params": {"_EDITION": "pro", "Part_Chastyna": "База (Base)", "Ears_Type": "Зліва та Справа (Left & Right)", "Ears_Count": "2"}},
+        {"name": "feat_ears_fb_4",          "params": {"_EDITION": "pro", "Part_Chastyna": "База (Base)", "Ears_Type": "Спереду та Ззаду (Front & Back)", "Ears_Count": "4"}},
+        {"name": "feat_keyholes",           "params": {"Part_Chastyna": "База (Base)", "Keyholes_Bottom_Enable": "true", "Keyholes_Screw_Size": "M4"}},
+        {"name": "feat_feet_pads",          "params": {"Part_Chastyna": "База (Base)", "Feet_Type": "Виступаючі ніжки (Pads)"}},
+        {"name": "feat_feet_recesses",      "params": {"Part_Chastyna": "База (Base)", "Feet_Type": "Пази під гумові ніжки (Recesses)"}},
+        {"name": "feat_gasket_groove",      "params": {"Part_Chastyna": "База (Base)", "Gasket_Groove_Enable": "true", "Joint_Styk": "Сходинка (Ledge)"}},
+        {"name": "feat_divider_x",          "params": {"Part_Chastyna": "База (Base)", "Divider_Type": "Подовжня (X-Axis)", "Divider_Wire_Hole": "true"}},
+        {"name": "feat_divider_y",          "params": {"Part_Chastyna": "База (Base)", "Divider_Type": "Поперечна (Y-Axis)"}},
+        {"name": "feat_light_pipes",        "params": {"_EDITION": "pro", "Part_Chastyna": "База (Base)", "LightPipe_Enable": "true", "LightPipe_Count": "3"}},
+        {"name": "feat_pcb_grid",           "params": {"Part_Chastyna": "База (Base)", "PCB_Enable_Stiyky": "true", "PCB_Layout_Mode": "Сітка (Grid)", "PCB_Grid_Cols": "3", "PCB_Grid_Rows": "2"}},
+        {"name": "feat_pcb_corners_6",      "params": {"Part_Chastyna": "База (Base)", "PCB_Enable_Stiyky": "true", "PCB_Count_Kilkist": "6"}},
+        {"name": "feat_vent_top_honeycomb", "params": {"Part_Chastyna": "Кришка (Lid)", "Vent_Top_Dakh": "Соти (Honeycomb)", "Vent_Size_Rozmir": "4.0"}},
+        {"name": "feat_vent_bottom_slots",  "params": {"Part_Chastyna": "База (Base)", "Vent_Bottom_Dno": "Слоти (Slots)"}},
+        {"name": "feat_vent_side_both",     "params": {"Part_Chastyna": "База (Base)", "Vent_Side_Face": "Зліва та Справа (Left & Right)", "Vent_Side_Style": "Отвори (Holes)"}},
+        {"name": "feat_fan_40",             "params": {"Part_Chastyna": "Кришка (Lid)", "Fan_Face_Gran": "Дах (Top)", "Fan_Size_Rozmir": "40x40"}},
+        {"name": "feat_fan_120_rings",      "params": {"Part_Chastyna": "Кришка (Lid)", "Fan_Face_Gran": "Дах (Top)", "Fan_Size_Rozmir": "120x120", "Fan_Grill_Style": "Кільця (Rings)"}},
+        {"name": "feat_text_emboss",        "params": {"Part_Chastyna": "Кришка (Lid)", "Text_1_Face_Gran": "Дах (Top)", "Text_1_Depth_Glybyna": "1.0"}},
+        {"name": "feat_text_deboss",        "params": {"Part_Chastyna": "Кришка (Lid)", "Text_1_Face_Gran": "Дах (Top)", "Text_1_Depth_Glybyna": "-1.0"}},
+        {"name": "feat_wire_slot",          "params": {"Part_Chastyna": "База (Base)", "Wire_Face_Gran": "Спереду (Front)", "Wire_Shape_Forma": "Слот (Slot)"}},
+        {"name": "feat_wire_gland_m16",     "params": {"Part_Chastyna": "База (Base)", "Wire_Face_Gran": "Справа (Right)", "Wire_Shape_Forma": "M16 Gland (Threaded)"}}
+      ]
+    },
+
+    "feature_combos": {
+      "description": "Combined feature interaction tests — verify no conflicts between simultaneously enabled features",
+      "tests": [
+        {
+          "name": "combo_panels_and_divider",
+          "params": {
+            "_EDITION": "pro",
+            "Part_Chastyna": "Зібраний (Assembled)",
+            "Panel_Enable": "true",
+            "Panel_Walls": "Всі 4 (All 4)",
+            "Divider_Type": "Подовжня (X-Axis)"
+          },
+          "expect_error": false,
+          "feature_note": "Panels + internal divider — groove cuts must not conflict with divider geometry"
+        },
+        {
+          "name": "combo_fan_and_sidevent",
+          "params": {
+            "Part_Chastyna": "Зібраний (Assembled)",
+            "Fan_Face_Gran": "Дах (Top)",
+            "Fan_Size_Rozmir": "80x80",
+            "Vent_Side_Face": "Зліва та Справа (Left & Right)",
+            "Vent_Side_Style": "Соти (Honeycomb)"
+          },
+          "expect_error": false,
+          "feature_note": "Top fan + side ventilation on both sides simultaneously"
+        },
+        {
+          "name": "combo_pcb_connectors_feet",
+          "params": {
+            "Part_Chastyna": "База (Base)",
+            "PCB_Enable_Stiyky": "true",
+            "PCB_Count_Kilkist": "4",
+            "Port_1_Type": "USB-C",
+            "Port_1_Face": "Спереду (Front)",
+            "Port_2_Type": "RJ45 Ethernet",
+            "Port_2_Face": "Ззаду (Back)",
+            "Feet_Type": "Виступаючі ніжки (Pads)"
+          },
+          "expect_manifold": true,
+          "feature_note": "PCB standoffs + 2 connectors + rubber feet pads — common real-world use case"
+        },
+        {
+          "name": "combo_ip54_full_config",
+          "params": {
+            "Part_Chastyna": "Зібраний (Assembled)",
+            "Joint_Styk": "Сходинка (Ledge)",
+            "Gasket_Groove_Enable": "true",
+            "Fastening_Kriplennya": "Термозакладки (Heatset)",
+            "Vent_Top_Dakh": "Без (None)",
+            "Vent_Bottom_Dno": "Без (None)"
+          },
+          "expect_error": false,
+          "feature_note": "IP54-style sealed enclosure: ledge joint + gasket groove + heatset screws + no vents"
+        },
+        {
+          "name": "combo_din_and_ears",
+          "params": {
+            "_EDITION": "pro",
+            "Part_Chastyna": "База (Base)",
+            "DIN_Rail_Enable": "true",
+            "Ears_Type": "Спереду та Ззаду (Front & Back)",
+            "Ears_Count": "2"
+          },
+          "expect_error": false,
+          "feature_note": "DIN rail mount + front/back ears — both mounting features active simultaneously"
+        },
+        {
+          "name": "combo_text_all_faces",
+          "params": {
+            "Part_Chastyna": "Зібраний (Assembled)",
+            "Text_1_Face_Gran": "Дах (Top)",
+            "Text_1_Depth_Glybyna": "-0.8",
+            "Text_2_Face_Gran": "Спереду (Front)",
+            "Text_2_Depth_Glybyna": "0.6",
+            "Text_3_Face_Gran": "Ззаду (Back)",
+            "Text_3_Depth_Glybyna": "-0.8",
+            "Text_4_Face_Gran": "Зліва (Left)",
+            "Text_4_Depth_Glybyna": "0.6"
+          },
+          "expect_error": false,
+          "feature_note": "Text on 4 faces simultaneously (mix of emboss and deboss)"
+        },
+        {
+          "name": "combo_lightpipe_and_usbc",
+          "params": {
+            "_EDITION": "pro",
+            "Part_Chastyna": "Зібраний (Assembled)",
+            "LightPipe_Enable": "true",
+            "LightPipe_Count": "4",
+            "Port_1_Type": "USB-C",
+            "Port_1_Face": "Спереду (Front)"
+          },
+          "expect_error": false,
+          "feature_note": "LED light pipes + front connector — check for geometry conflicts on front face"
+        },
+        {
+          "name": "combo_panels_and_text",
+          "params": {
+            "_EDITION": "pro",
+            "Part_Chastyna": "Панель X (X-Panel)",
+            "Panel_Enable": "true",
+            "Panel_Walls": "Ліво+Право (Left+Right)",
+            "Text_1_Face_Gran": "Зліва (Left)",
+            "Text_1_Depth_Glybyna": "-0.8"
+          },
+          "expect_manifold": true,
+          "feature_note": "Panel X with text deboss cutout applied in panel-local coordinates"
+        },
+        {
+          "name": "combo_iot_full_config",
+          "params": {
+            "Part_Chastyna": "Зібраний (Assembled)",
+            "Enclosure_Preset": "5 Sensor 85x50x21",
+            "PCB_Enable_Stiyky": "true",
+            "PCB_Count_Kilkist": "4",
+            "Port_1_Type": "USB-C",
+            "Port_1_Face": "Спереду (Front)",
+            "Vent_Top_Dakh": "Соти (Honeycomb)",
+            "Feet_Type": "Виступаючі ніжки (Pads)",
+            "Fastening_Kriplennya": "Термозакладки (Heatset)"
+          },
+          "expect_error": false,
+          "feature_note": "Realistic IoT sensor box: preset + PCB + USB-C + top vent + feet + heatset"
+        },
+        {
+          "name": "combo_audio_interface",
+          "params": {
+            "Part_Chastyna": "База (Base)",
+            "Enclosure_Preset": "6 Handheld 115x70x35",
+            "Port_1_Type": "XLR 3-pin",
+            "Port_1_Face": "Спереду (Front)",
+            "Port_2_Type": "Jack 6.35mm",
+            "Port_2_Face": "Спереду (Front)",
+            "Port_3_Type": "USB-C",
+            "Port_3_Face": "Ззаду (Back)",
+            "Port_4_Type": "MIDI DIN-5",
+            "Port_4_Face": "Ззаду (Back)",
+            "Feet_Type": "Пази під гумові ніжки (Recesses)"
+          },
+          "expect_error": false,
+          "feature_note": "Audio interface: XLR + TRS jack + USB-C + MIDI on a handheld preset"
+        }
+      ]
+    },
+
+    "connectors": {
+      "description": "Each of the 26 connector types compiles in at least one face",
+      "tests": [
+        {"name": "conn_usb_a",       "params": {"Part_Chastyna": "База (Base)", "Port_1_Type": "USB-A",             "Port_1_Face": "Спереду (Front)"}},
+        {"name": "conn_usb_a_dual",  "params": {"Part_Chastyna": "База (Base)", "Port_1_Type": "USB-A Dual Stack",  "Port_1_Face": "Спереду (Front)"}},
+        {"name": "conn_usb_b",       "params": {"Part_Chastyna": "База (Base)", "Port_1_Type": "USB-B",             "Port_1_Face": "Спереду (Front)"}},
+        {"name": "conn_usb_c",       "params": {"Part_Chastyna": "База (Base)", "Port_1_Type": "USB-C",             "Port_1_Face": "Спереду (Front)"}},
+        {"name": "conn_micro_usb",   "params": {"Part_Chastyna": "База (Base)", "Port_1_Type": "Micro-USB",         "Port_1_Face": "Спереду (Front)"}},
+        {"name": "conn_mini_usb",    "params": {"Part_Chastyna": "База (Base)", "Port_1_Type": "Mini-USB",          "Port_1_Face": "Спереду (Front)"}},
+        {"name": "conn_hdmi",        "params": {"Part_Chastyna": "База (Base)", "Port_1_Type": "HDMI",              "Port_1_Face": "Спереду (Front)"}},
+        {"name": "conn_mini_hdmi",   "params": {"Part_Chastyna": "База (Base)", "Port_1_Type": "Mini-HDMI",         "Port_1_Face": "Спереду (Front)"}},
+        {"name": "conn_rj45",        "params": {"Part_Chastyna": "База (Base)", "Port_1_Type": "RJ45 Ethernet",     "Port_1_Face": "Спереду (Front)"}},
+        {"name": "conn_de9",         "params": {"Part_Chastyna": "База (Base)", "Port_1_Type": "DE-9 (DB9)",        "Port_1_Face": "Спереду (Front)"}},
+        {"name": "conn_da15",        "params": {"Part_Chastyna": "База (Base)", "Port_1_Type": "DA-15 (DB15)",      "Port_1_Face": "Спереду (Front)"}},
+        {"name": "conn_db25",        "params": {"Part_Chastyna": "База (Base)", "Port_1_Type": "DB-25",             "Port_1_Face": "Спереду (Front)"}},
+        {"name": "conn_xlr3",        "params": {"Part_Chastyna": "База (Base)", "Port_1_Type": "XLR 3-pin",         "Port_1_Face": "Спереду (Front)"}},
+        {"name": "conn_xlr5",        "params": {"Part_Chastyna": "База (Base)", "Port_1_Type": "XLR 5-pin",         "Port_1_Face": "Спереду (Front)"}},
+        {"name": "conn_speakon",     "params": {"Part_Chastyna": "База (Base)", "Port_1_Type": "Speakon NL4",       "Port_1_Face": "Спереду (Front)"}},
+        {"name": "conn_jack35",      "params": {"Part_Chastyna": "База (Base)", "Port_1_Type": "Jack 3.5mm",        "Port_1_Face": "Спереду (Front)"}},
+        {"name": "conn_jack635",     "params": {"Part_Chastyna": "База (Base)", "Port_1_Type": "Jack 6.35mm",       "Port_1_Face": "Спереду (Front)"}},
+        {"name": "conn_midi",        "params": {"Part_Chastyna": "База (Base)", "Port_1_Type": "MIDI DIN-5",        "Port_1_Face": "Спереду (Front)"}},
+        {"name": "conn_dc_m8",       "params": {"Part_Chastyna": "База (Base)", "Port_1_Type": "DC Jack M8",        "Port_1_Face": "Спереду (Front)"}},
+        {"name": "conn_dc_m11",      "params": {"Part_Chastyna": "База (Base)", "Port_1_Type": "DC Jack M11",       "Port_1_Face": "Спереду (Front)"}},
+        {"name": "conn_xt30",        "params": {"Part_Chastyna": "База (Base)", "Port_1_Type": "XT30",              "Port_1_Face": "Спереду (Front)"}},
+        {"name": "conn_xt60",        "params": {"Part_Chastyna": "База (Base)", "Port_1_Type": "XT60",              "Port_1_Face": "Спереду (Front)"}},
+        {"name": "conn_iec_ac",      "params": {"Part_Chastyna": "База (Base)", "Port_1_Type": "IEC AC 220V",       "Port_1_Face": "Спереду (Front)"}},
+        {"name": "conn_iec_c8",      "params": {"Part_Chastyna": "База (Base)", "Port_1_Type": "IEC C8 Fig-8",      "Port_1_Face": "Спереду (Front)"}},
+        {"name": "conn_gx16",        "params": {"Part_Chastyna": "База (Base)", "Port_1_Type": "GX16 Aviation",     "Port_1_Face": "Спереду (Front)"}},
+        {"name": "conn_gx20",        "params": {"Part_Chastyna": "База (Base)", "Port_1_Type": "GX20 Aviation",     "Port_1_Face": "Спереду (Front)"}},
+        {"name": "conn_multi_face",  "params": {"Part_Chastyna": "База (Base)",
+          "Port_1_Type": "USB-C",    "Port_1_Face": "Спереду (Front)",
+          "Port_2_Type": "HDMI",      "Port_2_Face": "Ззаду (Back)",
+          "Port_3_Type": "RJ45 Ethernet", "Port_3_Face": "Зліва (Left)",
+          "Port_4_Type": "IEC AC 220V",  "Port_4_Face": "Справа (Right)"}},
+        {"name": "conn_port_count_8", "params": {
+          "Part_Chastyna":  "База (Base)",
+          "Port_Count":     "8",
+          "Port_1_Type":    "USB-C",         "Port_1_Face": "Спереду (Front)",
+          "Port_2_Type":    "HDMI",          "Port_2_Face": "Ззаду (Back)",
+          "Port_3_Type":    "RJ45 Ethernet", "Port_3_Face": "Зліва (Left)",
+          "Port_4_Type":    "IEC AC 220V",   "Port_4_Face": "Справа (Right)",
+          "Port_5_Type":    "USB-A",         "Port_5_Face": "Спереду (Front)",
+          "Port_6_Type":    "XLR 3-pin",     "Port_6_Face": "Ззаду (Back)",
+          "Port_7_Type":    "Speakon NL4",   "Port_7_Face": "Зліва (Left)",
+          "Port_8_Type":    "GX16 Aviation", "Port_8_Face": "Справа (Right)"}},
+        {"name": "conn_port_count_2", "params": {
+          "Part_Chastyna": "База (Base)",
+          "Port_Count":    "2",
+          "Port_1_Type":   "USB-C", "Port_1_Face": "Спереду (Front)",
+          "Port_2_Type":   "HDMI",  "Port_2_Face": "Ззаду (Back)",
+          "Port_3_Type":   "USB-A", "Port_3_Face": "Зліва (Left)"}}
+      ]
+    },
+
+    "materials": {
+      "description": "All material types compile with correct shrinkage",
+      "tests": [
+        {"name": "mat_pla",    "params": {"Part_Chastyna": "База (Base)", "Material_Type": "PLA"}},
+        {"name": "mat_petg",   "params": {"Part_Chastyna": "База (Base)", "Material_Type": "PETG"}},
+        {"name": "mat_abs",    "params": {"Part_Chastyna": "База (Base)", "Material_Type": "ABS"}},
+        {"name": "mat_asa",    "params": {"Part_Chastyna": "База (Base)", "Material_Type": "ASA"}},
+        {"name": "mat_custom", "params": {"Part_Chastyna": "База (Base)", "Material_Type": "Custom", "Custom_Shrinkage": "2.0"}}
+      ]
+    },
+
+    "manifold": {
+      "description": "Verify output is valid manifold geometry (watertight, no self-intersections)",
+      "tests": [
+        {"name": "manifold_base",             "params": {"Part_Chastyna": "База (Base)"},                         "expect_manifold": true},
+        {"name": "manifold_lid",              "params": {"Part_Chastyna": "Кришка (Lid)"},                         "expect_manifold": true},
+        {"name": "manifold_all",              "params": {"Part_Chastyna": "Всі деталі (All)"},                     "expect_manifold": true},
+        {"name": "manifold_assembled",        "params": {"Part_Chastyna": "Зібраний (Assembled)"},                 "expect_manifold": true},
+        {"name": "manifold_base_pro_panels",  "params": {"_EDITION": "pro", "Part_Chastyna": "База (Base)", "Panel_Enable": "true", "Panel_Walls": "Всі 4 (All 4)"}, "expect_manifold": true},
+        {"name": "manifold_lid_pro_panels",   "params": {"_EDITION": "pro", "Part_Chastyna": "Кришка (Lid)", "Panel_Enable": "true", "Panel_Walls": "Всі 4 (All 4)"}, "expect_manifold": true},
+        {"name": "manifold_panel_x_pro",      "params": {"_EDITION": "pro", "Part_Chastyna": "Панель X (X-Panel)", "Panel_Enable": "true", "Panel_Walls": "Ліво+Право (Left+Right)"}, "expect_manifold": true},
+        {"name": "manifold_panel_y_pro",      "params": {"_EDITION": "pro", "Part_Chastyna": "Панель Y (Y-Panel)", "Panel_Enable": "true", "Panel_Walls": "Перед+Зад (Front+Back)"}, "expect_manifold": true}
+      ]
+    }
+  }
+}
