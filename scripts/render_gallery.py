@@ -89,46 +89,108 @@ CONFIGS = [
         },
     },
 
-    # ── 03-04  Fan mounts 🔒 ────────────────────────────────────────────────────
+    # ── 03-07  Fan mounts — all 5 grill styles 🔒 ─────────────────────────────
+    # Camera: front face clearly visible — 30° tilt, slight right, close-up
     {
-        "name": "03_fan_80mm",
-        "title": "80 mm Fan Mount 🔒",
-        "desc": "120×80×50 mm, 80 mm fan with ring grill on back, honeycomb top",
+        "name": "03_fan_rings",
+        "title": "Fan Grill — Rings 🔒",
+        "desc": "80 mm fan, concentric ring grill — classic look",
+        "camera": "--camera=0,0,0,30,0,340,560",
         "params": {
-            "_EDITION":         "pro",
-            "Part_Chastyna":    "Зібраний (Assembled)",
-            "Length_Dovzhyna":  120,
-            "Width_Shyryna":    80,
-            "Height_Vysota":    50,
-            "Fan_Face_Gran":    "Ззаду (Back)",
-            "Fan_Size_Rozmir":  "80x80",
-            "Fan_Grill_Style":  "Кільця (Rings)",
-            "Vent_Top_Dakh":    "Соти (Honeycomb)",
-            "Radius_Kutiv":     3.0,
-            "Render_Quality":   "Normal",
+            "_EDITION":        "pro",
+            "Part_Chastyna":   "Зібраний (Assembled)",
+            "Length_Dovzhyna": 120,
+            "Width_Shyryna":   80,
+            "Height_Vysota":   50,
+            "Fan_Face_Gran":   "Спереду (Front)",
+            "Fan_Size_Rozmir": "80x80",
+            "Fan_Grill_Style": "Кільця (Rings)",
+            "Vent_Top_Dakh":   "Соти (Honeycomb)",
+            "Radius_Kutiv":    3.0,
+            "Render_Quality":  "Normal",
         },
     },
     {
-        "name": "04_fan_40mm",
-        "title": "40 mm Fan — Slots Grill 🔒",
-        "desc": "85×70×45 mm compact box, 40 mm fan on side with slot grill",
+        "name": "04_fan_honeycomb",
+        "title": "Fan Grill — Honeycomb 🔒",
+        "desc": "60 mm fan, honeycomb grill — maximum airflow",
+        "camera": "--camera=0,0,0,30,0,340,520",
         "params": {
-            "_EDITION":         "pro",
-            "Part_Chastyna":    "Зібраний (Assembled)",
-            "Length_Dovzhyna":  85,
-            "Width_Shyryna":    70,
-            "Height_Vysota":    45,
-            "Fan_Face_Gran":    "Справа (Right)",
-            "Fan_Size_Rozmir":  "40x40",
-            "Fan_Grill_Style":  "Слоти (Slots)",
-            "Vent_Top_Dakh":    "Отвори (Holes)",
-            "Render_Quality":   "Normal",
+            "_EDITION":        "pro",
+            "Part_Chastyna":   "Зібраний (Assembled)",
+            "Length_Dovzhyna": 100,
+            "Width_Shyryna":   70,
+            "Height_Vysota":   45,
+            "Fan_Face_Gran":   "Спереду (Front)",
+            "Fan_Size_Rozmir": "60x60",
+            "Fan_Grill_Style": "Соти (Honeycomb)",
+            "Vent_Top_Dakh":   "Слоти (Slots)",
+            "Radius_Kutiv":    3.0,
+            "Render_Quality":  "Normal",
+        },
+    },
+    {
+        "name": "05_fan_slots",
+        "title": "Fan Grill — Slots 🔒",
+        "desc": "40 mm fan, horizontal slot grill — compact case",
+        "camera": "--camera=0,0,0,30,0,340,480",
+        "params": {
+            "_EDITION":        "pro",
+            "Part_Chastyna":   "Зібраний (Assembled)",
+            "Length_Dovzhyna": 85,
+            "Width_Shyryna":   60,
+            "Height_Vysota":   45,
+            "Fan_Face_Gran":   "Спереду (Front)",
+            "Fan_Size_Rozmir": "40x40",
+            "Fan_Grill_Style": "Слоти (Slots)",
+            "Vent_Top_Dakh":   "Отвори (Holes)",
+            "Radius_Kutiv":    2.0,
+            "Render_Quality":  "Normal",
+        },
+    },
+    {
+        "name": "06_fan_holes",
+        "title": "Fan Grill — Holes 🔒",
+        "desc": "80 mm fan, circular holes grill pattern",
+        "camera": "--camera=0,0,0,30,0,340,560",
+        "params": {
+            "_EDITION":        "pro",
+            "Part_Chastyna":   "Зібраний (Assembled)",
+            "Length_Dovzhyna": 120,
+            "Width_Shyryna":   80,
+            "Height_Vysota":   50,
+            "Fan_Face_Gran":   "Спереду (Front)",
+            "Fan_Size_Rozmir": "80x80",
+            "Fan_Grill_Style": "Отвори (Holes)",
+            "Vent_Side_Face":  "Зліва та Справа (Left & Right)",
+            "Vent_Side_Style": "Слоти (Slots)",
+            "Radius_Kutiv":    3.0,
+            "Render_Quality":  "Normal",
+        },
+    },
+    {
+        "name": "07_fan_open",
+        "title": "Fan Grill — Open 🔒",
+        "desc": "120 mm fan, open cut-out — maximum airflow, minimal resistance",
+        "camera": "--camera=0,0,0,30,0,340,620",
+        "params": {
+            "_EDITION":        "pro",
+            "Part_Chastyna":   "Зібраний (Assembled)",
+            "Length_Dovzhyna": 140,
+            "Width_Shyryna":   140,
+            "Height_Vysota":   60,
+            "Fan_Face_Gran":   "Спереду (Front)",
+            "Fan_Size_Rozmir": "120x120",
+            "Fan_Grill_Style": "Відкритий (Open)",
+            "Vent_Top_Dakh":   "Соти (Honeycomb)",
+            "Radius_Kutiv":    4.0,
+            "Render_Quality":  "Normal",
         },
     },
 
-    # ── 05  PCB Standoffs 🔒 ────────────────────────────────────────────────────
+    # ── 08  PCB Standoffs 🔒 ────────────────────────────────────────────────────
     {
-        "name": "05_pcb_standoffs",
+        "name": "08_pcb_standoffs",
         "title": "PCB Standoffs 🔒",
         "desc": "100×60×30 mm, 4× M3 standoffs, USB-C front, base only view",
         "params": {
@@ -149,9 +211,9 @@ CONFIGS = [
         },
     },
 
-    # ── 06  DIN Rail TS-35 🔒 ────────────────────────────────────────────────────
+    # ── 09  DIN Rail TS-35 🔒 ────────────────────────────────────────────────────
     {
-        "name": "06_din_rail",
+        "name": "09_din_rail",
         "title": "DIN Rail TS-35 🔒",
         "desc": "Industrial controller 130×80×60 mm, DIN snap-on clip, DB9 + DC Jack",
         "params": {
@@ -170,9 +232,9 @@ CONFIGS = [
         },
     },
 
-    # ── 07  Snap-fit 🔒 ─────────────────────────────────────────────────────────
+    # ── 10  Snap-fit 🔒 ─────────────────────────────────────────────────────────
     {
-        "name": "07_snap_fit",
+        "name": "10_snap_fit",
         "title": "Snap-Fit Clips 🔒",
         "desc": "Cantilever snap clips on X + Y sides — no screws needed",
         "params": {
@@ -189,9 +251,9 @@ CONFIGS = [
         },
     },
 
-    # ── 08  Magnets 🔒 ──────────────────────────────────────────────────────────
+    # ── 11  Magnets 🔒 ──────────────────────────────────────────────────────────
     {
-        "name": "08_magnets",
+        "name": "11_magnets",
         "title": "Magnetic Closure 🔒",
         "desc": "Flush magnet pockets in base and lid corners",
         "params": {
@@ -208,9 +270,9 @@ CONFIGS = [
         },
     },
 
-    # ── 09  Mounting ears 🔒 ────────────────────────────────────────────────────
+    # ── 12  Mounting ears 🔒 ────────────────────────────────────────────────────
     {
-        "name": "09_mounting_ears",
+        "name": "12_mounting_ears",
         "title": "Mounting Ears 🔒",
         "desc": "Panel-mount flanges with M4 holes on all 4 sides",
         "params": {
@@ -228,9 +290,9 @@ CONFIGS = [
         },
     },
 
-    # ── 10  LED Light Pipes 🔒 ──────────────────────────────────────────────────
+    # ── 13  LED Light Pipes 🔒 ──────────────────────────────────────────────────
     {
-        "name": "10_led_lightpipes",
+        "name": "13_led_lightpipes",
         "title": "LED Light Pipes 🔒",
         "desc": "4 integrated light guides on front face for status LEDs",
         "params": {
@@ -251,9 +313,9 @@ CONFIGS = [
         },
     },
 
-    # ── 11  IP54 + Heat-set 🔒 ──────────────────────────────────────────────────
+    # ── 14  IP54 + Heat-set 🔒 ──────────────────────────────────────────────────
     {
-        "name": "11_ip54_heatset",
+        "name": "14_ip54_heatset",
         "title": "IP54 Gasket + Heat-set 🔒",
         "desc": "O-ring gasket groove for sealed enclosure, M3 heat-set inserts",
         "params": {
@@ -275,9 +337,9 @@ CONFIGS = [
         },
     },
 
-    # ── 12  Cable Glands 🔒 ─────────────────────────────────────────────────────
+    # ── 15  Cable Glands 🔒 ─────────────────────────────────────────────────────
     {
-        "name": "12_cable_glands",
+        "name": "15_cable_glands",
         "title": "M16 Cable Glands 🔒",
         "desc": "Industrial wire entries M16 threaded on left & right faces",
         "params": {
@@ -293,9 +355,43 @@ CONFIGS = [
         },
     },
 
-    # ── 13  Audio DI box 🔒 ─────────────────────────────────────────────────────
+    # ── 16  Removable panels (tongue-and-groove) 🔒 ────────────────────────────
     {
-        "name": "13_audio_di_box",
+        "name": "16_removable_panels",
+        "title": "Removable Side Panels 🔒",
+        "desc": "Tongue-and-groove slide-in walls — tool-free access, front+back",
+        "params": {
+            "_EDITION":        "pro",
+            "Part_Chastyna":   "Всі деталі (All)",
+            "Length_Dovzhyna": 120,
+            "Width_Shyryna":   80,
+            "Height_Vysota":   40,
+            "Panel_Enable":    True,
+            "Panel_Walls":     "Перед+Зад (Front+Back)",
+            "Fastening_Kriplennya": "Саморізи (Self-tap)",
+            "Render_Quality":  "Normal",
+        },
+    },
+    {
+        "name": "17_removable_panels_all4",
+        "title": "Removable Panels — All 4 Sides 🔒",
+        "desc": "All four walls removable — slide-in from the sides",
+        "params": {
+            "_EDITION":        "pro",
+            "Part_Chastyna":   "Всі деталі (All)",
+            "Length_Dovzhyna": 130,
+            "Width_Shyryna":   90,
+            "Height_Vysota":   45,
+            "Panel_Enable":    True,
+            "Panel_Walls":     "Всі 4 (All 4)",
+            "Fastening_Kriplennya": "Саморізи (Self-tap)",
+            "Render_Quality":  "Normal",
+        },
+    },
+
+    # ── 18  Audio DI box 🔒 ─────────────────────────────────────────────────────
+    {
+        "name": "18_audio_di_box",
         "title": "Audio DI Box 🔒",
         "desc": "115×75×40 mm, XLR 3-pin + Jack 6.35 mm + USB-C, rubber feet",
         "params": {
@@ -313,32 +409,9 @@ CONFIGS = [
         },
     },
 
-    # ── 14  Multi-connector panel 🔒 ────────────────────────────────────────────
+    # ── 19  Full honeycomb ventilation 🔒 ───────────────────────────────────────
     {
-        "name": "14_multi_connector",
-        "title": "Multi-Connector Panel 🔒",
-        "desc": "USB-C / HDMI / RJ45 / IEC C14 — one connector per face",
-        "params": {
-            "_EDITION":       "pro",
-            "Part_Chastyna":  "База (Base)",
-            "Length_Dovzhyna": 150,
-            "Width_Shyryna":   100,
-            "Height_Vysota":   50,
-            "Port_1_Type":    "USB-C",
-            "Port_1_Face":    "Спереду (Front)",
-            "Port_2_Type":    "HDMI",
-            "Port_2_Face":    "Ззаду (Back)",
-            "Port_3_Type":    "RJ45 Ethernet",
-            "Port_3_Face":    "Зліва (Left)",
-            "Port_4_Type":    "IEC AC 220V",
-            "Port_4_Face":    "Справа (Right)",
-            "Render_Quality": "Normal",
-        },
-    },
-
-    # ── 15  Full honeycomb ventilation 🔒 ───────────────────────────────────────
-    {
-        "name": "15_honeycomb_full",
+        "name": "19_honeycomb_full",
         "title": "Full Honeycomb Ventilation 🔒",
         "desc": "Honeycomb top + bottom + both sides — maximum airflow",
         "params": {
@@ -355,9 +428,9 @@ CONFIGS = [
         },
     },
 
-    # ── 16  Text labels (FREE) ──────────────────────────────────────────────────
+    # ── 20  Text labels (FREE) ──────────────────────────────────────────────────
     {
-        "name": "16_text_labels",
+        "name": "20_text_labels",
         "title": "Custom Text Labels",
         "desc": "Deboss on front face, emboss on top — any font, any face",
         "params": {
@@ -377,9 +450,9 @@ CONFIGS = [
         },
     },
 
-    # ── 17  IoT Sensor (FREE) ───────────────────────────────────────────────────
+    # ── 21  IoT Sensor (FREE) ───────────────────────────────────────────────────
     {
-        "name": "17_iot_sensor",
+        "name": "21_iot_sensor",
         "title": "IoT Sensor Node",
         "desc": "85×50×21 mm, USB-C front, RJ45 back, honeycomb top",
         "params": {
@@ -395,9 +468,9 @@ CONFIGS = [
         },
     },
 
-    # ── 18  Micro-Dongle (FREE) ─────────────────────────────────────────────────
+    # ── 22  Micro-Dongle (FREE) ─────────────────────────────────────────────────
     {
-        "name": "18_size_micro",
+        "name": "22_size_micro",
         "title": "Micro-Dongle — 50×35 mm",
         "desc": "Smallest preset — USB dongle / BLE module size",
         "params": {
@@ -409,9 +482,9 @@ CONFIGS = [
         },
     },
 
-    # ── 19  VESA mount 🔒 ───────────────────────────────────────────────────────
+    # ── 23  VESA mount 🔒 ───────────────────────────────────────────────────────
     {
-        "name": "19_vesa_75",
+        "name": "23_vesa_75",
         "title": "VESA 75×75 Mount 🔒",
         "desc": "Wall/monitor mount pattern 75×75 mm — bolt directly to VESA bracket",
         "params": {
@@ -426,9 +499,9 @@ CONFIGS = [
         },
     },
 
-    # ── 20  Maxi box 🔒 ─────────────────────────────────────────────────────────
+    # ── 24  Maxi box 🔒 ─────────────────────────────────────────────────────────
     {
-        "name": "20_size_maxi",
+        "name": "24_size_maxi",
         "title": "Maxi Box 250×180 mm 🔒",
         "desc": "Largest preset: 250×180×100 mm, honeycomb lid, side slots",
         "camera": "--camera=0,0,0,45,0,315,950",
