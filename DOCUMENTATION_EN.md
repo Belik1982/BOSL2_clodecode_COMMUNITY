@@ -42,6 +42,17 @@ After installing the dev snapshot:
 2. Enable **"manifold"**
 3. Restart OpenSCAD
 
+
+> ⚠️ **Important:** The full path to the project folder must contain **Latin characters only**.  
+> Cyrillic or other non-ASCII characters in any parent folder name will cause OpenSCAD to fail loading `BOSL2/` and `modules/` with "Can't open include file" errors.  
+> ✅ `C:\Projects\enclosure` — works  
+> ❌ `C:\Проекты\enclosure` — fails
+
+> ⚠️ **Important:** The full path to the project folder must contain **Latin characters only**.  
+> Cyrillic or other non-ASCII characters in any parent folder name will cause OpenSCAD to fail loading `BOSL2/` and `modules/` with "Can't open include file" errors.  
+> ✅ `C:\Projects\enclosure` — works  
+> ❌ `C:\Projects_Кириллица\enclosure` — fails
+
 ### Step 2 — Open the Project
 
 1. Launch OpenSCAD
@@ -554,6 +565,12 @@ A: Enable `Gasket_Groove_Enable = true` + use `Joint_Styk = "Сходинка (L
 
 **Q: Where do I find recommended screw lengths?**  
 A: In the OpenSCAD console after F5/F6: `INFO: Recommended screw length = XX mm`. 🔒
+
+**Q: OpenSCAD shows "Can't open include file 'BOSL2/std.scad'" after moving the project.**  
+A: The project folder path contains non-Latin (Cyrillic, Chinese, etc.) characters. Move the project to a path with Latin characters only, e.g. `C:\Projects\enclosure`. OpenSCAD cannot resolve include paths that contain non-ASCII characters.
+
+**Q: OpenSCAD shows "Can't open include file 'BOSL2/std.scad'" after moving the project.**  
+A: The project folder path contains non-Latin characters (Cyrillic, Chinese, etc.). Move the project to a path with Latin characters only, e.g. `C:\Projects\enclosure`. OpenSCAD cannot resolve include paths that contain non-ASCII characters.
 
 **Q: Can I use Cyrillic text in labels?**  
 A: Yes. Use `Liberation Sans:style=Bold` font (included in OpenSCAD) for best Cyrillic support.

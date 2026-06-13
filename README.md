@@ -140,6 +140,11 @@ All cutout dimensions verified against manufacturer datasheets (IEC 60320, EIA-5
 | OS | Windows 10 / macOS 11 / Ubuntu 20.04 | Windows 11 |
 | Slicer / Слайсер | Any STL-compatible / Будь-який STL | Bambu Studio 1.9+ |
 
+> ⚠️ **Important / Важливо:** The full path to the project folder must contain **Latin characters only**.  
+> Cyrillic, Chinese, Arabic or other non-ASCII characters in folder names **will cause OpenSCAD to fail loading include files**.  
+> ✅ `C:\Projects\enclosure` — works / працює  
+> ❌ `C:\Проекти\enclosure` — fails / не працює
+
 ---
 
 ## File Structure / Структура файлів
