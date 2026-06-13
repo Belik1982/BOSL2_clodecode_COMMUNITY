@@ -1,6 +1,8 @@
 # Parametric Enclosure Generator — Gallery
 
-*Generated: 2026-06-14 01:02 · 16/16 renders OK*
+*Generated: 2026-06-14 01:12 · 20/20 renders OK*
+
+> **🔒 PRO** label = feature available in the PRO version. [Get PRO on Gumroad](https://belik.gumroad.com/l/idxwoz)
 
 <table>
 <tr>
@@ -9,22 +11,148 @@
 ![Basic Box — Assembled](01_basic_assembled.png)
 
 **Basic Box — Assembled**  
-Default 100×60×30 mm box, lip joint, assembled view
+100×60×30 mm, lip joint, rounded corners — straight from the Customizer
 
 </td>
 <td width="50%">
 
-![Basic Box — All Parts](02_basic_exploded.png)
+![Basic Box — All Parts](02_basic_all_parts.png)
 
 **Basic Box — All Parts**  
-Base and lid side by side
+Base and lid side-by-side ready for STL export
 
 </td>
 </tr>
 <tr>
 <td width="50%">
 
-![IoT Sensor Node](03_iot_sensor.png)
+![80 mm Fan Mount 🔒](03_fan_80mm.png)
+
+**80 mm Fan Mount 🔒**  
+120×80×50 mm, 80 mm fan with ring grill on back, honeycomb top
+
+</td>
+<td width="50%">
+
+![40 mm Fan — Slots Grill 🔒](04_fan_40mm.png)
+
+**40 mm Fan — Slots Grill 🔒**  
+85×70×45 mm compact box, 40 mm fan on side with slot grill
+
+</td>
+</tr>
+<tr>
+<td width="50%">
+
+![PCB Standoffs 🔒](05_pcb_standoffs.png)
+
+**PCB Standoffs 🔒**  
+100×60×30 mm, 4× M3 standoffs, USB-C front, base only view
+
+</td>
+<td width="50%">
+
+![DIN Rail TS-35 🔒](06_din_rail.png)
+
+**DIN Rail TS-35 🔒**  
+Industrial controller 130×80×60 mm, DIN snap-on clip, DB9 + DC Jack
+
+</td>
+</tr>
+<tr>
+<td width="50%">
+
+![Snap-Fit Clips 🔒](07_snap_fit.png)
+
+**Snap-Fit Clips 🔒**  
+Cantilever snap clips on X + Y sides — no screws needed
+
+</td>
+<td width="50%">
+
+![Magnetic Closure 🔒](08_magnets.png)
+
+**Magnetic Closure 🔒**  
+Flush magnet pockets in base and lid corners
+
+</td>
+</tr>
+<tr>
+<td width="50%">
+
+![Mounting Ears 🔒](09_mounting_ears.png)
+
+**Mounting Ears 🔒**  
+Panel-mount flanges with M4 holes on all 4 sides
+
+</td>
+<td width="50%">
+
+![LED Light Pipes 🔒](10_led_lightpipes.png)
+
+**LED Light Pipes 🔒**  
+4 integrated light guides on front face for status LEDs
+
+</td>
+</tr>
+<tr>
+<td width="50%">
+
+![IP54 Gasket + Heat-set 🔒](11_ip54_heatset.png)
+
+**IP54 Gasket + Heat-set 🔒**  
+O-ring gasket groove for sealed enclosure, M3 heat-set inserts
+
+</td>
+<td width="50%">
+
+![M16 Cable Glands 🔒](12_cable_glands.png)
+
+**M16 Cable Glands 🔒**  
+Industrial wire entries M16 threaded on left & right faces
+
+</td>
+</tr>
+<tr>
+<td width="50%">
+
+![Audio DI Box 🔒](13_audio_di_box.png)
+
+**Audio DI Box 🔒**  
+115×75×40 mm, XLR 3-pin + Jack 6.35 mm + USB-C, rubber feet
+
+</td>
+<td width="50%">
+
+![Multi-Connector Panel 🔒](14_multi_connector.png)
+
+**Multi-Connector Panel 🔒**  
+USB-C / HDMI / RJ45 / IEC C14 — one connector per face
+
+</td>
+</tr>
+<tr>
+<td width="50%">
+
+![Full Honeycomb Ventilation 🔒](15_honeycomb_full.png)
+
+**Full Honeycomb Ventilation 🔒**  
+Honeycomb top + bottom + both sides — maximum airflow
+
+</td>
+<td width="50%">
+
+![Custom Text Labels](16_text_labels.png)
+
+**Custom Text Labels**  
+Deboss on front face, emboss on top — any font, any face
+
+</td>
+</tr>
+<tr>
+<td width="50%">
+
+![IoT Sensor Node](17_iot_sensor.png)
 
 **IoT Sensor Node**  
 85×50×21 mm, USB-C front, RJ45 back, honeycomb top
@@ -32,118 +160,28 @@ Base and lid side by side
 </td>
 <td width="50%">
 
-![Arduino Nano Box](04_arduino_nano.png)
+![Micro-Dongle — 50×35 mm](18_size_micro.png)
 
-**Arduino Nano Box**  
-100×60×25 mm, USB-C, PCB standoffs, ledge joint
-
-</td>
-</tr>
-<tr>
-<td width="50%">
-
-![Audio DI Box](05_audio_di_box.png)
-
-**Audio DI Box**  
-115×75×40 mm, XLR front, Jack 6.35 front, USB-C back
-
-</td>
-<td width="50%">
-
-![MIDI Controller Box](06_midi_controller.png)
-
-**MIDI Controller Box**  
-120×80×40 mm, MIDI DIN-5, USB-B, Jack 3.5 mm
+**Micro-Dongle — 50×35 mm**  
+Smallest preset — USB dongle / BLE module size
 
 </td>
 </tr>
 <tr>
 <td width="50%">
 
-![Network Router Box](07_network_router.png)
+![VESA 75×75 Mount 🔒](19_vesa_75.png)
 
-**Network Router Box**  
-140×90×35 mm, RJ45 ×2, honeycomb sides + top
-
-</td>
-<td width="50%">
-
-![PSU / Power Box](08_psu_box.png)
-
-**PSU / Power Box**  
-160×110×60 mm, IEC C14 inlet, ventilation slots
-
-</td>
-</tr>
-<tr>
-<td width="50%">
-
-![Full Honeycomb](09_honeycomb_all.png)
-
-**Full Honeycomb**  
-120×80×40 mm, honeycomb on top + sides
+**VESA 75×75 Mount 🔒**  
+Wall/monitor mount pattern 75×75 mm — bolt directly to VESA bracket
 
 </td>
 <td width="50%">
 
-![Ventilation Slots](10_slots_top_side.png)
+![Maxi Box 250×180 mm 🔒](20_size_maxi.png)
 
-**Ventilation Slots**  
-115×70×35 mm, slot ventilation top + back side
-
-</td>
-</tr>
-<tr>
-<td width="50%">
-
-![Multi-Connector Panel](11_multi_connector.png)
-
-**Multi-Connector Panel**  
-4 connectors on 4 different faces
-
-</td>
-<td width="50%">
-
-![Text Labels](12_text_labels.png)
-
-**Text Labels**  
-Deboss text on front, emboss on top
-
-</td>
-</tr>
-<tr>
-<td width="50%">
-
-![Lip Joint](13_joint_lip.png)
-
-**Lip Joint**  
-100×60×30 mm, lip (губа) joint profile
-
-</td>
-<td width="50%">
-
-![Ledge Joint](14_joint_ledge.png)
-
-**Ledge Joint**  
-100×60×30 mm, ledge (сходинка) joint profile
-
-</td>
-</tr>
-<tr>
-<td width="50%">
-
-![Micro-Dongle](15_size_micro.png)
-
-**Micro-Dongle**  
-Smallest preset: 50×35×22 mm
-
-</td>
-<td width="50%">
-
-![Maxi Box 250×180](16_size_maxi.png)
-
-**Maxi Box 250×180**  
-Largest preset: 250×180×100 mm  🔒 PRO
+**Maxi Box 250×180 mm 🔒**  
+Largest preset: 250×180×100 mm, honeycomb lid, side slots
 
 </td>
 </tr>
@@ -151,8 +189,8 @@ Largest preset: 250×180×100 mm  🔒 PRO
 
 ---
 
-## Get the PRO Version
+## Get the Full Feature Set
 
 [![Get PRO on Gumroad](https://img.shields.io/badge/PRO%20Version-Gumroad-ff90e8?logo=gumroad&style=for-the-badge)](https://belik.gumroad.com/l/idxwoz)
 
-*26 connectors · 15 presets · Fan mounts · Removable panels · DIN rail · VESA · PCB standoffs*
+*26 connectors · 15 presets · Fan mounts · Snap-fit · Magnets · PCB standoffs · DIN rail · VESA · Mounting ears · IP54 gasket · LED light pipes · Cable glands*

@@ -1,104 +1,131 @@
 {
-  "timestamp": "2026-06-14T01:02:18.861650",
+  "timestamp": "2026-06-14T01:12:22.870724",
+  "scad_file": "D:\\Downloads\\3d printel models\\parametric_generator openscad\\antropic_progect\\BOSL2_clodecode_PRO\\enclosure.scad",
   "openscad": "C:\\Program Files\\OpenSCAD (Nightly)\\openscad.exe",
   "size": "1280x960",
-  "total_sec": 9.2,
+  "total_sec": 8.9,
+  "ok": 20,
+  "total": 20,
   "results": [
     {
       "name": "01_basic_assembled",
       "ok": true,
-      "elapsed": 1.0,
+      "elapsed": 1.2,
       "path": "D:\\Downloads\\3d printel models\\parametric_generator openscad\\antropic_progect\\BOSL2_clodecode_COMMUNITY\\gallery\\01_basic_assembled.png"
     },
     {
-      "name": "02_basic_exploded",
-      "ok": true,
-      "elapsed": 0.9,
-      "path": "D:\\Downloads\\3d printel models\\parametric_generator openscad\\antropic_progect\\BOSL2_clodecode_COMMUNITY\\gallery\\02_basic_exploded.png"
-    },
-    {
-      "name": "03_iot_sensor",
-      "ok": true,
-      "elapsed": 1.1,
-      "path": "D:\\Downloads\\3d printel models\\parametric_generator openscad\\antropic_progect\\BOSL2_clodecode_COMMUNITY\\gallery\\03_iot_sensor.png"
-    },
-    {
-      "name": "04_arduino_nano",
+      "name": "02_basic_all_parts",
       "ok": true,
       "elapsed": 1.2,
-      "path": "D:\\Downloads\\3d printel models\\parametric_generator openscad\\antropic_progect\\BOSL2_clodecode_COMMUNITY\\gallery\\04_arduino_nano.png"
+      "path": "D:\\Downloads\\3d printel models\\parametric_generator openscad\\antropic_progect\\BOSL2_clodecode_COMMUNITY\\gallery\\02_basic_all_parts.png"
     },
     {
-      "name": "05_audio_di_box",
+      "name": "03_fan_80mm",
+      "ok": true,
+      "elapsed": 1.4,
+      "path": "D:\\Downloads\\3d printel models\\parametric_generator openscad\\antropic_progect\\BOSL2_clodecode_COMMUNITY\\gallery\\03_fan_80mm.png"
+    },
+    {
+      "name": "04_fan_40mm",
+      "ok": true,
+      "elapsed": 1.5,
+      "path": "D:\\Downloads\\3d printel models\\parametric_generator openscad\\antropic_progect\\BOSL2_clodecode_COMMUNITY\\gallery\\04_fan_40mm.png"
+    },
+    {
+      "name": "05_pcb_standoffs",
+      "ok": true,
+      "elapsed": 0.8,
+      "path": "D:\\Downloads\\3d printel models\\parametric_generator openscad\\antropic_progect\\BOSL2_clodecode_COMMUNITY\\gallery\\05_pcb_standoffs.png"
+    },
+    {
+      "name": "06_din_rail",
+      "ok": true,
+      "elapsed": 1.2,
+      "path": "D:\\Downloads\\3d printel models\\parametric_generator openscad\\antropic_progect\\BOSL2_clodecode_COMMUNITY\\gallery\\06_din_rail.png"
+    },
+    {
+      "name": "07_snap_fit",
       "ok": true,
       "elapsed": 1.0,
-      "path": "D:\\Downloads\\3d printel models\\parametric_generator openscad\\antropic_progect\\BOSL2_clodecode_COMMUNITY\\gallery\\05_audio_di_box.png"
+      "path": "D:\\Downloads\\3d printel models\\parametric_generator openscad\\antropic_progect\\BOSL2_clodecode_COMMUNITY\\gallery\\07_snap_fit.png"
     },
     {
-      "name": "06_midi_controller",
+      "name": "08_magnets",
+      "ok": true,
+      "elapsed": 1.0,
+      "path": "D:\\Downloads\\3d printel models\\parametric_generator openscad\\antropic_progect\\BOSL2_clodecode_COMMUNITY\\gallery\\08_magnets.png"
+    },
+    {
+      "name": "09_mounting_ears",
+      "ok": true,
+      "elapsed": 1.3,
+      "path": "D:\\Downloads\\3d printel models\\parametric_generator openscad\\antropic_progect\\BOSL2_clodecode_COMMUNITY\\gallery\\09_mounting_ears.png"
+    },
+    {
+      "name": "10_led_lightpipes",
       "ok": true,
       "elapsed": 0.9,
-      "path": "D:\\Downloads\\3d printel models\\parametric_generator openscad\\antropic_progect\\BOSL2_clodecode_COMMUNITY\\gallery\\06_midi_controller.png"
+      "path": "D:\\Downloads\\3d printel models\\parametric_generator openscad\\antropic_progect\\BOSL2_clodecode_COMMUNITY\\gallery\\10_led_lightpipes.png"
     },
     {
-      "name": "07_network_router",
+      "name": "11_ip54_heatset",
       "ok": true,
       "elapsed": 1.2,
-      "path": "D:\\Downloads\\3d printel models\\parametric_generator openscad\\antropic_progect\\BOSL2_clodecode_COMMUNITY\\gallery\\07_network_router.png"
+      "path": "D:\\Downloads\\3d printel models\\parametric_generator openscad\\antropic_progect\\BOSL2_clodecode_COMMUNITY\\gallery\\11_ip54_heatset.png"
     },
     {
-      "name": "08_psu_box",
+      "name": "12_cable_glands",
+      "ok": true,
+      "elapsed": 1.3,
+      "path": "D:\\Downloads\\3d printel models\\parametric_generator openscad\\antropic_progect\\BOSL2_clodecode_COMMUNITY\\gallery\\12_cable_glands.png"
+    },
+    {
+      "name": "13_audio_di_box",
+      "ok": true,
+      "elapsed": 1.3,
+      "path": "D:\\Downloads\\3d printel models\\parametric_generator openscad\\antropic_progect\\BOSL2_clodecode_COMMUNITY\\gallery\\13_audio_di_box.png"
+    },
+    {
+      "name": "14_multi_connector",
+      "ok": true,
+      "elapsed": 0.9,
+      "path": "D:\\Downloads\\3d printel models\\parametric_generator openscad\\antropic_progect\\BOSL2_clodecode_COMMUNITY\\gallery\\14_multi_connector.png"
+    },
+    {
+      "name": "15_honeycomb_full",
       "ok": true,
       "elapsed": 1.6,
-      "path": "D:\\Downloads\\3d printel models\\parametric_generator openscad\\antropic_progect\\BOSL2_clodecode_COMMUNITY\\gallery\\08_psu_box.png"
+      "path": "D:\\Downloads\\3d printel models\\parametric_generator openscad\\antropic_progect\\BOSL2_clodecode_COMMUNITY\\gallery\\15_honeycomb_full.png"
     },
     {
-      "name": "09_honeycomb_all",
+      "name": "16_text_labels",
+      "ok": true,
+      "elapsed": 1.3,
+      "path": "D:\\Downloads\\3d printel models\\parametric_generator openscad\\antropic_progect\\BOSL2_clodecode_COMMUNITY\\gallery\\16_text_labels.png"
+    },
+    {
+      "name": "17_iot_sensor",
       "ok": true,
       "elapsed": 1.2,
-      "path": "D:\\Downloads\\3d printel models\\parametric_generator openscad\\antropic_progect\\BOSL2_clodecode_COMMUNITY\\gallery\\09_honeycomb_all.png"
+      "path": "D:\\Downloads\\3d printel models\\parametric_generator openscad\\antropic_progect\\BOSL2_clodecode_COMMUNITY\\gallery\\17_iot_sensor.png"
     },
     {
-      "name": "10_slots_top_side",
+      "name": "18_size_micro",
       "ok": true,
       "elapsed": 1.1,
-      "path": "D:\\Downloads\\3d printel models\\parametric_generator openscad\\antropic_progect\\BOSL2_clodecode_COMMUNITY\\gallery\\10_slots_top_side.png"
+      "path": "D:\\Downloads\\3d printel models\\parametric_generator openscad\\antropic_progect\\BOSL2_clodecode_COMMUNITY\\gallery\\18_size_micro.png"
     },
     {
-      "name": "11_multi_connector",
+      "name": "19_vesa_75",
       "ok": true,
-      "elapsed": 0.7,
-      "path": "D:\\Downloads\\3d printel models\\parametric_generator openscad\\antropic_progect\\BOSL2_clodecode_COMMUNITY\\gallery\\11_multi_connector.png"
+      "elapsed": 1.1,
+      "path": "D:\\Downloads\\3d printel models\\parametric_generator openscad\\antropic_progect\\BOSL2_clodecode_COMMUNITY\\gallery\\19_vesa_75.png"
     },
     {
-      "name": "12_text_labels",
+      "name": "20_size_maxi",
       "ok": true,
-      "elapsed": 0.9,
-      "path": "D:\\Downloads\\3d printel models\\parametric_generator openscad\\antropic_progect\\BOSL2_clodecode_COMMUNITY\\gallery\\12_text_labels.png"
-    },
-    {
-      "name": "13_joint_lip",
-      "ok": true,
-      "elapsed": 0.9,
-      "path": "D:\\Downloads\\3d printel models\\parametric_generator openscad\\antropic_progect\\BOSL2_clodecode_COMMUNITY\\gallery\\13_joint_lip.png"
-    },
-    {
-      "name": "14_joint_ledge",
-      "ok": true,
-      "elapsed": 0.9,
-      "path": "D:\\Downloads\\3d printel models\\parametric_generator openscad\\antropic_progect\\BOSL2_clodecode_COMMUNITY\\gallery\\14_joint_ledge.png"
-    },
-    {
-      "name": "15_size_micro",
-      "ok": true,
-      "elapsed": 0.9,
-      "path": "D:\\Downloads\\3d printel models\\parametric_generator openscad\\antropic_progect\\BOSL2_clodecode_COMMUNITY\\gallery\\15_size_micro.png"
-    },
-    {
-      "name": "16_size_maxi",
-      "ok": true,
-      "elapsed": 1.6,
-      "path": "D:\\Downloads\\3d printel models\\parametric_generator openscad\\antropic_progect\\BOSL2_clodecode_COMMUNITY\\gallery\\16_size_maxi.png"
+      "elapsed": 2.0,
+      "path": "D:\\Downloads\\3d printel models\\parametric_generator openscad\\antropic_progect\\BOSL2_clodecode_COMMUNITY\\gallery\\20_size_maxi.png"
     }
   ]
 }
