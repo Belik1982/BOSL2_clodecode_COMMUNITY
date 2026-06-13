@@ -90,21 +90,28 @@ CONFIGS = [
     },
 
     # ── 03-07  Fan mounts — all 5 grill styles 🔒 ─────────────────────────────
-    # Camera: front face clearly visible — 30° tilt, slight right, close-up
+    # Fan on Front face. Min enclosure for fan to fit inside wall:
+    #   Width_Shyryna  > fan_frame_mm + 2×wall ≈ fan_size + 10 mm
+    #   Height_Vysota  > fan_frame_mm + 2×wall ≈ fan_size + 10 mm
+    #   Fan_Offset_2 = 0  → fan centered on wall (default 16 shifts fan, causes clipping)
+    # Camera 30°/340° makes front face prominently visible.
     {
         "name": "03_fan_rings",
         "title": "Fan Grill — Rings 🔒",
         "desc": "80 mm fan, concentric ring grill — classic look",
-        "camera": "--camera=0,0,0,30,0,340,560",
+        "camera": "--camera=0,0,0,30,0,340,650",
         "params": {
             "_EDITION":        "pro",
             "Part_Chastyna":   "Зібраний (Assembled)",
-            "Length_Dovzhyna": 120,
-            "Width_Shyryna":   80,
-            "Height_Vysota":   50,
+            # 80 mm fan needs Width ≥ 90 mm and Height ≥ 90 mm
+            "Length_Dovzhyna": 150,
+            "Width_Shyryna":   110,
+            "Height_Vysota":   100,
             "Fan_Face_Gran":   "Спереду (Front)",
             "Fan_Size_Rozmir": "80x80",
             "Fan_Grill_Style": "Кільця (Rings)",
+            "Fan_Offset_1":    0,
+            "Fan_Offset_2":    0,
             "Vent_Top_Dakh":   "Соти (Honeycomb)",
             "Radius_Kutiv":    3.0,
             "Render_Quality":  "Normal",
@@ -113,17 +120,20 @@ CONFIGS = [
     {
         "name": "04_fan_honeycomb",
         "title": "Fan Grill — Honeycomb 🔒",
-        "desc": "60 mm fan, honeycomb grill — maximum airflow",
-        "camera": "--camera=0,0,0,30,0,340,520",
+        "desc": "60 mm fan, honeycomb grill — maximum open area",
+        "camera": "--camera=0,0,0,30,0,340,560",
         "params": {
             "_EDITION":        "pro",
             "Part_Chastyna":   "Зібраний (Assembled)",
-            "Length_Dovzhyna": 100,
-            "Width_Shyryna":   70,
-            "Height_Vysota":   45,
+            # 60 mm fan needs Width ≥ 70 mm and Height ≥ 70 mm
+            "Length_Dovzhyna": 120,
+            "Width_Shyryna":   90,
+            "Height_Vysota":   80,
             "Fan_Face_Gran":   "Спереду (Front)",
             "Fan_Size_Rozmir": "60x60",
             "Fan_Grill_Style": "Соти (Honeycomb)",
+            "Fan_Offset_1":    0,
+            "Fan_Offset_2":    0,
             "Vent_Top_Dakh":   "Слоти (Slots)",
             "Radius_Kutiv":    3.0,
             "Render_Quality":  "Normal",
@@ -132,17 +142,20 @@ CONFIGS = [
     {
         "name": "05_fan_slots",
         "title": "Fan Grill — Slots 🔒",
-        "desc": "40 mm fan, horizontal slot grill — compact case",
+        "desc": "40 mm fan, horizontal slot grill — compact enclosure",
         "camera": "--camera=0,0,0,30,0,340,480",
         "params": {
             "_EDITION":        "pro",
             "Part_Chastyna":   "Зібраний (Assembled)",
-            "Length_Dovzhyna": 85,
-            "Width_Shyryna":   60,
-            "Height_Vysota":   45,
+            # 40 mm fan needs Width ≥ 50 mm and Height ≥ 50 mm
+            "Length_Dovzhyna": 90,
+            "Width_Shyryna":   65,
+            "Height_Vysota":   58,
             "Fan_Face_Gran":   "Спереду (Front)",
             "Fan_Size_Rozmir": "40x40",
             "Fan_Grill_Style": "Слоти (Slots)",
+            "Fan_Offset_1":    0,
+            "Fan_Offset_2":    0,
             "Vent_Top_Dakh":   "Отвори (Holes)",
             "Radius_Kutiv":    2.0,
             "Render_Quality":  "Normal",
@@ -151,17 +164,19 @@ CONFIGS = [
     {
         "name": "06_fan_holes",
         "title": "Fan Grill — Holes 🔒",
-        "desc": "80 mm fan, circular holes grill pattern",
-        "camera": "--camera=0,0,0,30,0,340,560",
+        "desc": "80 mm fan, circular holes grill + side slot ventilation",
+        "camera": "--camera=0,0,0,30,0,340,650",
         "params": {
             "_EDITION":        "pro",
             "Part_Chastyna":   "Зібраний (Assembled)",
-            "Length_Dovzhyna": 120,
-            "Width_Shyryna":   80,
-            "Height_Vysota":   50,
+            "Length_Dovzhyna": 150,
+            "Width_Shyryna":   110,
+            "Height_Vysota":   100,
             "Fan_Face_Gran":   "Спереду (Front)",
             "Fan_Size_Rozmir": "80x80",
             "Fan_Grill_Style": "Отвори (Holes)",
+            "Fan_Offset_1":    0,
+            "Fan_Offset_2":    0,
             "Vent_Side_Face":  "Зліва та Справа (Left & Right)",
             "Vent_Side_Style": "Слоти (Slots)",
             "Radius_Kutiv":    3.0,
@@ -170,18 +185,21 @@ CONFIGS = [
     },
     {
         "name": "07_fan_open",
-        "title": "Fan Grill — Open 🔒",
-        "desc": "120 mm fan, open cut-out — maximum airflow, minimal resistance",
-        "camera": "--camera=0,0,0,30,0,340,620",
+        "title": "Fan Grill — Open 120 mm 🔒",
+        "desc": "120 mm fan, open cut-out — maximum airflow, minimal restriction",
+        "camera": "--camera=0,0,0,30,0,340,820",
         "params": {
             "_EDITION":        "pro",
             "Part_Chastyna":   "Зібраний (Assembled)",
-            "Length_Dovzhyna": 140,
-            "Width_Shyryna":   140,
-            "Height_Vysota":   60,
+            # 120 mm fan needs Width ≥ 130 mm and Height ≥ 130 mm
+            "Length_Dovzhyna": 180,
+            "Width_Shyryna":   150,
+            "Height_Vysota":   140,
             "Fan_Face_Gran":   "Спереду (Front)",
             "Fan_Size_Rozmir": "120x120",
             "Fan_Grill_Style": "Відкритий (Open)",
+            "Fan_Offset_1":    0,
+            "Fan_Offset_2":    0,
             "Vent_Top_Dakh":   "Соти (Honeycomb)",
             "Radius_Kutiv":    4.0,
             "Render_Quality":  "Normal",

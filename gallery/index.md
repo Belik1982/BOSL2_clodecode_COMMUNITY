@@ -1,6 +1,6 @@
 # Parametric Enclosure Generator — Gallery
 
-*Generated: 2026-06-14 01:20 · 24/24 renders OK*
+*Generated: 2026-06-14 01:28 · 24/24 renders OK*
 
 > **🔒 PRO** label = feature available in the PRO version. [Get PRO on Gumroad](https://belik.gumroad.com/l/idxwoz)
 
@@ -37,7 +37,7 @@ Base and lid side-by-side ready for STL export
 ![Fan Grill — Honeycomb 🔒](04_fan_honeycomb.png)
 
 **Fan Grill — Honeycomb 🔒**  
-60 mm fan, honeycomb grill — maximum airflow
+60 mm fan, honeycomb grill — maximum open area
 
 </td>
 </tr>
@@ -47,7 +47,7 @@ Base and lid side-by-side ready for STL export
 ![Fan Grill — Slots 🔒](05_fan_slots.png)
 
 **Fan Grill — Slots 🔒**  
-40 mm fan, horizontal slot grill — compact case
+40 mm fan, horizontal slot grill — compact enclosure
 
 </td>
 <td width="50%">
@@ -55,17 +55,17 @@ Base and lid side-by-side ready for STL export
 ![Fan Grill — Holes 🔒](06_fan_holes.png)
 
 **Fan Grill — Holes 🔒**  
-80 mm fan, circular holes grill pattern
+80 mm fan, circular holes grill + side slot ventilation
 
 </td>
 </tr>
 <tr>
 <td width="50%">
 
-![Fan Grill — Open 🔒](07_fan_open.png)
+![Fan Grill — Open 120 mm 🔒](07_fan_open.png)
 
-**Fan Grill — Open 🔒**  
-120 mm fan, open cut-out — maximum airflow, minimal resistance
+**Fan Grill — Open 120 mm 🔒**  
+120 mm fan, open cut-out — maximum airflow, minimal restriction
 
 </td>
 <td width="50%">

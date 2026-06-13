@@ -1,9 +1,9 @@
 {
-  "timestamp": "2026-06-14T01:20:48.030767",
+  "timestamp": "2026-06-14T01:28:28.918973",
   "scad_file": "D:\\Downloads\\3d printel models\\parametric_generator openscad\\antropic_progect\\BOSL2_clodecode_PRO\\enclosure.scad",
   "openscad": "C:\\Program Files\\OpenSCAD (Nightly)\\openscad.exe",
   "size": "1280x960",
-  "total_sec": 11.1,
+  "total_sec": 11.2,
   "ok": 24,
   "total": 24,
   "results": [
@@ -22,37 +22,37 @@
     {
       "name": "03_fan_rings",
       "ok": true,
-      "elapsed": 1.4,
+      "elapsed": 1.5,
       "path": "D:\\Downloads\\3d printel models\\parametric_generator openscad\\antropic_progect\\BOSL2_clodecode_COMMUNITY\\gallery\\03_fan_rings.png"
     },
     {
       "name": "04_fan_honeycomb",
       "ok": true,
-      "elapsed": 1.4,
+      "elapsed": 1.6,
       "path": "D:\\Downloads\\3d printel models\\parametric_generator openscad\\antropic_progect\\BOSL2_clodecode_COMMUNITY\\gallery\\04_fan_honeycomb.png"
     },
     {
       "name": "05_fan_slots",
       "ok": true,
-      "elapsed": 1.4,
+      "elapsed": 1.5,
       "path": "D:\\Downloads\\3d printel models\\parametric_generator openscad\\antropic_progect\\BOSL2_clodecode_COMMUNITY\\gallery\\05_fan_slots.png"
     },
     {
       "name": "06_fan_holes",
       "ok": true,
-      "elapsed": 1.6,
+      "elapsed": 1.7,
       "path": "D:\\Downloads\\3d printel models\\parametric_generator openscad\\antropic_progect\\BOSL2_clodecode_COMMUNITY\\gallery\\06_fan_holes.png"
     },
     {
       "name": "07_fan_open",
       "ok": true,
-      "elapsed": 1.5,
+      "elapsed": 1.8,
       "path": "D:\\Downloads\\3d printel models\\parametric_generator openscad\\antropic_progect\\BOSL2_clodecode_COMMUNITY\\gallery\\07_fan_open.png"
     },
     {
       "name": "08_pcb_standoffs",
       "ok": true,
-      "elapsed": 0.9,
+      "elapsed": 1.0,
       "path": "D:\\Downloads\\3d printel models\\parametric_generator openscad\\antropic_progect\\BOSL2_clodecode_COMMUNITY\\gallery\\08_pcb_standoffs.png"
     },
     {
@@ -70,13 +70,13 @@
     {
       "name": "11_magnets",
       "ok": true,
-      "elapsed": 1.1,
+      "elapsed": 1.0,
       "path": "D:\\Downloads\\3d printel models\\parametric_generator openscad\\antropic_progect\\BOSL2_clodecode_COMMUNITY\\gallery\\11_magnets.png"
     },
     {
       "name": "12_mounting_ears",
       "ok": true,
-      "elapsed": 1.3,
+      "elapsed": 1.4,
       "path": "D:\\Downloads\\3d printel models\\parametric_generator openscad\\antropic_progect\\BOSL2_clodecode_COMMUNITY\\gallery\\12_mounting_ears.png"
     },
     {
@@ -88,31 +88,31 @@
     {
       "name": "14_ip54_heatset",
       "ok": true,
-      "elapsed": 1.2,
+      "elapsed": 1.1,
       "path": "D:\\Downloads\\3d printel models\\parametric_generator openscad\\antropic_progect\\BOSL2_clodecode_COMMUNITY\\gallery\\14_ip54_heatset.png"
     },
     {
       "name": "15_cable_glands",
       "ok": true,
-      "elapsed": 1.4,
+      "elapsed": 1.2,
       "path": "D:\\Downloads\\3d printel models\\parametric_generator openscad\\antropic_progect\\BOSL2_clodecode_COMMUNITY\\gallery\\15_cable_glands.png"
     },
     {
       "name": "16_removable_panels",
       "ok": true,
-      "elapsed": 1.2,
+      "elapsed": 1.1,
       "path": "D:\\Downloads\\3d printel models\\parametric_generator openscad\\antropic_progect\\BOSL2_clodecode_COMMUNITY\\gallery\\16_removable_panels.png"
     },
     {
       "name": "17_removable_panels_all4",
       "ok": true,
-      "elapsed": 1.1,
+      "elapsed": 1.2,
       "path": "D:\\Downloads\\3d printel models\\parametric_generator openscad\\antropic_progect\\BOSL2_clodecode_COMMUNITY\\gallery\\17_removable_panels_all4.png"
     },
     {
       "name": "18_audio_di_box",
       "ok": true,
-      "elapsed": 1.2,
+      "elapsed": 1.1,
       "path": "D:\\Downloads\\3d printel models\\parametric_generator openscad\\antropic_progect\\BOSL2_clodecode_COMMUNITY\\gallery\\18_audio_di_box.png"
     },
     {
