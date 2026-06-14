@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -19,11 +19,9 @@
   html { scroll-behavior: smooth; }
   body { background: var(--bg); color: var(--text); font-family: system-ui, sans-serif; margin: 0; }
 
-  /* ── Glow ── */
   .glow-pink { text-shadow: 0 0 30px #ff90e880, 0 0 60px #ff90e840; }
   .glow-box  { box-shadow: 0 0 40px #ff90e820, 0 0 1px #ff90e860; }
 
-  /* ── Hero SVG float ── */
   @keyframes float {
     0%,100% { transform: translateY(0px) rotate(-1deg); }
     50%      { transform: translateY(-18px) rotate(1deg); }
@@ -35,35 +33,28 @@
   .hero-svg { animation: float 5s ease-in-out infinite; }
   .hero-lid { animation: lid-lift 6s ease-in-out infinite; transform-origin: bottom; }
 
-  /* ── Gradient borders ── */
   .grad-border {
     border: 1px solid transparent;
     background: linear-gradient(var(--card), var(--card)) padding-box,
                 linear-gradient(135deg, #ff90e840, #60aaff40) border-box;
   }
 
-  /* ── Stat counter ── */
   @keyframes countUp { from { opacity:0; transform:translateY(10px); } to { opacity:1; transform:none; } }
   .stat-num { animation: countUp 0.6s ease both; }
 
-  /* ── Scroll reveal ── */
   .reveal { opacity:0; transform:translateY(30px); transition: opacity .6s ease, transform .6s ease; }
   .reveal.visible { opacity:1; transform:none; }
 
-  /* ── Table ── */
   .cmp-table th { background: #13131f; color: var(--muted); font-size:.75rem; text-transform:uppercase; letter-spacing:.08em; }
   .cmp-table td { border-top: 1px solid var(--border); }
   .cmp-table tr:hover td { background:#ffffff05; }
   .check { color:#4ade80; font-size:1.1rem; }
   .cross { color:#ff5555; font-size:1.1rem; }
 
-  /* ── FAQ accordion ── */
   details summary { cursor:pointer; list-style:none; }
   details summary::-webkit-details-marker { display:none; }
-  details[open] summary .arrow { transform:rotate(180deg); }
   .arrow { transition: transform .25s; display:inline-block; }
 
-  /* ── Buy section ── */
   .buy-btn {
     display:inline-flex; align-items:center; justify-content:center; gap:.5rem;
     background: linear-gradient(135deg, #ff90e8, #d060c8);
@@ -82,7 +73,6 @@
   }
   .price-input:focus { border-color:#ff90e8; }
 
-  /* ── Connector grid ── */
   .conn-tag {
     background:#13131f; border:1px solid var(--border);
     padding:.3rem .75rem; border-radius:999px;
@@ -91,15 +81,48 @@
   }
   .conn-tag:hover { border-color:#ff90e860; color:var(--text); }
 
-  /* ── Nav ── */
   .nav-blur { backdrop-filter:blur(12px); background:#09090fcc; }
 
-  /* ── Step line ── */
   .step-line::after {
     content:''; position:absolute; left:50%; top:100%;
     width:2px; height:40px; background:linear-gradient(#ff90e840,transparent);
     transform:translateX(-50%);
   }
+
+  /* ── Gallery ── */
+  .gal-tab {
+    background: #13131f; border: 1px solid var(--border);
+    color: var(--muted); font-size: .8rem; font-weight: 600;
+    padding: .4rem 1.1rem; border-radius: 999px; cursor: pointer;
+    transition: color .15s, border-color .15s, background .15s;
+  }
+  .gal-tab:hover { color: var(--text); border-color: #ff90e840; }
+  .gal-tab.active { color: #ff90e8; border-color: #ff90e860; background: #ff90e80d; }
+
+  .gal-item { position: relative; overflow: hidden; margin-bottom: .75rem; cursor: zoom-in; }
+  .gal-item .gal-img {
+    display: block; transition: transform .3s ease, filter .3s ease;
+    border: 1px solid #ffffff10;
+  }
+  .gal-item:hover .gal-img { transform: scale(1.03); filter: brightness(1.1); }
+  .gal-label {
+    position: absolute; bottom: 0; left: 0; right: 0;
+    background: linear-gradient(transparent, #000000cc);
+    color: #fff; font-size: .72rem; padding: .9rem .6rem .4rem;
+    opacity: 0; transition: opacity .2s; pointer-events: none;
+  }
+  .gal-item:hover .gal-label { opacity: 1; }
+  .gal-item.hidden { display: none; }
+
+  /* ── Language switcher ── */
+  .lang-btn {
+    background: none; border: 1px solid transparent; color: var(--muted);
+    font-size: .75rem; font-weight: 600; padding: .25rem .55rem;
+    border-radius: .35rem; cursor: pointer; letter-spacing: .04em;
+    transition: color .15s, border-color .15s;
+  }
+  .lang-btn:hover { color: var(--text); }
+  .lang-btn.active { color: #ff90e8; border-color: #ff90e840; }
 </style>
 </head>
 <body>
@@ -115,121 +138,95 @@
       </svg>
       <span class="font-semibold text-sm text-white/80">Enclosure Generator <span class="text-[#ff90e8]">PRO</span></span>
     </div>
-    <button data-gumroad-action="buy" data-gumroad-price="29"
-      class="buy-btn !py-2 !px-5 !text-sm">
-      Get PRO — $29
-    </button>
+    <div class="flex items-center gap-3">
+      <!-- Language switcher -->
+      <div class="flex items-center gap-1 mr-2">
+        <button class="lang-btn active" id="btn-en" onclick="setLang('en')">EN</button>
+        <span class="text-white/20 text-xs">|</span>
+        <button class="lang-btn" id="btn-ua" onclick="setLang('ua')">UA</button>
+      </div>
+      <button data-gumroad-action="buy" data-gumroad-price="29"
+        class="buy-btn !py-2 !px-5 !text-sm" data-i18n="nav_buy">
+        Get PRO — $29
+      </button>
+    </div>
   </div>
 </nav>
 
 <!-- ═══════════════ HERO ═══════════════ -->
 <section class="min-h-screen flex items-center pt-20 pb-10 px-6 overflow-hidden relative">
-  <!-- Background grid -->
   <div class="absolute inset-0 opacity-[0.04]" style="background-image:linear-gradient(#fff 1px,transparent 1px),linear-gradient(90deg,#fff 1px,transparent 1px);background-size:40px 40px;"></div>
-  <!-- Glow orbs -->
   <div class="absolute top-1/4 left-1/4 w-96 h-96 rounded-full opacity-10" style="background:radial-gradient(circle,#ff90e8,transparent 70%);filter:blur(60px);pointer-events:none;"></div>
   <div class="absolute bottom-1/4 right-1/4 w-80 h-80 rounded-full opacity-8" style="background:radial-gradient(circle,#60aaff,transparent 70%);filter:blur(60px);pointer-events:none;"></div>
 
   <div class="max-w-6xl mx-auto w-full grid lg:grid-cols-2 gap-12 items-center">
-
-    <!-- Text -->
     <div>
       <div class="inline-flex items-center gap-2 text-xs font-medium px-3 py-1.5 rounded-full mb-6"
-           style="background:#ff90e812;border:1px solid #ff90e830;color:#ff90e8;">
+           style="background:#ff90e812;border:1px solid #ff90e830;color:#ff90e8;" data-i18n="hero_badge">
         ✦ OpenSCAD · 3D Printing · No CAD skills needed
       </div>
       <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black leading-tight mb-6">
-        Generate<br>
-        <span class="glow-pink" style="color:#ff90e8;">Print-Ready</span><br>
-        Enclosures
+        <span data-i18n="hero_h1_1">Generate</span><br>
+        <span class="glow-pink" style="color:#ff90e8;" data-i18n="hero_h1_2">Print-Ready</span><br>
+        <span data-i18n="hero_h1_3">Enclosures</span>
       </h1>
-      <p class="text-lg text-white/60 mb-8 leading-relaxed max-w-lg">
+      <p class="text-lg text-white/60 mb-8 leading-relaxed max-w-lg" data-i18n="hero_p">
         One <code class="text-[#ff90e8] bg-white/5 px-1 rounded">.scad</code> file,
         <strong class="text-white">130+ parameters</strong>, OpenSCAD Customizer.
         Fan mounts, snap-fits, PCB standoffs, 26 connectors —
         adjust sliders, press <kbd class="bg-white/10 px-1.5 py-0.5 rounded text-sm">F6</kbd>, get STL.
       </p>
-
-      <!-- CTA block -->
       <div class="flex flex-wrap gap-4 items-center mb-8">
         <div class="flex items-center gap-3">
-          <label class="text-white/50 text-sm">Your price, min $29:</label>
+          <label class="text-white/50 text-sm" data-i18n="price_label">Your price, min $29:</label>
           <input type="number" id="price-input" class="price-input" min="29" value="29" step="1">
         </div>
         <button id="buy-main" class="buy-btn">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
-          Get PRO Now
+          <span data-i18n="btn_buy_now">Get PRO Now</span>
         </button>
       </div>
-
       <div class="flex flex-wrap gap-x-6 gap-y-2 text-sm text-white/40">
-        <span>✓ Full OpenSCAD source</span>
-        <span>✓ Lifetime updates</span>
-        <span>✓ Manifold backend ready</span>
+        <span data-i18n="hero_trust_1">✓ Full OpenSCAD source</span>
+        <span data-i18n="hero_trust_2">✓ Lifetime updates</span>
+        <span data-i18n="hero_trust_3">✓ Manifold backend ready</span>
       </div>
     </div>
 
-    <!-- Hero SVG illustration -->
+    <!-- Hero SVG -->
     <div class="flex justify-center lg:justify-end">
       <div class="hero-svg relative w-72 h-72 sm:w-96 sm:h-96">
         <svg viewBox="0 0 320 280" xmlns="http://www.w3.org/2000/svg" class="w-full h-full drop-shadow-2xl">
           <defs>
             <linearGradient id="topGrad" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0%" stop-color="#ff90e8"/>
-              <stop offset="100%" stop-color="#d060c0"/>
+              <stop offset="0%" stop-color="#ff90e8"/><stop offset="100%" stop-color="#d060c0"/>
             </linearGradient>
             <linearGradient id="frontGrad" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stop-color="#3a2060"/>
-              <stop offset="100%" stop-color="#1e0f3a"/>
+              <stop offset="0%" stop-color="#3a2060"/><stop offset="100%" stop-color="#1e0f3a"/>
             </linearGradient>
             <linearGradient id="sideGrad" x1="0" y1="0" x2="1" y2="0">
-              <stop offset="0%" stop-color="#2a1550"/>
-              <stop offset="100%" stop-color="#150830"/>
+              <stop offset="0%" stop-color="#2a1550"/><stop offset="100%" stop-color="#150830"/>
             </linearGradient>
-            
-            <clipPath id="topClip">
-              <polygon points="160,30 270,90 160,150 50,90"/>
-            </clipPath>
-            <clipPath id="frontClip">
-              <polygon points="50,90 160,150 160,230 50,170"/>
-            </clipPath>
+            <clipPath id="topClip"><polygon points="160,30 270,90 160,150 50,90"/></clipPath>
+            <clipPath id="frontClip"><polygon points="50,90 160,150 160,230 50,170"/></clipPath>
           </defs>
-
-          <!-- Shadow -->
           <ellipse cx="160" cy="260" rx="110" ry="14" fill="#ff90e8" style="opacity:.08"/>
-
-          <!-- BASE: front face -->
           <polygon points="50,120 160,180 160,230 50,170" fill="url(#frontGrad)" stroke="#ff90e830" stroke-width="1"/>
-          <!-- BASE: right face -->
           <polygon points="160,180 270,120 270,170 160,230" fill="url(#sideGrad)" stroke="#ff90e830" stroke-width="1"/>
-          <!-- BASE: top rim -->
           <polygon points="50,120 160,60 270,120 160,180" fill="#2a1555" stroke="#ff90e850" stroke-width="1"/>
-
-          <!-- USB-C cutout on front face -->
           <rect x="85" y="188" width="18" height="10" rx="4" fill="#09090f" stroke="#ff90e840" stroke-width=".8"/>
           <rect x="88" y="190" width="12" height="6" rx="2.5" fill="#60aaff" style="opacity:.6"/>
-
-          <!-- Screw bosses on front -->
           <circle cx="62" cy="133" r="3" fill="#ff90e8" style="opacity:.3"/>
           <circle cx="62" cy="133" r="1.5" fill="#ff90e8" style="opacity:.6"/>
           <circle cx="62" cy="163" r="3" fill="#ff90e8" style="opacity:.3"/>
           <circle cx="62" cy="163" r="1.5" fill="#ff90e8" style="opacity:.6"/>
-
-          <!-- LID: animates up -->
           <g class="hero-lid">
-            <!-- LID top face -->
             <polygon points="50,90 160,30 270,90 160,150" fill="url(#topGrad)" style="opacity:.95"/>
-            <!-- Honeycomb on lid top -->
             <polygon points="50,90 160,30 270,90 160,150" fill="none" clip-path="url(#topClip)"/>
-            <!-- LID front face -->
             <polygon points="50,90 160,150 160,180 50,120" fill="#5a2580" stroke="#ff90e830" stroke-width="1"/>
-            <!-- LID right face -->
             <polygon points="160,150 270,90 270,120 160,180" fill="#3a1560" stroke="#ff90e830" stroke-width="1"/>
-            <!-- Lid edge highlight -->
             <polyline points="50,90 160,30 270,90" stroke="#ff90e8" stroke-width="1.5" fill="none" style="opacity:.7"/>
           </g>
-
-          <!-- Fan grill on right face of lid -->
           <g style="opacity:.7">
             <circle cx="232" cy="102" r="14" fill="none" stroke="#ff90e8" stroke-width="1"/>
             <circle cx="232" cy="102" r="10" fill="none" stroke="#ff90e8" stroke-width=".8"/>
@@ -237,72 +234,216 @@
             <circle cx="232" cy="102" r="2"  fill="#ff90e8" style="opacity:.5"/>
             <line x1="218" y1="102" x2="246" y2="102" stroke="#ff90e8" stroke-width=".5"/>
             <line x1="232" y1="88"  x2="232" y2="116" stroke="#ff90e8" stroke-width=".5"/>
-            <!-- Mounting screws -->
             <circle cx="218" cy="88"  r="2" fill="none" stroke="#ff90e8" stroke-width=".8" style="opacity:.5"/>
             <circle cx="246" cy="88"  r="2" fill="none" stroke="#ff90e8" stroke-width=".8" style="opacity:.5"/>
             <circle cx="218" cy="116" r="2" fill="none" stroke="#ff90e8" stroke-width=".8" style="opacity:.5"/>
             <circle cx="246" cy="116" r="2" fill="none" stroke="#ff90e8" stroke-width=".8" style="opacity:.5"/>
           </g>
-
-          <!-- PCB standoffs inside base (visible from top) -->
           <circle cx="80"  cy="140" r="3" fill="#4ade80" style="opacity:.5"/>
           <circle cx="140" cy="140" r="3" fill="#4ade80" style="opacity:.5"/>
           <circle cx="80"  cy="170" r="3" fill="#4ade80" style="opacity:.5"/>
           <circle cx="140" cy="170" r="3" fill="#4ade80" style="opacity:.5"/>
-
-          <!-- Labels -->
-          
           <line x1="160" y1="26" x2="160" y2="32" stroke="#ff90e830" stroke-width="1"/>
         </svg>
       </div>
     </div>
-
   </div>
 </section>
 
 <!-- ═══════════════ STATS ═══════════════ -->
 <section class="border-y border-white/5 py-8 px-6 reveal">
   <div class="max-w-5xl mx-auto grid grid-cols-2 sm:grid-cols-4 gap-6 text-center">
-    <div>
-      <div class="stat-num text-3xl font-black" style="color:#ff90e8;">130+</div>
-      <div class="text-xs text-white/40 mt-1">Parameters</div>
-    </div>
-    <div>
-      <div class="stat-num text-3xl font-black" style="color:#ff90e8;">26</div>
-      <div class="text-xs text-white/40 mt-1">Connector Types</div>
-    </div>
-    <div>
-      <div class="stat-num text-3xl font-black" style="color:#ff90e8;">15</div>
-      <div class="text-xs text-white/40 mt-1">Size Presets</div>
-    </div>
-    <div>
-      <div class="stat-num text-3xl font-black" style="color:#ff90e8;">5</div>
-      <div class="text-xs text-white/40 mt-1">Fastening Types</div>
-    </div>
+    <div><div class="stat-num text-3xl font-black" style="color:#ff90e8;">130+</div><div class="text-xs text-white/40 mt-1" data-i18n="stat_params">Parameters</div></div>
+    <div><div class="stat-num text-3xl font-black" style="color:#ff90e8;">26</div><div class="text-xs text-white/40 mt-1" data-i18n="stat_conn">Connector Types</div></div>
+    <div><div class="stat-num text-3xl font-black" style="color:#ff90e8;">15</div><div class="text-xs text-white/40 mt-1" data-i18n="stat_presets">Size Presets</div></div>
+    <div><div class="stat-num text-3xl font-black" style="color:#ff90e8;">5</div><div class="text-xs text-white/40 mt-1" data-i18n="stat_fasten">Fastening Types</div></div>
   </div>
 </section>
+
+<!-- ═══════════════ GALLERY ═══════════════ -->
+<section class="py-20 px-6 reveal">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-10">
+      <h2 class="text-3xl font-black mb-3" data-i18n="gal_h2">See It In Action</h2>
+      <p class="text-white/40 text-sm" data-i18n="gal_sub">Real renders from OpenSCAD — every image generated with this generator</p>
+    </div>
+
+    <!-- Filter tabs -->
+    <div class="flex flex-wrap justify-center gap-2 mb-8" id="gal-tabs">
+      <button class="gal-tab active" data-cat="all"     data-i18n="gal_tab_all">All</button>
+      <button class="gal-tab"       data-cat="render"   data-i18n="gal_tab_3d">3D Renders</button>
+      <button class="gal-tab"       data-cat="ui"       data-i18n="gal_tab_ui">Interface</button>
+    </div>
+
+    <!-- Grid -->
+    <div class="columns-2 sm:columns-3 lg:columns-4 gap-3 space-y-3" id="gal-grid">
+
+      <!-- ── 3D Renders ── -->
+      <div class="gal-item break-inside-avoid" data-cat="render">
+        <img src="https://belik1982.github.io/BOSL2_clodecode_COMMUNITY/gallery/01_basic_assembled.png"
+             alt="Assembled enclosure" loading="lazy" class="gal-img rounded-lg w-full">
+        <div class="gal-label" data-i18n="gi01">Assembled enclosure</div>
+      </div>
+
+      <div class="gal-item break-inside-avoid" data-cat="render">
+        <img src="https://belik1982.github.io/BOSL2_clodecode_COMMUNITY/gallery/02_basic_all_parts.png"
+             alt="All parts exploded" loading="lazy" class="gal-img rounded-lg w-full">
+        <div class="gal-label" data-i18n="gi02">All parts exploded</div>
+      </div>
+
+      <div class="gal-item break-inside-avoid" data-cat="render">
+        <img src="https://belik1982.github.io/BOSL2_clodecode_COMMUNITY/gallery/03_fan_rings.png"
+             alt="Fan: ring grill" loading="lazy" class="gal-img rounded-lg w-full">
+        <div class="gal-label" data-i18n="gi03">Fan: ring grill</div>
+      </div>
+
+      <div class="gal-item break-inside-avoid" data-cat="render">
+        <img src="https://belik1982.github.io/BOSL2_clodecode_COMMUNITY/gallery/04_fan_honeycomb.png"
+             alt="Fan: honeycomb grill" loading="lazy" class="gal-img rounded-lg w-full">
+        <div class="gal-label" data-i18n="gi04">Fan: honeycomb grill</div>
+      </div>
+
+      <div class="gal-item break-inside-avoid" data-cat="render">
+        <img src="https://belik1982.github.io/BOSL2_clodecode_COMMUNITY/gallery/08_pcb_standoffs.png"
+             alt="PCB standoffs" loading="lazy" class="gal-img rounded-lg w-full">
+        <div class="gal-label" data-i18n="gi08">PCB standoffs</div>
+      </div>
+
+      <div class="gal-item break-inside-avoid" data-cat="render">
+        <img src="https://belik1982.github.io/BOSL2_clodecode_COMMUNITY/gallery/10_snap_fit.png"
+             alt="Snap-fit fastening" loading="lazy" class="gal-img rounded-lg w-full">
+        <div class="gal-label" data-i18n="gi10">Snap-fit fastening</div>
+      </div>
+
+      <div class="gal-item break-inside-avoid" data-cat="render">
+        <img src="https://belik1982.github.io/BOSL2_clodecode_COMMUNITY/gallery/11_magnets.png"
+             alt="Magnet fastening" loading="lazy" class="gal-img rounded-lg w-full">
+        <div class="gal-label" data-i18n="gi11">Magnet fastening</div>
+      </div>
+
+      <div class="gal-item break-inside-avoid" data-cat="render">
+        <img src="https://belik1982.github.io/BOSL2_clodecode_COMMUNITY/gallery/14_ip54_heatset.png"
+             alt="IP54 + heat-set inserts" loading="lazy" class="gal-img rounded-lg w-full">
+        <div class="gal-label" data-i18n="gi14">IP54 + heat-set inserts</div>
+      </div>
+
+      <div class="gal-item break-inside-avoid" data-cat="render">
+        <img src="https://belik1982.github.io/BOSL2_clodecode_COMMUNITY/gallery/16_removable_panels.png"
+             alt="Removable panels" loading="lazy" class="gal-img rounded-lg w-full">
+        <div class="gal-label" data-i18n="gi16">Removable panels</div>
+      </div>
+
+      <div class="gal-item break-inside-avoid" data-cat="render">
+        <img src="https://belik1982.github.io/BOSL2_clodecode_COMMUNITY/gallery/18_audio_di_box.png"
+             alt="Audio DI box" loading="lazy" class="gal-img rounded-lg w-full">
+        <div class="gal-label" data-i18n="gi18">Audio DI box</div>
+      </div>
+
+      <div class="gal-item break-inside-avoid" data-cat="render">
+        <img src="https://belik1982.github.io/BOSL2_clodecode_COMMUNITY/gallery/19_honeycomb_full.png"
+             alt="Full honeycomb vents" loading="lazy" class="gal-img rounded-lg w-full">
+        <div class="gal-label" data-i18n="gi19">Full honeycomb vents</div>
+      </div>
+
+      <div class="gal-item break-inside-avoid" data-cat="render">
+        <img src="https://belik1982.github.io/BOSL2_clodecode_COMMUNITY/gallery/20_text_labels.png"
+             alt="Custom text labels" loading="lazy" class="gal-img rounded-lg w-full">
+        <div class="gal-label" data-i18n="gi20">Custom text labels</div>
+      </div>
+
+      <div class="gal-item break-inside-avoid" data-cat="render">
+        <img src="https://belik1982.github.io/BOSL2_clodecode_COMMUNITY/gallery/09_din_rail.png"
+             alt="DIN rail mount" loading="lazy" class="gal-img rounded-lg w-full">
+        <div class="gal-label" data-i18n="gi09">DIN rail mount</div>
+      </div>
+
+      <div class="gal-item break-inside-avoid" data-cat="render">
+        <img src="https://belik1982.github.io/BOSL2_clodecode_COMMUNITY/gallery/24_size_maxi.png"
+             alt="Maxi 250×180×100 mm" loading="lazy" class="gal-img rounded-lg w-full">
+        <div class="gal-label" data-i18n="gi24">Maxi 250×180×100 mm</div>
+      </div>
+
+      <!-- ── Interface screenshots ── -->
+      <div class="gal-item break-inside-avoid" data-cat="ui">
+        <img src="https://belik1982.github.io/BOSL2_clodecode_COMMUNITY/images/hero_assembled_exploded.jpg"
+             alt="OpenSCAD Customizer" loading="lazy" class="gal-img rounded-lg w-full">
+        <div class="gal-label" data-i18n="gui01">OpenSCAD Customizer</div>
+      </div>
+
+      <div class="gal-item break-inside-avoid" data-cat="ui">
+        <img src="https://belik1982.github.io/BOSL2_clodecode_COMMUNITY/images/hero_text_labels.jpg"
+             alt="Text labels interface" loading="lazy" class="gal-img rounded-lg w-full">
+        <div class="gal-label" data-i18n="gui02">Text labels interface</div>
+      </div>
+
+      <div class="gal-item break-inside-avoid" data-cat="ui">
+        <img src="https://belik1982.github.io/BOSL2_clodecode_COMMUNITY/images/feature_honeycomb_top.jpg"
+             alt="Honeycomb top ventilation" loading="lazy" class="gal-img rounded-lg w-full">
+        <div class="gal-label" data-i18n="gui03">Honeycomb top ventilation</div>
+      </div>
+
+      <div class="gal-item break-inside-avoid" data-cat="ui">
+        <img src="https://belik1982.github.io/BOSL2_clodecode_COMMUNITY/images/feature_ajar_fan_vent.jpg"
+             alt="Fan + ventilation" loading="lazy" class="gal-img rounded-lg w-full">
+        <div class="gal-label" data-i18n="gui04">Fan + ventilation</div>
+      </div>
+
+      <div class="gal-item break-inside-avoid" data-cat="ui">
+        <img src="https://belik1982.github.io/BOSL2_clodecode_COMMUNITY/images/feature_snap_fit_fan.jpg"
+             alt="Snap-fit + fan mount" loading="lazy" class="gal-img rounded-lg w-full">
+        <div class="gal-label" data-i18n="gui05">Snap-fit + fan mount</div>
+      </div>
+
+      <div class="gal-item break-inside-avoid" data-cat="ui">
+        <img src="https://belik1982.github.io/BOSL2_clodecode_COMMUNITY/images/feature_removable_panels.jpg"
+             alt="Removable side panels" loading="lazy" class="gal-img rounded-lg w-full">
+        <div class="gal-label" data-i18n="gui06">Removable side panels</div>
+      </div>
+
+      <div class="gal-item break-inside-avoid" data-cat="ui">
+        <img src="https://belik1982.github.io/BOSL2_clodecode_COMMUNITY/images/feature_ventilation_top.jpg"
+             alt="Top ventilation slots" loading="lazy" class="gal-img rounded-lg w-full">
+        <div class="gal-label" data-i18n="gui07">Top ventilation slots</div>
+      </div>
+
+      <div class="gal-item break-inside-avoid" data-cat="ui">
+        <img src="https://belik1982.github.io/BOSL2_clodecode_COMMUNITY/images/feature_slots_fan_side.jpg"
+             alt="Side slot ventilation" loading="lazy" class="gal-img rounded-lg w-full">
+        <div class="gal-label" data-i18n="gui08">Side slot ventilation</div>
+      </div>
+
+    </div><!-- /gal-grid -->
+  </div>
+</section>
+
+<!-- Lightbox -->
+<div id="lb" style="display:none;position:fixed;inset:0;z-index:9999;background:#000000e0;cursor:zoom-out;align-items:center;justify-content:center;padding:24px;">
+  <img id="lb-img" src="" alt="" style="max-width:92vw;max-height:90vh;border-radius:8px;box-shadow:0 0 60px #000;object-fit:contain;">
+  <div id="lb-cap" style="position:fixed;bottom:24px;left:0;right:0;text-align:center;color:#fff;font-size:.85rem;opacity:.7;"></div>
+  <button id="lb-close" style="position:fixed;top:20px;right:24px;background:none;border:none;color:#fff;font-size:2rem;cursor:pointer;line-height:1;">✕</button>
+</div>
 
 <!-- ═══════════════ HOW IT WORKS ═══════════════ -->
 <section class="py-20 px-6 reveal">
   <div class="max-w-4xl mx-auto text-center mb-14">
-    <h2 class="text-3xl font-black mb-3">From idea to STL in <span style="color:#ff90e8;">3 steps</span></h2>
-    <p class="text-white/40">No CAD skills. No subscription. Just sliders.</p>
+    <h2 class="text-3xl font-black mb-3" data-i18n="how_h2">From idea to STL in <span style="color:#ff90e8;">3 steps</span></h2>
+    <p class="text-white/40" data-i18n="how_sub">No CAD skills. No subscription. Just sliders.</p>
   </div>
   <div class="max-w-3xl mx-auto grid sm:grid-cols-3 gap-8">
     <div class="text-center">
       <div class="step-line relative w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4 font-black text-lg" style="background:linear-gradient(135deg,#ff90e830,#60aaff20);border:1px solid #ff90e840;color:#ff90e8;">1</div>
-      <h3 class="font-bold mb-2">Open in OpenSCAD</h3>
-      <p class="text-sm text-white/40">File → Open → enclosure.scad. Press <kbd class="bg-white/10 px-1 rounded">Ctrl+Shift+C</kbd> to open the Customizer panel.</p>
+      <h3 class="font-bold mb-2" data-i18n="step1_h">Open in OpenSCAD</h3>
+      <p class="text-sm text-white/40" data-i18n="step1_p">File → Open → enclosure.scad. Press <kbd class="bg-white/10 px-1 rounded">Ctrl+Shift+C</kbd> to open the Customizer panel.</p>
     </div>
     <div class="text-center">
       <div class="step-line relative w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4 font-black text-lg" style="background:linear-gradient(135deg,#ff90e830,#60aaff20);border:1px solid #ff90e840;color:#ff90e8;">2</div>
-      <h3 class="font-bold mb-2">Adjust Sliders</h3>
-      <p class="text-sm text-white/40">Set dimensions, pick connectors, choose fastening type, enable fan mount — 17 parameter groups.</p>
+      <h3 class="font-bold mb-2" data-i18n="step2_h">Adjust Sliders</h3>
+      <p class="text-sm text-white/40" data-i18n="step2_p">Set dimensions, pick connectors, choose fastening type, enable fan mount — 17 parameter groups.</p>
     </div>
     <div class="text-center">
       <div class="w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4 font-black text-lg" style="background:linear-gradient(135deg,#ff90e830,#60aaff20);border:1px solid #ff90e840;color:#ff90e8;">3</div>
-      <h3 class="font-bold mb-2">Export STL</h3>
-      <p class="text-sm text-white/40">Press <kbd class="bg-white/10 px-1 rounded">F6</kbd> to render with Manifold backend. File → Export → Export as STL. Done.</p>
+      <h3 class="font-bold mb-2" data-i18n="step3_h">Export STL</h3>
+      <p class="text-sm text-white/40" data-i18n="step3_p">Press <kbd class="bg-white/10 px-1 rounded">F6</kbd> to render with Manifold backend. File → Export → Export as STL. Done.</p>
     </div>
   </div>
 </section>
@@ -311,64 +452,63 @@
 <section class="py-20 px-6 reveal" style="background:linear-gradient(180deg,transparent,#0d0d1a,transparent);">
   <div class="max-w-6xl mx-auto">
     <div class="text-center mb-14">
-      <h2 class="text-3xl font-black mb-3">Everything you need to <span style="color:#ff90e8;">ship hardware</span></h2>
-      <p class="text-white/40">Every parameter verified against industry standards and manufacturer datasheets</p>
+      <h2 class="text-3xl font-black mb-3" data-i18n="feat_h2">Everything you need to <span style="color:#ff90e8;">ship hardware</span></h2>
+      <p class="text-white/40" data-i18n="feat_sub">Every parameter verified against industry standards and manufacturer datasheets</p>
     </div>
     <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
 
-      <!-- Feature cards -->
       <div class="grad-border rounded-xl p-6 hover:scale-[1.02] transition-transform">
         <div class="text-3xl mb-3">🌀</div>
-        <h3 class="font-bold mb-2">Fan Mounts</h3>
-        <p class="text-sm text-white/50">30 / 40 / 60 / 80 / 120 mm fans. 5 grill styles: rings, honeycomb, slots, holes, open. Any face.</p>
+        <h3 class="font-bold mb-2" data-i18n="f1_h">Fan Mounts</h3>
+        <p class="text-sm text-white/50" data-i18n="f1_p">30 / 40 / 60 / 80 / 120 mm fans. 5 grill styles: rings, honeycomb, slots, holes, open. Any face.</p>
       </div>
 
       <div class="grad-border rounded-xl p-6 hover:scale-[1.02] transition-transform">
         <div class="text-3xl mb-3">🔒</div>
-        <h3 class="font-bold mb-2">5 Fastening Types</h3>
-        <p class="text-sm text-white/50">Magnets · Snap-fit cantilever clips · Heat-set inserts · Hex nuts · Self-tap screws. M2–M4.</p>
+        <h3 class="font-bold mb-2" data-i18n="f2_h">5 Fastening Types</h3>
+        <p class="text-sm text-white/50" data-i18n="f2_p">Magnets · Snap-fit cantilever clips · Heat-set inserts · Hex nuts · Self-tap screws. M2–M4.</p>
       </div>
 
       <div class="grad-border rounded-xl p-6 hover:scale-[1.02] transition-transform">
         <div class="text-3xl mb-3">🔌</div>
-        <h3 class="font-bold mb-2">26 Connector Cutouts</h3>
-        <p class="text-sm text-white/50">USB, HDMI, XLR, Speakon, XT60, IEC C14/C8, GX16/20, DB9/25, MIDI, Jack, RJ45 and more.</p>
+        <h3 class="font-bold mb-2" data-i18n="f3_h">26 Connector Cutouts</h3>
+        <p class="text-sm text-white/50" data-i18n="f3_p">USB, HDMI, XLR, Speakon, XT60, IEC C14/C8, GX16/20, DB9/25, MIDI, Jack, RJ45 and more.</p>
       </div>
 
       <div class="grad-border rounded-xl p-6 hover:scale-[1.02] transition-transform">
         <div class="text-3xl mb-3">💧</div>
-        <h3 class="font-bold mb-2">IP54 Gasket Groove</h3>
-        <p class="text-sm text-white/50">O-ring channel for sealed enclosures. Parametric width and depth. Compatible with ledge joint.</p>
+        <h3 class="font-bold mb-2" data-i18n="f4_h">IP54 Gasket Groove</h3>
+        <p class="text-sm text-white/50" data-i18n="f4_p">O-ring channel for sealed enclosures. Parametric width and depth. Compatible with ledge joint.</p>
       </div>
 
       <div class="grad-border rounded-xl p-6 hover:scale-[1.02] transition-transform">
         <div class="text-3xl mb-3">🔧</div>
-        <h3 class="font-bold mb-2">PCB Standoffs</h3>
-        <p class="text-sm text-white/50">M2 / M2.5 / M3. Grid or corner layout. Configurable height, offset, count. Fused to base.</p>
+        <h3 class="font-bold mb-2" data-i18n="f5_h">PCB Standoffs</h3>
+        <p class="text-sm text-white/50" data-i18n="f5_p">M2 / M2.5 / M3. Grid or corner layout. Configurable height, offset, count. Fused to base.</p>
       </div>
 
       <div class="grad-border rounded-xl p-6 hover:scale-[1.02] transition-transform">
         <div class="text-3xl mb-3">🏭</div>
-        <h3 class="font-bold mb-2">DIN Rail TS-35</h3>
-        <p class="text-sm text-white/50">Snap-on clip for standard DIN rail panel mounting. Industrial automation ready.</p>
+        <h3 class="font-bold mb-2" data-i18n="f6_h">DIN Rail TS-35</h3>
+        <p class="text-sm text-white/50" data-i18n="f6_p">Snap-on clip for standard DIN rail panel mounting. Industrial automation ready.</p>
       </div>
 
       <div class="grad-border rounded-xl p-6 hover:scale-[1.02] transition-transform">
         <div class="text-3xl mb-3">🪟</div>
-        <h3 class="font-bold mb-2">Removable Panels</h3>
-        <p class="text-sm text-white/50">Tongue-and-groove slide-in walls. Front+Back, Left+Right, or all 4 sides. Tool-free access.</p>
+        <h3 class="font-bold mb-2" data-i18n="f7_h">Removable Panels</h3>
+        <p class="text-sm text-white/50" data-i18n="f7_p">Tongue-and-groove slide-in walls. Front+Back, Left+Right, or all 4 sides. Tool-free access.</p>
       </div>
 
       <div class="grad-border rounded-xl p-6 hover:scale-[1.02] transition-transform">
         <div class="text-3xl mb-3">💡</div>
-        <h3 class="font-bold mb-2">LED Light Pipes</h3>
-        <p class="text-sm text-white/50">Up to 8 integrated light guides. Configurable diameter, spacing, face. Status LED ready.</p>
+        <h3 class="font-bold mb-2" data-i18n="f8_h">LED Light Pipes</h3>
+        <p class="text-sm text-white/50" data-i18n="f8_p">Up to 8 integrated light guides. Configurable diameter, spacing, face. Status LED ready.</p>
       </div>
 
       <div class="grad-border rounded-xl p-6 hover:scale-[1.02] transition-transform">
         <div class="text-3xl mb-3">📺</div>
-        <h3 class="font-bold mb-2">VESA + Mounting Ears</h3>
-        <p class="text-sm text-white/50">VESA 75×75 / 100×100. Mounting ears 2 or 4, any side. Keyhole wall-mount slots.</p>
+        <h3 class="font-bold mb-2" data-i18n="f9_h">VESA + Mounting Ears</h3>
+        <p class="text-sm text-white/50" data-i18n="f9_p">VESA 75×75 / 100×100. Mounting ears 2 or 4, any side. Keyhole wall-mount slots.</p>
       </div>
 
     </div>
@@ -378,8 +518,8 @@
 <!-- ═══════════════ CONNECTORS ═══════════════ -->
 <section class="py-16 px-6 reveal">
   <div class="max-w-4xl mx-auto">
-    <h2 class="text-2xl font-black text-center mb-2">26 Connector Cutouts</h2>
-    <p class="text-center text-white/40 text-sm mb-8">All dimensions verified against manufacturer datasheets (IEC 60320, EIA-574, ISO 273)</p>
+    <h2 class="text-2xl font-black text-center mb-2" data-i18n="conn_h2">26 Connector Cutouts</h2>
+    <p class="text-center text-white/40 text-sm mb-8" data-i18n="conn_sub">All dimensions verified against manufacturer datasheets (IEC 60320, EIA-574, ISO 273)</p>
     <div class="flex flex-wrap gap-2 justify-center">
       <span class="conn-tag">USB-A</span><span class="conn-tag">USB-A Dual</span>
       <span class="conn-tag">USB-B</span><span class="conn-tag">USB-C</span>
@@ -402,49 +542,48 @@
 <!-- ═══════════════ FREE vs PRO ═══════════════ -->
 <section class="py-20 px-6 reveal">
   <div class="max-w-3xl mx-auto">
-    <h2 class="text-3xl font-black text-center mb-2">Free <span style="color:#ff90e8">vs</span> PRO</h2>
-    <p class="text-center text-white/40 text-sm mb-10">Try the free Community version on GitHub — upgrade when you need more</p>
+    <h2 class="text-3xl font-black text-center mb-2" data-i18n="cmp_h2">Free <span style="color:#ff90e8">vs</span> PRO</h2>
+    <p class="text-center text-white/40 text-sm mb-10" data-i18n="cmp_sub">Try the free Community version on GitHub — upgrade when you need more</p>
 
     <div class="rounded-2xl overflow-hidden border border-white/10">
       <table class="cmp-table w-full text-sm">
         <thead>
           <tr>
-            <th class="text-left px-5 py-3 w-1/2">Feature</th>
+            <th class="text-left px-5 py-3 w-1/2" data-i18n="cmp_col_feat">Feature</th>
             <th class="px-4 py-3">🆓 Community</th>
             <th class="px-4 py-3" style="color:#ff90e8;">🔒 PRO</th>
           </tr>
         </thead>
         <tbody class="divide-y divide-white/5">
-          <tr><td class="px-5 py-3">Enclosure sizes 20–400 mm</td><td class="text-center check">✓</td><td class="text-center check">✓</td></tr>
-          <tr><td class="px-5 py-3">5 size presets</td><td class="text-center check">✓</td><td class="text-center check">✓</td></tr>
-          <tr><td class="px-5 py-3">Self-tap screw fastening</td><td class="text-center check">✓</td><td class="text-center check">✓</td></tr>
-          <tr><td class="px-5 py-3">6 connector cutouts</td><td class="text-center check">✓</td><td class="text-center check">✓</td></tr>
-          <tr><td class="px-5 py-3">Top/bottom ventilation</td><td class="text-center check">✓</td><td class="text-center check">✓</td></tr>
-          <tr><td class="px-5 py-3">2 text labels, 3 fonts</td><td class="text-center check">✓</td><td class="text-center check">✓</td></tr>
-          <tr><td class="px-5 py-3">PLA / PETG materials</td><td class="text-center check">✓</td><td class="text-center check">✓</td></tr>
-          <tr style="background:#ff90e805"><td class="px-5 py-3 font-medium" style="color:#ff90e8;">All 15 presets (up to 250×180×100)</td><td class="text-center cross">✗</td><td class="text-center check">✓</td></tr>
-          <tr style="background:#ff90e805"><td class="px-5 py-3 font-medium" style="color:#ff90e8;">All 26 connector types</td><td class="text-center cross">✗</td><td class="text-center check">✓</td></tr>
-          <tr style="background:#ff90e805"><td class="px-5 py-3 font-medium" style="color:#ff90e8;">Fan mounts 30–120 mm, 5 grill styles</td><td class="text-center cross">✗</td><td class="text-center check">✓</td></tr>
-          <tr style="background:#ff90e805"><td class="px-5 py-3 font-medium" style="color:#ff90e8;">Snap-fit · Magnets · Heat-set · Hex nuts</td><td class="text-center cross">✗</td><td class="text-center check">✓</td></tr>
-          <tr style="background:#ff90e805"><td class="px-5 py-3 font-medium" style="color:#ff90e8;">IP54 gasket groove</td><td class="text-center cross">✗</td><td class="text-center check">✓</td></tr>
-          <tr style="background:#ff90e805"><td class="px-5 py-3 font-medium" style="color:#ff90e8;">PCB standoffs M2/M2.5/M3</td><td class="text-center cross">✗</td><td class="text-center check">✓</td></tr>
-          <tr style="background:#ff90e805"><td class="px-5 py-3 font-medium" style="color:#ff90e8;">DIN Rail TS-35 clip</td><td class="text-center cross">✗</td><td class="text-center check">✓</td></tr>
-          <tr style="background:#ff90e805"><td class="px-5 py-3 font-medium" style="color:#ff90e8;">VESA 75×75 / 100×100</td><td class="text-center cross">✗</td><td class="text-center check">✓</td></tr>
-          <tr style="background:#ff90e805"><td class="px-5 py-3 font-medium" style="color:#ff90e8;">Removable panels (tongue-and-groove)</td><td class="text-center cross">✗</td><td class="text-center check">✓</td></tr>
-          <tr style="background:#ff90e805"><td class="px-5 py-3 font-medium" style="color:#ff90e8;">LED light pipes</td><td class="text-center cross">✗</td><td class="text-center check">✓</td></tr>
-          <tr style="background:#ff90e805"><td class="px-5 py-3 font-medium" style="color:#ff90e8;">Mounting ears · Keyhole slots · Rubber feet</td><td class="text-center cross">✗</td><td class="text-center check">✓</td></tr>
-          <tr style="background:#ff90e805"><td class="px-5 py-3 font-medium" style="color:#ff90e8;">Side wall ventilation (any face)</td><td class="text-center cross">✗</td><td class="text-center check">✓</td></tr>
-          <tr style="background:#ff90e805"><td class="px-5 py-3 font-medium" style="color:#ff90e8;">Cable glands M12 / M16 / M20</td><td class="text-center cross">✗</td><td class="text-center check">✓</td></tr>
-          <tr style="background:#ff90e805"><td class="px-5 py-3 font-medium" style="color:#ff90e8;">4 text fields · 12 fonts · all faces</td><td class="text-center cross">✗</td><td class="text-center check">✓</td></tr>
-          <tr style="background:#ff90e805"><td class="px-5 py-3 font-medium" style="color:#ff90e8;">ABS / ASA / Custom material</td><td class="text-center cross">✗</td><td class="text-center check">✓</td></tr>
-          <tr style="background:#ff90e805"><td class="px-5 py-3 font-medium" style="color:#ff90e8;">Bill of materials + print time hints</td><td class="text-center cross">✗</td><td class="text-center check">✓</td></tr>
+          <tr><td class="px-5 py-3" data-i18n="r01">Enclosure sizes 20–400 mm</td><td class="text-center check">✓</td><td class="text-center check">✓</td></tr>
+          <tr><td class="px-5 py-3" data-i18n="r02">5 size presets</td><td class="text-center check">✓</td><td class="text-center check">✓</td></tr>
+          <tr><td class="px-5 py-3" data-i18n="r03">Self-tap screw fastening</td><td class="text-center check">✓</td><td class="text-center check">✓</td></tr>
+          <tr><td class="px-5 py-3" data-i18n="r04">6 connector cutouts</td><td class="text-center check">✓</td><td class="text-center check">✓</td></tr>
+          <tr><td class="px-5 py-3" data-i18n="r05">Top/bottom ventilation</td><td class="text-center check">✓</td><td class="text-center check">✓</td></tr>
+          <tr><td class="px-5 py-3" data-i18n="r06">2 text labels, 3 fonts</td><td class="text-center check">✓</td><td class="text-center check">✓</td></tr>
+          <tr><td class="px-5 py-3" data-i18n="r07">PLA / PETG materials</td><td class="text-center check">✓</td><td class="text-center check">✓</td></tr>
+          <tr style="background:#ff90e805"><td class="px-5 py-3 font-medium" style="color:#ff90e8;" data-i18n="r08">All 15 presets (up to 250×180×100)</td><td class="text-center cross">✗</td><td class="text-center check">✓</td></tr>
+          <tr style="background:#ff90e805"><td class="px-5 py-3 font-medium" style="color:#ff90e8;" data-i18n="r09">All 26 connector types</td><td class="text-center cross">✗</td><td class="text-center check">✓</td></tr>
+          <tr style="background:#ff90e805"><td class="px-5 py-3 font-medium" style="color:#ff90e8;" data-i18n="r10">Fan mounts 30–120 mm, 5 grill styles</td><td class="text-center cross">✗</td><td class="text-center check">✓</td></tr>
+          <tr style="background:#ff90e805"><td class="px-5 py-3 font-medium" style="color:#ff90e8;" data-i18n="r11">Snap-fit · Magnets · Heat-set · Hex nuts</td><td class="text-center cross">✗</td><td class="text-center check">✓</td></tr>
+          <tr style="background:#ff90e805"><td class="px-5 py-3 font-medium" style="color:#ff90e8;" data-i18n="r12">IP54 gasket groove</td><td class="text-center cross">✗</td><td class="text-center check">✓</td></tr>
+          <tr style="background:#ff90e805"><td class="px-5 py-3 font-medium" style="color:#ff90e8;" data-i18n="r13">PCB standoffs M2/M2.5/M3</td><td class="text-center cross">✗</td><td class="text-center check">✓</td></tr>
+          <tr style="background:#ff90e805"><td class="px-5 py-3 font-medium" style="color:#ff90e8;" data-i18n="r14">DIN Rail TS-35 clip</td><td class="text-center cross">✗</td><td class="text-center check">✓</td></tr>
+          <tr style="background:#ff90e805"><td class="px-5 py-3 font-medium" style="color:#ff90e8;" data-i18n="r15">VESA 75×75 / 100×100</td><td class="text-center cross">✗</td><td class="text-center check">✓</td></tr>
+          <tr style="background:#ff90e805"><td class="px-5 py-3 font-medium" style="color:#ff90e8;" data-i18n="r16">Removable panels (tongue-and-groove)</td><td class="text-center cross">✗</td><td class="text-center check">✓</td></tr>
+          <tr style="background:#ff90e805"><td class="px-5 py-3 font-medium" style="color:#ff90e8;" data-i18n="r17">LED light pipes</td><td class="text-center cross">✗</td><td class="text-center check">✓</td></tr>
+          <tr style="background:#ff90e805"><td class="px-5 py-3 font-medium" style="color:#ff90e8;" data-i18n="r18">Mounting ears · Keyhole slots · Rubber feet</td><td class="text-center cross">✗</td><td class="text-center check">✓</td></tr>
+          <tr style="background:#ff90e805"><td class="px-5 py-3 font-medium" style="color:#ff90e8;" data-i18n="r19">Side wall ventilation (any face)</td><td class="text-center cross">✗</td><td class="text-center check">✓</td></tr>
+          <tr style="background:#ff90e805"><td class="px-5 py-3 font-medium" style="color:#ff90e8;" data-i18n="r20">Cable glands M12 / M16 / M20</td><td class="text-center cross">✗</td><td class="text-center check">✓</td></tr>
+          <tr style="background:#ff90e805"><td class="px-5 py-3 font-medium" style="color:#ff90e8;" data-i18n="r21">4 text fields · 12 fonts · all faces</td><td class="text-center cross">✗</td><td class="text-center check">✓</td></tr>
+          <tr style="background:#ff90e805"><td class="px-5 py-3 font-medium" style="color:#ff90e8;" data-i18n="r22">ABS / ASA / Custom material</td><td class="text-center cross">✗</td><td class="text-center check">✓</td></tr>
+          <tr style="background:#ff90e805"><td class="px-5 py-3 font-medium" style="color:#ff90e8;" data-i18n="r23">Bill of materials + print time hints</td><td class="text-center cross">✗</td><td class="text-center check">✓</td></tr>
         </tbody>
       </table>
     </div>
-
     <div class="mt-6 text-center">
-      <p class="text-white/30 text-xs mb-4">🆓 Community version is free on GitHub — try before you buy</p>
-      <button data-gumroad-action="buy" data-gumroad-price="29" class="buy-btn">
+      <p class="text-white/30 text-xs mb-4" data-i18n="cmp_note">🆓 Community version is free on GitHub — try before you buy</p>
+      <button data-gumroad-action="buy" data-gumroad-price="29" class="buy-btn" data-i18n="btn_buy_table">
         Get PRO — starting at $29
       </button>
     </div>
@@ -454,28 +593,28 @@
 <!-- ═══════════════ PRESETS ═══════════════ -->
 <section class="py-16 px-6 reveal" style="background:linear-gradient(180deg,transparent,#0d0d1a,transparent);">
   <div class="max-w-4xl mx-auto">
-    <h2 class="text-2xl font-black text-center mb-2">15 Size Presets</h2>
-    <p class="text-center text-white/40 text-sm mb-8">From a USB dongle to a full desktop controller — or set any custom size 20–400 mm</p>
+    <h2 class="text-2xl font-black text-center mb-2" data-i18n="pre_h2">15 Size Presets</h2>
+    <p class="text-center text-white/40 text-sm mb-8" data-i18n="pre_sub">From a USB dongle to a full desktop controller — or set any custom size 20–400 mm</p>
     <div class="overflow-x-auto">
       <table class="w-full text-sm text-center" style="border-collapse:collapse;">
         <thead>
           <tr style="color:var(--muted);font-size:.7rem;text-transform:uppercase;letter-spacing:.08em;">
-            <th class="px-4 py-2 text-left">Name</th>
-            <th class="px-4 py-2">Size (L×W×H mm)</th>
-            <th class="px-4 py-2">Typical Use</th>
+            <th class="px-4 py-2 text-left" data-i18n="pre_col_name">Name</th>
+            <th class="px-4 py-2" data-i18n="pre_col_size">Size (L×W×H mm)</th>
+            <th class="px-4 py-2" data-i18n="pre_col_use">Typical Use</th>
             <th class="px-4 py-2"></th>
           </tr>
         </thead>
         <tbody>
-          <tr style="border-top:1px solid var(--border)"><td class="px-4 py-2.5 text-left font-medium">Micro-Dongle</td><td class="px-4 py-2.5 text-white/50">50×35×22</td><td class="px-4 py-2.5 text-white/40">USB dongles, BLE</td><td class="px-4 py-2.5 text-green-400 text-xs">FREE</td></tr>
-          <tr style="border-top:1px solid var(--border)"><td class="px-4 py-2.5 text-left font-medium">Pocket</td><td class="px-4 py-2.5 text-white/50">64×41×20</td><td class="px-4 py-2.5 text-white/40">Keyfobs, small sensors</td><td class="px-4 py-2.5 text-green-400 text-xs">FREE</td></tr>
-          <tr style="border-top:1px solid var(--border)"><td class="px-4 py-2.5 text-left font-medium">KeyFob</td><td class="px-4 py-2.5 text-white/50">80×45×16</td><td class="px-4 py-2.5 text-white/40">Slim remotes</td><td class="px-4 py-2.5 text-green-400 text-xs">FREE</td></tr>
-          <tr style="border-top:1px solid var(--border)"><td class="px-4 py-2.5 text-left font-medium">Mini-Gauge</td><td class="px-4 py-2.5 text-white/50">100×60×25</td><td class="px-4 py-2.5 text-white/40">Arduino Nano, ESP32</td><td class="px-4 py-2.5 text-green-400 text-xs">FREE</td></tr>
-          <tr style="border-top:1px solid var(--border)"><td class="px-4 py-2.5 text-left font-medium">Sensor</td><td class="px-4 py-2.5 text-white/50">85×50×21</td><td class="px-4 py-2.5 text-white/40">IoT nodes</td><td class="px-4 py-2.5 text-green-400 text-xs">FREE</td></tr>
-          <tr style="border-top:1px solid var(--border);background:#ff90e805"><td class="px-4 py-2.5 text-left font-medium" style="color:#ff90e8;">Handheld</td><td class="px-4 py-2.5 text-white/50">115×70×35</td><td class="px-4 py-2.5 text-white/40">Field instruments</td><td class="px-4 py-2.5 text-xs" style="color:#ff90e8;">PRO</td></tr>
-          <tr style="border-top:1px solid var(--border);background:#ff90e805"><td class="px-4 py-2.5 text-left font-medium" style="color:#ff90e8;">Project</td><td class="px-4 py-2.5 text-white/50">115×75×40</td><td class="px-4 py-2.5 text-white/40">Audio DI boxes</td><td class="px-4 py-2.5 text-xs" style="color:#ff90e8;">PRO</td></tr>
-          <tr style="border-top:1px solid var(--border);background:#ff90e805"><td class="px-4 py-2.5 text-left font-medium" style="color:#ff90e8;">Gadget</td><td class="px-4 py-2.5 text-white/50">120×80×40</td><td class="px-4 py-2.5 text-white/40">Raspberry Pi 4</td><td class="px-4 py-2.5 text-xs" style="color:#ff90e8;">PRO</td></tr>
-          <tr style="border-top:1px solid var(--border);background:#ff90e805"><td class="px-4 py-2.5 text-left font-medium" style="color:#ff90e8;">…7 more</td><td class="px-4 py-2.5 text-white/50">up to 250×180×100</td><td class="px-4 py-2.5 text-white/40">Industrial controllers</td><td class="px-4 py-2.5 text-xs" style="color:#ff90e8;">PRO</td></tr>
+          <tr style="border-top:1px solid var(--border)"><td class="px-4 py-2.5 text-left font-medium">Micro-Dongle</td><td class="px-4 py-2.5 text-white/50">50×35×22</td><td class="px-4 py-2.5 text-white/40" data-i18n="pu1">USB dongles, BLE</td><td class="px-4 py-2.5 text-green-400 text-xs">FREE</td></tr>
+          <tr style="border-top:1px solid var(--border)"><td class="px-4 py-2.5 text-left font-medium">Pocket</td><td class="px-4 py-2.5 text-white/50">64×41×20</td><td class="px-4 py-2.5 text-white/40" data-i18n="pu2">Keyfobs, small sensors</td><td class="px-4 py-2.5 text-green-400 text-xs">FREE</td></tr>
+          <tr style="border-top:1px solid var(--border)"><td class="px-4 py-2.5 text-left font-medium">KeyFob</td><td class="px-4 py-2.5 text-white/50">80×45×16</td><td class="px-4 py-2.5 text-white/40" data-i18n="pu3">Slim remotes</td><td class="px-4 py-2.5 text-green-400 text-xs">FREE</td></tr>
+          <tr style="border-top:1px solid var(--border)"><td class="px-4 py-2.5 text-left font-medium">Mini-Gauge</td><td class="px-4 py-2.5 text-white/50">100×60×25</td><td class="px-4 py-2.5 text-white/40" data-i18n="pu4">Arduino Nano, ESP32</td><td class="px-4 py-2.5 text-green-400 text-xs">FREE</td></tr>
+          <tr style="border-top:1px solid var(--border)"><td class="px-4 py-2.5 text-left font-medium">Sensor</td><td class="px-4 py-2.5 text-white/50">85×50×21</td><td class="px-4 py-2.5 text-white/40" data-i18n="pu5">IoT nodes</td><td class="px-4 py-2.5 text-green-400 text-xs">FREE</td></tr>
+          <tr style="border-top:1px solid var(--border);background:#ff90e805"><td class="px-4 py-2.5 text-left font-medium" style="color:#ff90e8;">Handheld</td><td class="px-4 py-2.5 text-white/50">115×70×35</td><td class="px-4 py-2.5 text-white/40" data-i18n="pu6">Field instruments</td><td class="px-4 py-2.5 text-xs" style="color:#ff90e8;">PRO</td></tr>
+          <tr style="border-top:1px solid var(--border);background:#ff90e805"><td class="px-4 py-2.5 text-left font-medium" style="color:#ff90e8;">Project</td><td class="px-4 py-2.5 text-white/50">115×75×40</td><td class="px-4 py-2.5 text-white/40" data-i18n="pu7">Audio DI boxes</td><td class="px-4 py-2.5 text-xs" style="color:#ff90e8;">PRO</td></tr>
+          <tr style="border-top:1px solid var(--border);background:#ff90e805"><td class="px-4 py-2.5 text-left font-medium" style="color:#ff90e8;">Gadget</td><td class="px-4 py-2.5 text-white/50">120×80×40</td><td class="px-4 py-2.5 text-white/40" data-i18n="pu8">Raspberry Pi 4</td><td class="px-4 py-2.5 text-xs" style="color:#ff90e8;">PRO</td></tr>
+          <tr style="border-top:1px solid var(--border);background:#ff90e805"><td class="px-4 py-2.5 text-left font-medium" style="color:#ff90e8;" data-i18n="pu9_name">…7 more</td><td class="px-4 py-2.5 text-white/50">up to 250×180×100</td><td class="px-4 py-2.5 text-white/40" data-i18n="pu9">Industrial controllers</td><td class="px-4 py-2.5 text-xs" style="color:#ff90e8;">PRO</td></tr>
         </tbody>
       </table>
     </div>
@@ -485,13 +624,13 @@
 <!-- ═══════════════ MATERIALS ═══════════════ -->
 <section class="py-16 px-6 reveal">
   <div class="max-w-3xl mx-auto text-center">
-    <h2 class="text-2xl font-black mb-8">Material Shrinkage Compensation</h2>
+    <h2 class="text-2xl font-black mb-8" data-i18n="mat_h2">Material Shrinkage Compensation</h2>
     <div class="grid grid-cols-2 sm:grid-cols-5 gap-3">
       <div class="grad-border rounded-xl p-4"><div class="font-bold mb-1">PLA</div><div class="text-xs text-white/40">0.3%</div><div class="text-xs text-green-400 mt-1">FREE</div></div>
       <div class="grad-border rounded-xl p-4"><div class="font-bold mb-1">PETG</div><div class="text-xs text-white/40">0.5%</div><div class="text-xs text-green-400 mt-1">FREE</div></div>
       <div class="grad-border rounded-xl p-4"><div class="font-bold mb-1">ABS</div><div class="text-xs text-white/40">0.8%</div><div class="text-xs mt-1" style="color:#ff90e8;">PRO</div></div>
       <div class="grad-border rounded-xl p-4"><div class="font-bold mb-1">ASA</div><div class="text-xs text-white/40">0.6%</div><div class="text-xs mt-1" style="color:#ff90e8;">PRO</div></div>
-      <div class="grad-border rounded-xl p-4"><div class="font-bold mb-1">Custom</div><div class="text-xs text-white/40">0–3.0%</div><div class="text-xs mt-1" style="color:#ff90e8;">PRO</div></div>
+      <div class="grad-border rounded-xl p-4"><div class="font-bold mb-1" data-i18n="mat_custom">Custom</div><div class="text-xs text-white/40">0–3.0%</div><div class="text-xs mt-1" style="color:#ff90e8;">PRO</div></div>
     </div>
   </div>
 </section>
@@ -502,52 +641,52 @@
     <h2 class="text-3xl font-black text-center mb-10">FAQ</h2>
     <div class="space-y-3">
 
-      <details class="grad-border rounded-xl overflow-hidden group">
+      <details class="grad-border rounded-xl overflow-hidden">
         <summary class="flex justify-between items-center px-6 py-4 font-medium hover:text-white transition-colors">
-          Do I need to know OpenSCAD to use this?
+          <span data-i18n="faq1_q">Do I need to know OpenSCAD to use this?</span>
           <span class="arrow text-white/40 ml-4">▼</span>
         </summary>
-        <p class="px-6 pb-5 text-sm text-white/50">No. The Customizer panel in OpenSCAD gives you sliders and dropdowns for every parameter. You never need to touch the code. If you can use PowerPoint, you can use this.</p>
+        <p class="px-6 pb-5 text-sm text-white/50" data-i18n="faq1_a">No. The Customizer panel in OpenSCAD gives you sliders and dropdowns for every parameter. You never need to touch the code. If you can use PowerPoint, you can use this.</p>
       </details>
 
       <details class="grad-border rounded-xl overflow-hidden">
         <summary class="flex justify-between items-center px-6 py-4 font-medium hover:text-white transition-colors">
-          Which slicer does it work with?
+          <span data-i18n="faq2_q">Which slicer does it work with?</span>
           <span class="arrow text-white/40 ml-4">▼</span>
         </summary>
-        <p class="px-6 pb-5 text-sm text-white/50">Any slicer that accepts STL — Bambu Studio, PrusaSlicer, OrcaSlicer, Cura, etc. Export STL from OpenSCAD, import into your slicer. That's it.</p>
+        <p class="px-6 pb-5 text-sm text-white/50" data-i18n="faq2_a">Any slicer that accepts STL — Bambu Studio, PrusaSlicer, OrcaSlicer, Cura, etc. Export STL from OpenSCAD, import into your slicer. That's it.</p>
       </details>
 
       <details class="grad-border rounded-xl overflow-hidden">
         <summary class="flex justify-between items-center px-6 py-4 font-medium hover:text-white transition-colors">
-          How fast does it render?
+          <span data-i18n="faq3_q">How fast does it render?</span>
           <span class="arrow text-white/40 ml-4">▼</span>
         </summary>
-        <p class="px-6 pb-5 text-sm text-white/50">With the Manifold backend (free, available in OpenSCAD 2024 dev snapshot) most enclosures render in 1–3 seconds. Enable it at Edit → Preferences → Features → manifold.</p>
+        <p class="px-6 pb-5 text-sm text-white/50" data-i18n="faq3_a">With the Manifold backend (free, available in OpenSCAD 2024 dev snapshot) most enclosures render in 1–3 seconds. Enable it at Edit → Preferences → Features → manifold.</p>
       </details>
 
       <details class="grad-border rounded-xl overflow-hidden">
         <summary class="flex justify-between items-center px-6 py-4 font-medium hover:text-white transition-colors">
-          What do I get after purchase?
+          <span data-i18n="faq4_q">What do I get after purchase?</span>
           <span class="arrow text-white/40 ml-4">▼</span>
         </summary>
-        <p class="px-6 pb-5 text-sm text-white/50">Full OpenSCAD source <code class="text-[#ff90e8]">.scad</code> file with all PRO features unlocked, documentation in EN/UA/RU, and all future updates — forever, no subscription.</p>
+        <p class="px-6 pb-5 text-sm text-white/50" data-i18n="faq4_a">Full OpenSCAD source <code class="text-[#ff90e8]">.scad</code> file with all PRO features unlocked, documentation in EN/UA/RU, and all future updates — forever, no subscription.</p>
       </details>
 
       <details class="grad-border rounded-xl overflow-hidden">
         <summary class="flex justify-between items-center px-6 py-4 font-medium hover:text-white transition-colors">
-          Can I use it commercially?
+          <span data-i18n="faq5_q">Can I use it commercially?</span>
           <span class="arrow text-white/40 ml-4">▼</span>
         </summary>
-        <p class="px-6 pb-5 text-sm text-white/50">Yes. The PRO license covers commercial use — you can use it to design and sell enclosures for your products. The free Community version is non-commercial only.</p>
+        <p class="px-6 pb-5 text-sm text-white/50" data-i18n="faq5_a">Yes. The PRO license covers commercial use — you can use it to design and sell enclosures for your products. The free Community version is non-commercial only.</p>
       </details>
 
       <details class="grad-border rounded-xl overflow-hidden">
         <summary class="flex justify-between items-center px-6 py-4 font-medium hover:text-white transition-colors">
-          My folder name has Cyrillic/Chinese characters — will it work?
+          <span data-i18n="faq6_q">My folder name has Cyrillic/Chinese characters — will it work?</span>
           <span class="arrow text-white/40 ml-4">▼</span>
         </summary>
-        <p class="px-6 pb-5 text-sm text-white/50">OpenSCAD requires Latin characters in the full folder path. Place the project in a path like <code class="text-[#ff90e8]">C:\Projects\enclosure</code> — not <code class="text-white/30">C:\Проекти\</code>.</p>
+        <p class="px-6 pb-5 text-sm text-white/50" data-i18n="faq6_a">OpenSCAD requires Latin characters in the full folder path. Place the project in a path like <code class="text-[#ff90e8]">C:\Projects\enclosure</code> — not <code class="text-white/30">C:\Проекти\</code>.</p>
       </details>
 
     </div>
@@ -563,45 +702,254 @@
         <rect x="7" y="11" width="4" height="3" rx=".5" fill="#ff90e8" stroke="none"/>
       </svg>
     </div>
-    <h2 class="text-4xl font-black mb-4">Ready to build?</h2>
+    <h2 class="text-4xl font-black mb-4" data-i18n="cta_h2">Ready to build?</h2>
     <p class="text-white/50 mb-8 text-lg">
-      One purchase · Full source · Lifetime updates<br>
-      <span class="text-sm">🆓 Not sure? Try the <a href="https://github.com/Belik1982/BOSL2_clodecode_COMMUNITY" style="color:#ff90e8;text-decoration:underline;" target="_blank">free Community version</a> first</span>
+      <span data-i18n="cta_p1">One purchase · Full source · Lifetime updates</span><br>
+      <span class="text-sm" data-i18n="cta_p2">🆓 Not sure? Try the <a href="https://github.com/Belik1982/BOSL2_clodecode_COMMUNITY" style="color:#ff90e8;text-decoration:underline;" target="_blank">free Community version</a> first</span>
     </p>
-
     <div class="flex flex-col sm:flex-row gap-4 items-center justify-center">
       <div class="flex items-center gap-3 bg-white/5 rounded-xl px-4 py-3 border border-white/10">
-        <span class="text-white/40 text-sm">Your price (min $29):</span>
+        <span class="text-white/40 text-sm" data-i18n="price_label2">Your price (min $29):</span>
         <span class="text-white/40 text-sm">$</span>
         <input type="number" id="price-input-2" class="price-input !w-20" min="29" value="29" step="1">
       </div>
       <button id="buy-final" class="buy-btn text-lg px-8 py-4">
-        Get PRO Now →
+        <span data-i18n="btn_buy_final">Get PRO Now →</span>
       </button>
     </div>
-
-    <p class="mt-6 text-white/20 text-xs">
-      Secure checkout · Instant download · 30-day refund policy
-    </p>
+    <p class="mt-6 text-white/20 text-xs" data-i18n="cta_trust">Secure checkout · Instant download · 30-day refund policy</p>
   </div>
 </section>
 
 <!-- ═══════════════ FOOTER ═══════════════ -->
 <footer class="border-t border-white/5 py-8 px-6 text-center text-white/20 text-xs">
-  <p>Parametric Enclosure Generator PRO · Made with OpenSCAD &amp; BOSL2</p>
+  <p data-i18n="footer_1">Parametric Enclosure Generator PRO · Made with OpenSCAD &amp; BOSL2</p>
   <p class="mt-1">
-    <a href="https://github.com/Belik1982/BOSL2_clodecode_COMMUNITY" style="color:#ff90e840;" target="_blank">Free Community Version on GitHub</a>
-    · CC BY-NC-ND 4.0 (Community) · Commercial use: PRO license
+    <a href="https://github.com/Belik1982/BOSL2_clodecode_COMMUNITY" style="color:#ff90e840;" target="_blank" data-i18n="footer_2">Free Community Version on GitHub</a>
+    · CC BY-NC-ND 4.0 (Community) · <span data-i18n="footer_3">Commercial use: PRO license</span>
   </p>
 </footer>
 
 <!-- ═══════════════ SCRIPTS ═══════════════ -->
 <script>
-// ── Pay-what-you-want buy handler ──────────────────────────────────────────
+// ══════════════════════════════════════════════════════
+//  i18n — translations dictionary
+// ══════════════════════════════════════════════════════
+var T = {
+  en: {
+    nav_buy:       "Get PRO — $29",
+    hero_badge:    "✦ OpenSCAD · 3D Printing · No CAD skills needed",
+    hero_h1_1:     "Generate",
+    hero_h1_2:     "Print-Ready",
+    hero_h1_3:     "Enclosures",
+    hero_p:        "One <code class=\"text-[#ff90e8] bg-white/5 px-1 rounded\">.scad</code> file, <strong class=\"text-white\">130+ parameters</strong>, OpenSCAD Customizer. Fan mounts, snap-fits, PCB standoffs, 26 connectors — adjust sliders, press <kbd class=\"bg-white/10 px-1.5 py-0.5 rounded text-sm\">F6</kbd>, get STL.",
+    price_label:   "Your price, min $29:",
+    price_label2:  "Your price (min $29):",
+    btn_buy_now:   "Get PRO Now",
+    btn_buy_table: "Get PRO — starting at $29",
+    btn_buy_final: "Get PRO Now →",
+    hero_trust_1:  "✓ Full OpenSCAD source",
+    hero_trust_2:  "✓ Lifetime updates",
+    hero_trust_3:  "✓ Manifold backend ready",
+    stat_params:   "Parameters",
+    stat_conn:     "Connector Types",
+    stat_presets:  "Size Presets",
+    stat_fasten:   "Fastening Types",
+    how_h2:        "From idea to STL in <span style=\"color:#ff90e8;\">3 steps</span>",
+    how_sub:       "No CAD skills. No subscription. Just sliders.",
+    step1_h:       "Open in OpenSCAD",
+    step1_p:       "File → Open → enclosure.scad. Press <kbd class=\"bg-white/10 px-1 rounded\">Ctrl+Shift+C</kbd> to open the Customizer panel.",
+    step2_h:       "Adjust Sliders",
+    step2_p:       "Set dimensions, pick connectors, choose fastening type, enable fan mount — 17 parameter groups.",
+    step3_h:       "Export STL",
+    step3_p:       "Press <kbd class=\"bg-white/10 px-1 rounded\">F6</kbd> to render with Manifold backend. File → Export → Export as STL. Done.",
+    feat_h2:       "Everything you need to <span style=\"color:#ff90e8;\">ship hardware</span>",
+    feat_sub:      "Every parameter verified against industry standards and manufacturer datasheets",
+    f1_h:"Fan Mounts",          f1_p:"30 / 40 / 60 / 80 / 120 mm fans. 5 grill styles: rings, honeycomb, slots, holes, open. Any face.",
+    f2_h:"5 Fastening Types",   f2_p:"Magnets · Snap-fit cantilever clips · Heat-set inserts · Hex nuts · Self-tap screws. M2–M4.",
+    f3_h:"26 Connector Cutouts",f3_p:"USB, HDMI, XLR, Speakon, XT60, IEC C14/C8, GX16/20, DB9/25, MIDI, Jack, RJ45 and more.",
+    f4_h:"IP54 Gasket Groove",  f4_p:"O-ring channel for sealed enclosures. Parametric width and depth. Compatible with ledge joint.",
+    f5_h:"PCB Standoffs",       f5_p:"M2 / M2.5 / M3. Grid or corner layout. Configurable height, offset, count. Fused to base.",
+    f6_h:"DIN Rail TS-35",      f6_p:"Snap-on clip for standard DIN rail panel mounting. Industrial automation ready.",
+    f7_h:"Removable Panels",    f7_p:"Tongue-and-groove slide-in walls. Front+Back, Left+Right, or all 4 sides. Tool-free access.",
+    f8_h:"LED Light Pipes",     f8_p:"Up to 8 integrated light guides. Configurable diameter, spacing, face. Status LED ready.",
+    f9_h:"VESA + Mounting Ears",f9_p:"VESA 75×75 / 100×100. Mounting ears 2 or 4, any side. Keyhole wall-mount slots.",
+    conn_h2:  "26 Connector Cutouts",
+    conn_sub: "All dimensions verified against manufacturer datasheets (IEC 60320, EIA-574, ISO 273)",
+    cmp_h2:       "Free <span style=\"color:#ff90e8\">vs</span> PRO",
+    cmp_sub:      "Try the free Community version on GitHub — upgrade when you need more",
+    cmp_col_feat: "Feature",
+    cmp_note:     "🆓 Community version is free on GitHub — try before you buy",
+    r01:"Enclosure sizes 20–400 mm", r02:"5 size presets", r03:"Self-tap screw fastening",
+    r04:"6 connector cutouts", r05:"Top/bottom ventilation", r06:"2 text labels, 3 fonts",
+    r07:"PLA / PETG materials", r08:"All 15 presets (up to 250×180×100)", r09:"All 26 connector types",
+    r10:"Fan mounts 30–120 mm, 5 grill styles", r11:"Snap-fit · Magnets · Heat-set · Hex nuts",
+    r12:"IP54 gasket groove", r13:"PCB standoffs M2/M2.5/M3", r14:"DIN Rail TS-35 clip",
+    r15:"VESA 75×75 / 100×100", r16:"Removable panels (tongue-and-groove)", r17:"LED light pipes",
+    r18:"Mounting ears · Keyhole slots · Rubber feet", r19:"Side wall ventilation (any face)",
+    r20:"Cable glands M12 / M16 / M20", r21:"4 text fields · 12 fonts · all faces",
+    r22:"ABS / ASA / Custom material", r23:"Bill of materials + print time hints",
+    pre_h2:"15 Size Presets",
+    pre_sub:"From a USB dongle to a full desktop controller — or set any custom size 20–400 mm",
+    pre_col_name:"Name", pre_col_size:"Size (L×W×H mm)", pre_col_use:"Typical Use",
+    pu1:"USB dongles, BLE", pu2:"Keyfobs, small sensors", pu3:"Slim remotes",
+    pu4:"Arduino Nano, ESP32", pu5:"IoT nodes", pu6:"Field instruments",
+    pu7:"Audio DI boxes", pu8:"Raspberry Pi 4", pu9_name:"…7 more", pu9:"Industrial controllers",
+    mat_h2:"Material Shrinkage Compensation", mat_custom:"Custom",
+    faq1_q:"Do I need to know OpenSCAD to use this?",
+    faq1_a:"No. The Customizer panel in OpenSCAD gives you sliders and dropdowns for every parameter. You never need to touch the code. If you can use PowerPoint, you can use this.",
+    faq2_q:"Which slicer does it work with?",
+    faq2_a:"Any slicer that accepts STL — Bambu Studio, PrusaSlicer, OrcaSlicer, Cura, etc. Export STL from OpenSCAD, import into your slicer. That's it.",
+    faq3_q:"How fast does it render?",
+    faq3_a:"With the Manifold backend (free, available in OpenSCAD 2024 dev snapshot) most enclosures render in 1–3 seconds. Enable it at Edit → Preferences → Features → manifold.",
+    faq4_q:"What do I get after purchase?",
+    faq4_a:"Full OpenSCAD source <code class=\"text-[#ff90e8]\">.scad</code> file with all PRO features unlocked, documentation in EN/UA/RU, and all future updates — forever, no subscription.",
+    faq5_q:"Can I use it commercially?",
+    faq5_a:"Yes. The PRO license covers commercial use — you can use it to design and sell enclosures for your products. The free Community version is non-commercial only.",
+    faq6_q:"My folder name has Cyrillic/Chinese characters — will it work?",
+    faq6_a:"OpenSCAD requires Latin characters in the full folder path. Place the project in a path like <code class=\"text-[#ff90e8]\">C:\\Projects\\enclosure</code> — not <code class=\"text-white/30\">C:\\Проекти\\</code>.",
+    cta_h2:"Ready to build?",
+    cta_p1:"One purchase · Full source · Lifetime updates",
+    cta_p2:"🆓 Not sure? Try the <a href=\"https://github.com/Belik1982/BOSL2_clodecode_COMMUNITY\" style=\"color:#ff90e8;text-decoration:underline;\" target=\"_blank\">free Community version</a> first",
+    cta_trust:"Secure checkout · Instant download · 30-day refund policy",
+    footer_1:"Parametric Enclosure Generator PRO · Made with OpenSCAD &amp; BOSL2",
+    footer_2:"Free Community Version on GitHub",
+    footer_3:"Commercial use: PRO license",
+    gal_h2:"See It In Action", gal_sub:"Real renders from OpenSCAD — every image generated with this generator",
+    gal_tab_all:"All", gal_tab_3d:"3D Renders", gal_tab_ui:"Interface",
+    gi01:"Assembled enclosure", gi02:"All parts exploded", gi03:"Fan: ring grill",
+    gi04:"Fan: honeycomb grill", gi08:"PCB standoffs", gi09:"DIN rail mount",
+    gi10:"Snap-fit fastening", gi11:"Magnet fastening", gi14:"IP54 + heat-set inserts",
+    gi16:"Removable panels", gi18:"Audio DI box", gi19:"Full honeycomb vents",
+    gi20:"Custom text labels", gi24:"Maxi 250×180×100 mm",
+    gui01:"OpenSCAD Customizer", gui02:"Text labels interface", gui03:"Honeycomb top ventilation",
+    gui04:"Fan + ventilation", gui05:"Snap-fit + fan mount", gui06:"Removable side panels",
+    gui07:"Top ventilation slots", gui08:"Side slot ventilation",
+  },
+  ua: {
+    nav_buy:       "Отримати PRO — $29",
+    hero_badge:    "✦ OpenSCAD · 3D Друк · Без знань CAD",
+    hero_h1_1:     "Генеруйте",
+    hero_h1_2:     "Готові до Друку",
+    hero_h1_3:     "Корпуси",
+    hero_p:        "Один <code class=\"text-[#ff90e8] bg-white/5 px-1 rounded\">.scad</code> файл, <strong class=\"text-white\">130+ параметрів</strong>, Customizer у OpenSCAD. Вентилятори, защіпки, стійки для PCB, 26 роз'ємів — рухайте повзунки, натискайте <kbd class=\"bg-white/10 px-1.5 py-0.5 rounded text-sm\">F6</kbd>, отримуйте STL.",
+    price_label:   "Ваша ціна, мін. $29:",
+    price_label2:  "Ваша ціна (мін. $29):",
+    btn_buy_now:   "Отримати PRO",
+    btn_buy_table: "Отримати PRO — від $29",
+    btn_buy_final: "Отримати PRO →",
+    hero_trust_1:  "✓ Повний вихідний код OpenSCAD",
+    hero_trust_2:  "✓ Оновлення назавжди",
+    hero_trust_3:  "✓ Підтримка Manifold backend",
+    stat_params:   "Параметрів",
+    stat_conn:     "Типів роз'ємів",
+    stat_presets:  "Пресетів розмірів",
+    stat_fasten:   "Типів кріплення",
+    how_h2:        "Від ідеї до STL за <span style=\"color:#ff90e8;\">3 кроки</span>",
+    how_sub:       "Без знань CAD. Без підписки. Тільки повзунки.",
+    step1_h:       "Відкрити в OpenSCAD",
+    step1_p:       "Файл → Відкрити → enclosure.scad. Натисніть <kbd class=\"bg-white/10 px-1 rounded\">Ctrl+Shift+C</kbd> щоб відкрити панель Customizer.",
+    step2_h:       "Налаштувати параметри",
+    step2_p:       "Задайте розміри, виберіть роз'єми, тип кріплення, увімкніть вентилятор — 17 груп параметрів.",
+    step3_h:       "Експортувати STL",
+    step3_p:       "Натисніть <kbd class=\"bg-white/10 px-1 rounded\">F6</kbd> для рендеру з Manifold backend. Файл → Експорт → Експортувати як STL. Готово.",
+    feat_h2:       "Все необхідне для <span style=\"color:#ff90e8;\">виробництва</span>",
+    feat_sub:      "Кожен параметр перевірений за галузевими стандартами та специфікаціями виробників",
+    f1_h:"Кріплення вентиляторів",  f1_p:"Вентилятори 30/40/60/80/120 мм. 5 стилів решітки: кільця, стільники, щілини, отвори, відкрита. Будь-яка грань.",
+    f2_h:"5 типів кріплення",       f2_p:"Магніти · Защіпки · Термовставки · Гайки під ключ · Саморізи. M2–M4.",
+    f3_h:"26 вирізів для роз'ємів", f3_p:"USB, HDMI, XLR, Speakon, XT60, IEC C14/C8, GX16/20, DB9/25, MIDI, Jack, RJ45 та інші.",
+    f4_h:"Канавка ущільнювача IP54", f4_p:"Канал для O-ring ущільнення. Параметрична ширина та глибина. Сумісно з Ledge-з'єднанням.",
+    f5_h:"Стійки для PCB",          f5_p:"M2 / M2.5 / M3. Сітка або кутове розміщення. Налаштована висота, зміщення, кількість.",
+    f6_h:"DIN-рейка TS-35",         f6_p:"Клямка для стандартної DIN-рейки. Готово для промислової автоматизації.",
+    f7_h:"Знімні панелі",           f7_p:"Стінки з пазом типу «ластівчин хвіст». Перед+Зад, Ліво+Право або всі 4 сторони.",
+    f8_h:"Світловоди LED",          f8_p:"До 8 інтегрованих світловодів. Настроювані діаметр, крок, грань.",
+    f9_h:"VESA + вушка кріплення",  f9_p:"VESA 75×75 / 100×100. Вушка 2 або 4 шт., будь-яка сторона. Замкові прорізи для настінного монтажу.",
+    conn_h2:  "26 вирізів для роз'ємів",
+    conn_sub: "Всі розміри перевірені за специфікаціями виробників (IEC 60320, EIA-574, ISO 273)",
+    cmp_h2:       "Free <span style=\"color:#ff90e8\">vs</span> PRO",
+    cmp_sub:      "Спробуйте безкоштовну Community версію на GitHub — оновіть коли знадобиться більше",
+    cmp_col_feat: "Функція",
+    cmp_note:     "🆓 Community версія безкоштовна на GitHub — спробуйте перед покупкою",
+    r01:"Розміри корпусу 20–400 мм", r02:"5 пресетів розмірів", r03:"Саморізи для кріплення",
+    r04:"6 типів вирізів роз'ємів", r05:"Вентиляція верх/низ", r06:"2 текстових поля, 3 шрифти",
+    r07:"Матеріали PLA / PETG", r08:"Усі 15 пресетів (до 250×180×100)", r09:"Усі 26 типів роз'ємів",
+    r10:"Вентилятори 30–120 мм, 5 стилів решітки", r11:"Защіпки · Магніти · Термовставки · Гайки",
+    r12:"Канавка ущільнювача IP54", r13:"Стійки PCB M2/M2.5/M3", r14:"Клямка DIN-рейки TS-35",
+    r15:"VESA 75×75 / 100×100", r16:"Знімні панелі (паз «ластівчин хвіст»)", r17:"Світловоди LED",
+    r18:"Вушка · Замкові прорізи · Гумові ніжки", r19:"Вентиляція бокових стінок (будь-яка грань)",
+    r20:"Кабельні введення M12 / M16 / M20", r21:"4 текстових поля · 12 шрифтів · всі грані",
+    r22:"ABS / ASA / Свій матеріал", r23:"Специфікація матеріалів + підказки часу друку",
+    pre_h2:"15 пресетів розмірів",
+    pre_sub:"Від USB-донгла до настільного контролера — або задайте довільний розмір 20–400 мм",
+    pre_col_name:"Назва", pre_col_size:"Розмір (Д×Ш×В мм)", pre_col_use:"Типове застосування",
+    pu1:"USB-донгли, BLE-модулі", pu2:"Брелоки, малі сенсори", pu3:"Тонкі пульти",
+    pu4:"Arduino Nano, ESP32", pu5:"IoT-вузли", pu6:"Польові прилади",
+    pu7:"Аудіо DI-бокси", pu8:"Raspberry Pi 4", pu9_name:"…ще 7", pu9:"Промислові контролери",
+    mat_h2:"Компенсація усадки матеріалу", mat_custom:"Свій",
+    faq1_q:"Чи потрібно знати OpenSCAD?",
+    faq1_a:"Ні. Панель Customizer у OpenSCAD дає повзунки та випадаючі списки для кожного параметра. Код чіпати не потрібно. Якщо вмієте користуватися PowerPoint — впораєтеся.",
+    faq2_q:"З яким слайсером це працює?",
+    faq2_a:"З будь-яким слайсером що підтримує STL — Bambu Studio, PrusaSlicer, OrcaSlicer, Cura тощо. Експортуйте STL з OpenSCAD, імпортуйте у свій слайсер. Все.",
+    faq3_q:"Як швидко відбувається рендер?",
+    faq3_a:"З Manifold backend (безкоштовний, у знімку розробника OpenSCAD 2024) більшість корпусів рендериться за 1–3 секунди. Увімкніть: Edit → Preferences → Features → manifold.",
+    faq4_q:"Що я отримую після покупки?",
+    faq4_a:"Повний вихідний код <code class=\"text-[#ff90e8]\">.scad</code> з усіма PRO-функціями, документацію EN/UA/RU і всі майбутні оновлення — назавжди, без підписки.",
+    faq5_q:"Чи можна використовувати комерційно?",
+    faq5_a:"Так. PRO-ліцензія дозволяє комерційне використання — можна проектувати і продавати корпуси для своїх продуктів. Безкоштовна Community версія — лише для некомерційного використання.",
+    faq6_q:"У назві папки є кирилиця — чи запрацює?",
+    faq6_a:"OpenSCAD вимагає латинських символів у повному шляху до папки. Розмістіть проект у шляху на кшталт <code class=\"text-[#ff90e8]\">C:\\Projects\\enclosure</code> — не <code class=\"text-white/30\">C:\\Проекти\\</code>.",
+    cta_h2:"Готові розпочати?",
+    cta_p1:"Одна покупка · Повний код · Оновлення назавжди",
+    cta_p2:"🆓 Не впевнені? Спробуйте <a href=\"https://github.com/Belik1982/BOSL2_clodecode_COMMUNITY\" style=\"color:#ff90e8;text-decoration:underline;\" target=\"_blank\">безкоштовну Community версію</a> спочатку",
+    cta_trust:"Безпечна оплата · Миттєве завантаження · Повернення протягом 30 днів",
+    footer_1:"Генератор параметричних корпусів PRO · Зроблено з OpenSCAD &amp; BOSL2",
+    footer_2:"Безкоштовна Community версія на GitHub",
+    footer_3:"Комерційне використання: PRO ліцензія",
+    gal_h2:"Подивіться на результат", gal_sub:"Реальні рендери з OpenSCAD — кожне зображення згенеровано цим генератором",
+    gal_tab_all:"Всі", gal_tab_3d:"3D Рендери", gal_tab_ui:"Інтерфейс",
+    gi01:"Зібраний корпус", gi02:"Всі деталі розібрано", gi03:"Вентилятор: кільцева решітка",
+    gi04:"Вентилятор: стільникова решітка", gi08:"Стійки для PCB", gi09:"Кріплення DIN-рейки",
+    gi10:"Защіпки (snap-fit)", gi11:"Магнітне кріплення", gi14:"IP54 + термовставки",
+    gi16:"Знімні панелі", gi18:"Аудіо DI-бокс", gi19:"Повне стільникове вентилювання",
+    gi20:"Текстові мітки", gi24:"Максі 250×180×100 мм",
+    gui01:"Інтерфейс OpenSCAD Customizer", gui02:"Інтерфейс: текстові мітки",
+    gui03:"Стільникова вентиляція зверху", gui04:"Вентилятор + вентиляція",
+    gui05:"Защіпки + кріплення вентилятора", gui06:"Знімні бокові панелі",
+    gui07:"Щілинна вентиляція зверху", gui08:"Бокова щілинна вентиляція",
+  }
+};
+
+// ── Apply language ──────────────────────────────────────────────────────────
+var currentLang = "en";
+
+function setLang(lang) {
+  currentLang = lang;
+  var dict = T[lang];
+  document.querySelectorAll("[data-i18n]").forEach(function(el) {
+    var key = el.getAttribute("data-i18n");
+    if (dict[key] !== undefined) {
+      el.innerHTML = dict[key];
+    }
+  });
+  // Update nav buttons
+  document.getElementById("btn-en").classList.toggle("active", lang === "en");
+  document.getElementById("btn-ua").classList.toggle("active", lang === "ua");
+  // Save preference
+  try { localStorage.setItem("lang", lang); } catch(e){}
+}
+
+// ── Auto-detect language on load ────────────────────────────────────────────
+(function() {
+  var saved = "";
+  try { saved = localStorage.getItem("lang") || ""; } catch(e){}
+  var preferred = saved || (navigator.language || "").toLowerCase().slice(0,2);
+  setLang(preferred === "uk" || preferred === "ua" ? "ua" : "en");
+})();
+
+// ── Pay-what-you-want buy handler ───────────────────────────────────────────
 function gumroadBuy(inputId) {
   var input = document.getElementById(inputId);
-  var raw   = (input ? input.value : "").trim();
-  var price = parseFloat(raw);
+  var price = parseFloat(input ? input.value : "");
   var MIN   = 29;
   if (isNaN(price) || price < MIN) price = MIN;
   parent.postMessage({ type: "gumroad:checkout", params: { price: String(price) } }, "*");
@@ -610,7 +958,6 @@ function gumroadBuy(inputId) {
 document.getElementById("buy-main").addEventListener("click",  function(){ gumroadBuy("price-input");   });
 document.getElementById("buy-final").addEventListener("click", function(){ gumroadBuy("price-input-2"); });
 
-// Clamp inputs to minimum $29
 ["price-input","price-input-2"].forEach(function(id){
   var el = document.getElementById(id);
   if (!el) return;
@@ -620,14 +967,52 @@ document.getElementById("buy-final").addEventListener("click", function(){ gumro
   });
 });
 
-// ── Scroll reveal ──────────────────────────────────────────────────────────
+// ── Scroll reveal ────────────────────────────────────────────────────────────
 var reveals = document.querySelectorAll(".reveal");
 var io = new IntersectionObserver(function(entries){
   entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add("visible"); io.unobserve(e.target); } });
 }, { threshold: 0.1 });
 reveals.forEach(function(el){ io.observe(el); });
 
-// ── FAQ arrow sync ─────────────────────────────────────────────────────────
+// ── Gallery filter ────────────────────────────────────────────────────────────
+document.getElementById("gal-tabs").addEventListener("click", function(e) {
+  var btn = e.target.closest(".gal-tab");
+  if (!btn) return;
+  var cat = btn.getAttribute("data-cat");
+  document.querySelectorAll(".gal-tab").forEach(function(b){ b.classList.remove("active"); });
+  btn.classList.add("active");
+  document.querySelectorAll(".gal-item").forEach(function(item){
+    var ic = item.getAttribute("data-cat");
+    item.classList.toggle("hidden", cat !== "all" && ic !== cat);
+  });
+});
+
+// ── Lightbox ────────────────────────────────────────────────────────────────
+var lb     = document.getElementById("lb");
+var lbImg  = document.getElementById("lb-img");
+var lbCap  = document.getElementById("lb-cap");
+
+document.querySelectorAll(".gal-item").forEach(function(item){
+  item.addEventListener("click", function(){
+    var img = item.querySelector("img");
+    var cap = item.querySelector(".gal-label");
+    lbImg.src = img.src;
+    lbImg.alt = img.alt;
+    lbCap.textContent = cap ? cap.textContent : "";
+    lb.style.display = "flex";
+    document.body.style.overflow = "hidden";
+  });
+});
+
+function closeLb() {
+  lb.style.display = "none";
+  lbImg.src = "";
+  document.body.style.overflow = "";
+}
+lb.addEventListener("click", function(e){ if(e.target === lb || e.target === document.getElementById("lb-close")) closeLb(); });
+document.addEventListener("keydown", function(e){ if(e.key === "Escape") closeLb(); });
+
+// ── FAQ arrow ────────────────────────────────────────────────────────────────
 document.querySelectorAll("details").forEach(function(d){
   d.addEventListener("toggle", function(){
     var arrow = d.querySelector(".arrow");
