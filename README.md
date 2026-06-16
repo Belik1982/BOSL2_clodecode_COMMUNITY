@@ -6,8 +6,10 @@
 
 [![OpenSCAD](https://img.shields.io/badge/OpenSCAD-2024%2B-blue?logo=openscad)](https://openscad.org)
 [![License](https://img.shields.io/badge/License-CC%20BY--NC--ND%204.0-lightgrey)](LICENSE)
-[![PRO Version](https://img.shields.io/badge/PRO%20Version-Gumroad-ff90e8?logo=gumroad)](https://belik.gumroad.com/l/idxwoz)
-[![Free](https://img.shields.io/badge/Community-FREE-brightgreen)](https://github.com/Belik1982/BOSL2_clodecode_COMMUNITY)
+[![PRO on Gumroad](https://img.shields.io/badge/PRO-Gumroad-ff90e8?logo=gumroad)](https://belik.gumroad.com/l/idxwoz)
+[![PRO on Ko-fi](https://img.shields.io/badge/PRO-Ko--fi-ff5e5b?logo=ko-fi)](https://ko-fi.com/s/d83d51aacf)
+[![PRO on Cults3D](https://img.shields.io/badge/PRO-Cults3D-3a86ff)](https://cults3d.com/:4564095)
+[![Community FREE](https://img.shields.io/badge/Community-FREE-brightgreen)](https://github.com/Belik1982/BOSL2_clodecode_COMMUNITY)
 
 <br>
 
