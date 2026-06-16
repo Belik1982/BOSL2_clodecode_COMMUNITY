@@ -277,7 +277,15 @@ A: Yes. Use `Liberation Sans:style=Bold` font (built into OpenSCAD).
 A: Yes. Export STL → import into any slicer.
 
 **Q: How do I get the PRO features?**  
-A: Purchase the PRO version on [Gumroad](https://belik.gumroad.com/l/idxwoz). You get the full source `.scad` file with all features unlocked.
+A: Purchase the PRO version on your preferred platform:
+
+| Platform | Link |
+|----------|:----:|
+| 🎁 **Ko-fi** (buy + donate) | [ko-fi.com/s/d83d51aacf](https://ko-fi.com/s/d83d51aacf) |
+| 🖨️ **Cults3D** | [cults3d.com/:4564095](https://cults3d.com/:4564095) |
+| 💻 **GitHub (private)** | [Belik1982/BOSL2_clodecode_PRO](https://github.com/Belik1982/BOSL2_clodecode_PRO) |
+
+You get the full source `.scad` file with all features unlocked.
 
 ---
 
@@ -292,9 +300,11 @@ Free for personal and educational use. Commercial use requires the PRO license.
 
 ## Ready to go further?
 
-### [🔒 Get PRO Version on Gumroad](https://belik.gumroad.com/l/idxwoz)
+### [🎁 Get PRO on Ko-fi](https://ko-fi.com/s/d83d51aacf)  ·  [🖨️ Get PRO on Cults3D](https://cults3d.com/:4564095)
 
 *26 connectors · 15 presets · Fan mounts · Removable panels · IP54 · DIN rail · VESA · PCB standoffs · and more*
+
+**Ko-fi** also accepts donations — buy me a coffee ☕ for the Community edition.
 
 <br>
 
